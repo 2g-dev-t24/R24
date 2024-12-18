@@ -1,0 +1,167 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "workbenchtools.fullname" . }}
+  labels:
+    {{- include "workbenchtools.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "workbenchtools.selectorLabels" . | nindent 6 }}
+  serviceName: {{ .Chart.Name }}
+  template:
+    metadata:
+    {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      labels:
+        {{- include "workbenchtools.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- if eq .Values.environment "eks" }}
+      {{- if .Values.serviceAccount.enabled }}
+      serviceAccountName: {{ include "dsf-workbench-tools.serviceAccountName" . | quote }}
+      {{- end }}
+      {{- end }}
+      securityContext:
+        fsGroup: 1001
+        fsGroupChangePolicy: "OnRootMismatch"
+      {{- if .Values.image.pullSecret }}
+      imagePullSecrets:
+      - name: {{ .Values.image.pullSecret }}
+      {{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.tools.repository }}:{{ .Values.image.tools.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: BOOTSTRAP_PROFILES
+              value: {{ .Values.env.wbToolsBootstrapProfiles | quote }}            
+            # HTTP settings
+            - name: QUARKUS_HTTP_PORT
+              value: {{ .Values.env.quarkusHttpPort | quote }}
+            - name: QUARKUS_HTTPS_ENABLED
+              value: {{ .Values.env.quarkusHttpsEnabled | quote }}
+            {{- if .Values.env.quarkusHttpsEnabled }}
+            - name: QUARKUS_HTTP_INSECURE_REQUESTS
+              value: {{ .Values.env.quarkusInsecureRequests | quote }}
+            - name: QUARKUS_HTTP_SSL_PORT
+              value: {{ .Values.env.quarkusHttpsPort | quote }}
+            - name: SSL_KEYSTORE_FILE
+              value: "/etc/ssl/ssl_cert.pfx"
+            - name: SSL_KEYSTORE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "workbenchtools.fullname" . }}{{ "-config-secret" }}
+                  key: ssl_cert_password
+            - name: SSL_KEYSTORE_FILE_TYPE
+              value: {{ .Values.env.ssl_cert_filetype | quote }}
+            {{- end }}
+            - name: WBTOOLS_CONFIG_PROFILE
+              value: {{ .Values.env.wbToolsConfigProfile | quote }}
+            - name: WBTOOLS_CONTEXT_PATH
+              value: {{ .Values.env.wbToolsContextPath | quote }}
+            - name: WBTOOLS_LOG_LEVEL
+              value: {{ .Values.env.wbToolsLogLevel | quote }}
+            - name: HEALTH_CHECK_INTERVAL
+              value: {{ .Values.env.wbToolsHealthCheckInterval | quote }}
+            - name: WBTOOLS_CONFIG_PROVIDER
+              value: {{ .Values.env.wbToolsConfigProvider | quote }}
+            - name: CONFIG_SERVER_URL
+              value: {{ .Values.env.wbToolsConfigServerUrl | quote }}
+            - name: BUILD_DB_LIMIT
+              value: {{ .Values.env.wbToolsBuildDbLimit | quote }}
+            - name: OTEL_ENABLED
+              value: {{ .Values.env.otelEnabled | quote }}
+            - name: OTEL_EXPORTER_ENDPOINT
+              value: {{ .Values.env.otelExporterEndpoint | quote }}
+            - name: SAAS_WORKBENCH_INSTANCE
+              value: {{ .Values.env.saasWorkbenchInstance | quote }}
+            - name: SAAS_WORKBENCH_BLUEPRINT
+              value: {{ .Values.env.saasWorkbenchBlueprint | quote }}
+            - name: AUTH_PROVIDER
+              value: {{ .Values.env.authProvider | quote }}
+            - name: OIDC_AUTH_SERVER_URL
+              value: {{ .Values.env.oidcAuthServerUrl | quote }}
+            - name: OIDC_CLIENT_ID
+              value: {{ .Values.env.oidcClientId | quote }}
+            - name: GIT_PROVIDER
+              value: {{ .Values.env.gitProvider | quote }}
+            - name: GIT_SERVER_URL
+              value: {{ .Values.env.gitServerUrl | quote }}
+            - name: GIT_PROJECT
+              value: {{ .Values.env.gitProject | quote }}
+            - name: GIT_REPOSITORY
+              value: {{ .Values.env.gitRepository | quote }}
+            - name: GIT_ADMIN_ACCESS_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "workbenchtools.fullname" . }}{{ "-config-secret" }}
+                  key: gitAdminAccessToken
+            - name: MANAGE_GIT_USERS
+              value: {{ .Values.env.manageGitUsers | quote }}
+            - name: MANAGE_GIT_PROJECTS
+              value: {{ .Values.env.manageGitProjects | quote }}
+            - name: MANAGE_L3_BINARIES
+              value: {{ .Values.env.manageL3Binaries | quote }}
+            - name: GITFS_REPO_ROOT
+              value: {{ .Values.env.gitRepoRoot | quote }}
+            - name: REPO_PROVIDER
+              value: {{ .Values.env.repoProvider | quote }}
+            - name: REPO_SERVER_URL
+              value: {{ .Values.env.artifactoryBaseUrl | quote }}
+            - name: ARTIFACTORY_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "workbenchtools.fullname" . }}{{ "-config-secret" }}
+                  key: artifactoryKey
+            - name: TENANT_ARTIFACTORY_REPO
+              value: {{ .Values.env.tenantArtifactoryRepo | quote }}
+            - name: NOTIFICATION_PROVIDER
+              value: {{ .Values.env.notificationProvider | quote }}
+            - name: KAFKA_BOOTSTRAP_SERVERS
+              value: {{ .Values.env.kafkaBootstrapServers | quote }}
+            - name: KAFKA_PRODUCER_TOPIC
+              value: {{ .Values.env.kafkaProducerTopic | quote }}
+            - name: KAFKA_SECURITY_PROTOCOL
+              value: {{ .Values.env.kafkaSecurityProtocol | quote }}
+            - name: KAFKA_SASL_MECHANISM
+              value: {{ .Values.env.kafkaSaslMechanism | quote }}
+            - name: KAFKA_SECURITY_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "workbenchtools.fullname" . }}{{ "-config-secret" }}
+                  key: kafkaSecurityPassword
+          ports:
+            - name: http
+              containerPort: {{ .Values.env.quarkusHttpPort  | default 8080}}
+              protocol: TCP
+            {{- if .Values.env.quarkusHttpsEnabled }}
+            - name: https
+              containerPort: {{ .Values.env.quarkusHttpsPort | default 8443 }}
+              protocol: TCP
+            {{- end }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: workbenchtools-data
+              mountPath: {{ .Values.env.gitRepoRoot }} 
+            {{- if .Values.env.quarkusHttpsEnabled }}
+            - name: workbenchtools-ssl-data
+              mountPath: "/etc/ssl"
+              readOnly: true
+            {{- end }}
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsUser: 1001  
+            runAsGroup: 1001
+      volumes:
+        - name: workbenchtools-data
+          persistentVolumeClaim:
+            claimName: {{ .Values.fileShare.pvcName }}
+        {{- if .Values.env.quarkusHttpsEnabled }}
+        - name: workbenchtools-ssl-data
+          secret:
+            secretName: workbenchtools-ssl-secret
+        {{- end }}

@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: aws-load-balancer-controller-stg
+  namespace: argocd
+spec:
+  destination:
+    namespace: kube-system
+    server: https://kubernetes.default.svc
+  project: infra-prj
+  source:
+    chart: aws-load-balancer-controller
+    repoURL: https://aws.github.io/eks-charts
+    targetRevision: 1.8.1
+    helm:
+      values: |
+        clusterName: abc-t24-stage
+        vpcId: vpc-0ea2442ffbbe81758
+        region: us-east-1
+        serviceAccount:
+          create: "true"
+          name: aws-load-balancer-controller
+          annotations:
+            eks.amazonaws.com/role-arn: "arn:aws:iam::471112832974:role/eks_irsa_alb_controller_mex-stage"
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true

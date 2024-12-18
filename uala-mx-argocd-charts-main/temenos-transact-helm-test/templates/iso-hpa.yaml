@@ -1,0 +1,27 @@
+{{- if .Values.deployATM.enabled }}   #This file is used to deploy ATM framework and it is meant to be client specific requirement.
+{{- if .Values.autoscaling.enabled -}}
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ include "transact.fullname" . }}{{ "-iso-hpa" }}
+  labels:
+    app.kubernetes.io/name: {{ include "transact.name" . }}{{ "-iso-hpa" }}
+    helm.sh/chart: {{ include "transact.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ include "transact.fullname" . }}{{ "-iso" }}
+  minReplicas: {{ .Values.autoscaling.minReplicas }}
+  maxReplicas: {{ .Values.autoscaling.maxReplicas }}
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: {{ .Values.autoscaling.targetCPUUtilizationPercentage}}
+{{- end -}}
+{{- end -}}

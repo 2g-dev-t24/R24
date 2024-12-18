@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-config
+  namespace: argocd
+spec:
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc
+  project: infra-prj
+  source:
+    repoURL: https://github.com/Bancar/uala-mx-argocd-config.git
+    path: dev/argocd-config
+    targetRevision: main
+  syncPolicy:
+    syncOptions:

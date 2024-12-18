@@ -1,0 +1,24 @@
+{{- if .Values.logstash.enabled }} 
+apiVersion: v1
+kind: Service
+metadata:
+  name: logstash
+  labels:
+    app.kubernetes.io/name: {{ include "transact.name" . }}
+    helm.sh/chart: {{ include "transact.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  type: ClusterIP
+  ports:
+    - name: logs
+      port: 4560
+      targetPort: 4560
+      protocol: TCP
+    - name: monitor
+      port: 9600
+      targetPort: 9600
+      protocol: TCP
+  selector:
+    {{- include "logstash.selectorLabels" . | nindent 4 }}
+{{- end }}

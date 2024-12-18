@@ -1,0 +1,121 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "workbench-uux.fullname" . }}
+  labels:
+    {{- include "workbench-uux.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "workbench-uux.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+    {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      labels:
+        {{- include "workbench-uux.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- if eq .Values.environment "eks" }}
+      {{- if .Values.serviceAccount.enabled }}
+      serviceAccountName: {{ include "workbench-uux.serviceAccountName" . | quote }}
+      {{- end }}
+      {{- end }}
+      {{- if .Values.image.pullSecret }}
+      imagePullSecrets:
+      - name: {{ .Values.image.pullSecret }}
+      {{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.app.repository }}:{{ .Values.image.app.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: NODE_ENV
+              value: {{ .Values.env.nodeEnv | quote }}
+            - name: NODE_OPTIONS
+              value: "--openssl-legacy-provider"
+            - name: HTTP_PORT
+              value: {{ .Values.env.httpPort | quote }}
+            - name: HTTPS_ENABLED
+              value: {{ .Values.env.httpsEnabled | quote }}
+            {{- if .Values.env.httpsEnabled }}
+            - name: HTTPS_PORT
+              value: {{ .Values.env.httpsPort | quote }}
+            - name: SSL_CERT_FILENAME
+              value: "/etc/ssl/ssl_cert.pfx"
+            - name: SSL_CERT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: workbench-uux-ssl-secret
+                  key: ssl_cert_password
+            {{- end }}
+            - name: WBTOOLS_BASE_URL
+              value: {{ .Values.env.wbToolsBaseUrl | quote }}
+            - name: WBTOOLS_SWAGGER_ENDPOINT
+              value: {{ .Values.env.wbToolsSwaggerContextPath | quote }}
+            - name: WBTOOLS_HEALTH_ENDPOINT
+              value: {{ .Values.env.wbToolsHealthContextPath | quote }}
+            - name: WB_PROFILE
+              value: {{ .Values.env.wbProfile | quote }}
+            - name: WB_CONTEXT_PATH
+              value: {{ .Values.env.contextPath | quote }}
+            - name: AUTH_PROVIDER
+              value: {{ .Values.env.authProvider | quote }}
+            - name: LOGIN_MODE
+              value: {{ .Values.env.loginMode | quote }}
+            - name: OIDC_AUTH_SERVER_URL
+              value: {{ .Values.env.oidcAuthServerUrl | quote }}
+            - name: OIDC_CLIENT_ID
+              value: {{ .Values.env.oidcClientId | quote }}
+            - name: OIDC_REALM_NAME
+              value: {{ .Values.env.oidcRealmName | quote }}
+            - name: OIDC_CLIENT_SECRET
+              value: {{ .Values.env.oidcClientSecret | quote }}
+            - name: SESSION_TIMEOUT_MINUTES
+              value: {{ .Values.env.sessionTimeoutMinutes | quote }}
+            - name: COOKIE_SECURED
+              value: {{ .Values.env.cookieSecured | quote }}
+            - name: MAX_BODY_REQUEST_SIZE_MB
+              value: {{ .Values.env.maxBodyRequestSize | quote }}
+            - name: MAX_FILE_UPLOAD_SIZE_MB
+              value: {{ .Values.env.maxFileUploadSizeMb | quote }}
+            - name: ALLOWED_ORIGINS
+              value: {{ .Values.env.allowedOrigins | quote }}
+            - name: OTEL_EXPORTER_ENDPOINT
+              value: {{ .Values.env.otelExporterEndpoint | quote }}
+            - name: OTEL_SERVICE_NAME
+              value: {{ .Values.env.otelServiceName | quote }}
+            - name: OTEL_PROPAGATORS
+              value: {{ .Values.env.otelPropagators | quote }}           
+          ports:
+            - name: http
+              containerPort: {{ .Values.env.httpPort }}
+              protocol: TCP
+            {{- if .Values.env.httpsEnabled }}
+            - name: https
+              containerPort: {{ .Values.env.httpsPort }}
+              protocol: TCP
+            {{- end }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+            requests:
+              cpu: {{ .Values.resources.requests.cpu }}
+              memory: {{ .Values.resources.requests.memory }}
+            limits:
+              cpu: {{ .Values.resources.limits.cpu }}
+              memory: {{ .Values.resources.limits.memory }}
+          {{- if .Values.env.httpsEnabled }}
+          volumeMounts:
+            - name: workbench-uux-ssl-data
+              mountPath: "/etc/ssl"
+              readOnly: true
+          {{- end }}
+      {{- if .Values.env.httpsEnabled }}
+      volumes:        
+        - name: workbench-uux-ssl-data
+          secret:
+            secretName: workbench-uux-ssl-secret
+      {{- end }}
+        

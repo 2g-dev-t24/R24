@@ -1,0 +1,85 @@
+# Default values for workbench-uux.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+namespace: workbench-uux
+
+environment: "eks"
+
+replicaCount: 1
+
+image:
+  pullPolicy: IfNotPresent
+  pullSecret: ""
+  app:
+    repository: 471112605010.dkr.ecr.us-east-1.amazonaws.com/workbench-uux 
+    tag: 24.0.13
+
+serviceAccount:
+  # Specifies whether a service account should be 
+  enabled: true
+   # The name of the service account to use.
+  # If not set then service account workbench-uux-sa will be created 
+  name: ""
+
+service:
+  type: ClusterIP
+  http_port: "80"
+  https_port: "443"
+  
+env:
+  nodeEnv: "production" 
+  httpPort: "8080"
+  httpsEnabled: false
+  httpsPort: "8443"
+  ssl_cert_content_b64enc: ""
+  ssl_cert_password: ""
+  # wbToolsBaseUrl: "http://workbench:8080/wb-tools"
+  wbToolsBaseUrl: "https://wbtools.dev.corebanking.uala.mx/wb-tools"
+  wbProfile: "TRANSACT-EF"
+  # wbProfile: "TRANSACT-API"
+  wbToolsSwaggerContextPath: "/v1.0.0/swagger.json"
+  wbToolsHealthContextPath: "/api/v1.0.0/health/core"
+  contextPath: "/wb-uux"
+  authProvider: "BASIC"   # OIDC, BASIC
+  loginMode: "CUSTOM"  # KEYCLOAK , CUSTOM
+  oidcAuthServerUrl: ""
+  oidcClientId: "workbench2.0"
+  oidcRealmName: "DSFPackager"
+  oidcClientSecret: ""
+  otelExporterEndpoint: "http://otel-collector:4317"
+  otelServiceName: "workbench"
+  otelPropagators:  "tracecontext,baggage,jaeger"
+  allowedOrigins: "*"
+  sessionTimeoutMinutes: "60"
+  cookieSecured: "false"
+  maxBodyRequestSize: "5mb"
+  maxFileUploadSizeMb: "100"
+  
+tls:
+  crt: ""
+  key: ""
+
+resources: 
+  limits:
+    cpu: "1.5"
+    memory: "6G"
+  requests:
+    cpu: "1.5"
+    memory: "3G"
+    
+ingress:
+  enabled: true
+  controller: "awsalbcontroller"
+  annotations: {}
+  usePrivateIp: true
+  gatewayPrivateIP: ""
+  domainName: ""
+  hosts: "wbuux.dev.corebanking.uala.mx"
+  paths:
+  - path: /wb-assets/*
+  - path: /wb-uux/*
+
+  
+networkpolicy:
+  # if true then network policy will be deployed in workbench-uux namespace
+  enabled: false

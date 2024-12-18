@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name:  {{ include "transact.fullname" . }}{{ "-efs-pv" }}
+spec:
+  mountOptions:
+    - iam
+    - tls
+  capacity:
+    storage: {{ .Values.volumes.capacityStorage }}
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: {{ include "transact.fullname" . }}{{ "-efs-sc" }}
+  csi:
+    driver: efs.csi.aws.com
+    volumeHandle: "{{ .Values.volumes.fileSystemId }}::{{ .Values.volumes.fileSystemAPId }}"
+    volumeAttributes:
+      mounttargetip: {{ .Values.volumes.mounttargetip }}

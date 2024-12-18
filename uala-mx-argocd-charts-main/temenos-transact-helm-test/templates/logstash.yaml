@@ -1,0 +1,51 @@
+{{- if .Values.logstash.enabled }} 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "transact.fullname" . }}{{ "-logstash" }}
+  labels:
+    app.kubernetes.io/name: {{ include "transact.fullname" . }}{{ "-logstash" }}
+    helm.sh/chart: {{ include "transact.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.logstashReplicaCount }}
+  selector:
+    matchLabels:
+      {{- include "logstash.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "logstash.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- if .Values.image.pullSecret }}
+      imagePullSecrets:
+      - name: {{ .Values.image.pullSecret }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- if and .Values.nodegroup (ne .Values.nodegroup "") }}
+      nodeSelector:
+        eks.amazonaws.com/nodegroup:  {{ .Values.nodegroup }}
+      {{- end }}
+      containers:
+      - name: logstash
+        image: {{ include "logs.image" . | quote }}
+        imagePullPolicy: {{ .Values.image.pullPolicy | default "IfNotPresent" }}
+        resources:
+          requests:
+            cpu: {{ .Values.requests.logstash.cpu }}
+            memory: {{ .Values.requests.logstash.memory }}
+          limits:
+            cpu: {{ .Values.limits.logstash.cpu }}
+            memory: {{ .Values.limits.logstash.memory }}
+        ports:
+        - name: logs
+          containerPort: 4560
+          protocol: TCP
+        - name: monitor
+          containerPort: 9600
+          protocol: TCP
+{{- end }}

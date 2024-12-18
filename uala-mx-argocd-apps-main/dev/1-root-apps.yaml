@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-app
+  namespace: argocd
+spec:
+  destination:
+    namespace: argocd
+    name: in-cluster
+  project: default
+  source:
+    path: dev/apps
+    repoURL: https://github.com/Bancar/uala-mx-argocd-apps.git
+    targetRevision: HEAD
+    directory:
+      recurse: true
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true

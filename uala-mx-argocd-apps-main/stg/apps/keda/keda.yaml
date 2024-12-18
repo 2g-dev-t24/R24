@@ -1,0 +1,27 @@
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: keda
+#   namespace: argocd
+# spec:
+#   destination:
+#     namespace: keda
+#     server: https://kubernetes.default.svc
+#   project: transact-prj
+#   source:
+#     chart: keda
+#     repoURL: https://kedacore.github.io/charts
+#     targetRevision: 2.13.0
+#     helm:
+#       values: |
+#         nodeSelector:
+#           eks.amazonaws.com/nodegroup: "transact"
+#         tolerations:
+#           - key: "dedicated.uala"
+#             operator: "Equal"
+#             value: "transact"
+#             effect: "NoSchedule"
+#   syncPolicy:
+#     automated: {}
+#     syncOptions:
+#     - CreateNamespace=true

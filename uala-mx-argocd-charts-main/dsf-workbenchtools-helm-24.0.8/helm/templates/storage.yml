@@ -1,0 +1,59 @@
+{{- if eq .Values.environment "eks" }}
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: {{ .Values.fileShare.storageClassName }}  
+provisioner: ebs.csi.aws.com
+volumeBindingMode: WaitForFirstConsumer
+{{- end }}
+{{- if eq .Values.environment "aks" }}
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: {{ .Values.fileShare.pvcName }}
+spec:
+  capacity:
+    storage: {{ .Values.fileShare.storageSize }}
+  accessModes:
+    - ReadWriteMany
+  storageClassName: {{ .Values.fileShare.storageClassName }}
+  azureFile:
+    secretName: {{ .Values.fileShare.secretName }}
+    secretNamespace: {{ .Values.namespace }}
+    shareName: {{ .Values.fileShare.shareName }}
+    readOnly: false
+  mountOptions:
+  - dir_mode=0777
+  - file_mode=0777
+  - uid=1001
+  - gid=1001
+  - mfsymlinks
+  - cache=none
+  - actimeo=30
+{{- end }}
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Values.fileShare.pvcName }}
+spec:
+  {{- if eq .Values.environment "minikube" }}
+  accessModes:
+    - ReadWriteMany
+  {{- end }}
+  {{- if eq .Values.environment "aks" }}
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  storageClassName: {{ .Values.fileShare.storageClassName }}
+  {{- end }}
+  {{- if eq .Values.environment "eks" }}
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  storageClassName: {{ .Values.fileShare.storageClassName }}
+  {{- end }}  
+  resources:
+    requests:
+      storage: {{ .Values.fileShare.storageSize }}

@@ -1,0 +1,88 @@
+# Default values for workbenchtools.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  pullPolicy: Always
+  pullSecret: ""
+  tools:
+    repository: workbench-tools
+    tag: 202108.1
+
+service:
+  type: ClusterIP
+  http_port: "80"
+  https_port: "443"
+  
+env:
+  quarkusHttpPort: "8080"
+  quarkusInsecureRequests: "enabled" # enabled, disabled, redirect
+  quarkusHttpsEnabled: false # true, false
+  quarkusHttpsPort: "8443"
+  ssl_cert_content_b64enc: "" # base64 encoded ssl certificate file (pfx) content
+  ssl_cert_password: "" # password for the  ssl certificate 
+  ssl_cert_filetype: "PKCS12" # JKS, JCEKS, P12, PKCS12, PFX
+  wbToolsConfigProfile: "SAAS" # DEV, SAAS, UTP
+  wbToolsBootstrapProfiles: "false" # DEV only
+  wbToolsContextPath: "/wb-tools"
+  wbToolsLogLevel: "ERROR" # INFO, WARN, ERROR
+  wbToolsHealthCheckInterval: "10m"
+  wbToolsConfigProvider: "nitrite_db" # nitrite_db (DEV Only), generic_config, dsf_settings
+  wbToolsConfigServerUrl: ""
+  wbToolsBuildDbLimit: "10"
+  otelEnabled: "false"
+  otelExporterEndpoint: ""
+  saasWorkbenchInstance: ""
+  saasWorkbenchBlueprint: ""
+  authProvider: ""   # oidc, basic
+  oidcAuthServerUrl: ""   # none for basic auth
+  oidcClientId: ""
+  gitProvider: "" # gitlab, bitbucket, none
+  gitServerUrl: ""
+  gitProject: ""
+  gitRepository: "" # only incase of bitbucket
+  gitAdminAccessToken: ""
+  gitRepoRoot: ""
+  manageGitUsers: "true"
+  manageGitProjects: "true"
+  manageL3Binaries: "false"
+  repoProvider: "jfrog" # jfrog, local, none
+  artifactoryBaseUrl: ""
+  artifactoryKey: ""
+  tenantArtifactoryRepo: ""
+  notificationProvider: "kafka" # kafka, none
+  kafkaBootstrapServers: "core-shs-notifications-euw1.servicebus.windows.net:9093"
+  kafkaProducerTopic: "sbx-notification-engine"
+  kafkaSecurityProtocol: "SASL_SSL"
+  kafkaSaslMechanism: "PLAIN"
+  kafkaSecurityPassword: org.apache.kafka.common.security.plain.PlainLoginModule required username="admin" password="Endpoint=sb://core-shs-notifications-euw1.servicebus.windows.net/;SharedAccessKeyName=producer;SharedAccessKey=H9UWf/lrNasndB5JHztDSgDWLnznWP/Rwq+Y8uhoASg=;EntityPath=sbx-notification-engine"  
+  
+fileShare:
+  storageClassName: workbenchtools-azurefile
+  pvcName: workbenchtools-pvc
+  secretName: workbenchtools-secret
+  storageSize: 5Gi
+  StorageAccount: ""
+  StorageKey: ""
+  shareName: "wb-data"
+
+resources: 
+  limits:
+    cpu: "2"
+    memory: "4G"
+  requests:
+    cpu: "1"
+    memory: "2G"
+    
+ingress:
+  enabled: true
+  controller: ""
+  annotations: {}
+  usePrivateIp: true
+  gatewayPrivateIP: ""
+  domainName: ""
+  hosts: ""
+  paths:
+  - path: /wb-tools/*

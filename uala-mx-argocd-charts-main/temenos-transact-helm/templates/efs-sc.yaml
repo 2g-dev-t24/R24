@@ -1,0 +1,15 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: {{ include "transact.fullname" . }}{{ "-efs-sc" }}
+provisioner: efs.csi.aws.com
+mountOptions:
+  - tls
+  - iam
+parameters:
+  provisioningMode: efs-ap
+  fileSystemId: {{ .Values.volumes.fileSystemId }}
+  directoryPerms: "{{ .Values.volumes.directoryPerms }}"
+  gidRangeStart: "{{ .Values.volumes.gidRangeStart }}"
+  gidRangeEnd: "{{ .Values.volumes.gidRangeEnd }}"
+  basePath: "{{ .Values.volumes.basePath }}"

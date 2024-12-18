@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-projects-prd
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/Bancar/uala-mx-argocd-apps.git'
+    path: prd/projects
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated: {}

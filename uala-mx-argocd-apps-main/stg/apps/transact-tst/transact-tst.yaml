@@ -1,0 +1,23 @@
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: transact-tst
+#   namespace: argocd
+# spec:
+#   destination:
+#     namespace: transact-tst
+#     server: https://kubernetes.default.svc
+#   project: transact-prj
+#   sources:
+#     - repoURL: https://github.com/Bancar/uala-mx-argocd-charts.git
+#       path: temenos-transact-helm-test
+#       targetRevision: feat/transact-test
+#       helm:
+#         valueFiles:
+#           - $values/dev/apps/transact-tst/values-tst.yaml
+#     - repoURL: https://github.com/Bancar/uala-mx-argocd-apps.git
+#       targetRevision: main
+#       ref: values
+#   syncPolicy:
+#     syncOptions:
+#     - CreateNamespace=true

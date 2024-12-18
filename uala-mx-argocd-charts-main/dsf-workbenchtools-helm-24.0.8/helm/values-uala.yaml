@@ -1,0 +1,104 @@
+# Default values for workbenchtools.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+namespace: dsf-workbench-tools
+
+environment: "eks"
+
+replicaCount: 1
+
+image:
+  pullPolicy: IfNotPresent
+  pullSecret: ""
+  tools:
+    repository: 471112605010.dkr.ecr.us-east-1.amazonaws.com/dsf-workbenchtools
+    tag: 202411.0.0
+
+serviceAccount:
+  # Specifies whether a service account should be 
+  enabled: true
+   # The name of the service account to use.
+  # If not set then service account workbenchtools-sa will be created 
+  name: ""
+
+service:
+  type: ClusterIP
+  http_port: "80"
+  https_port: "443"
+  
+env:
+  quarkusHttpPort: "8080"
+  quarkusInsecureRequests: "enabled" # enabled, disabled, redirect
+  quarkusHttpsEnabled: false # true, false
+  quarkusHttpsPort: "8443"
+  ssl_cert_content_b64enc: "" # base64 encoded ssl certificate file (pfx) content
+  ssl_cert_password: "" # password for the  ssl certificate 
+  ssl_cert_filetype: "PKCS12" # JKS, JCEKS, P12, PKCS12, PFX
+  wbToolsConfigProfile: "SAAS" # DEV, SAAS, UTP
+  wbToolsBootstrapProfiles: "false" # DEV only
+  wbToolsContextPath: "/wb-tools"
+  wbToolsLogLevel: "ERROR" # INFO, WARN, ERROR
+  wbToolsHealthCheckInterval: "10m"
+  wbToolsConfigProvider: "dsf_settings" # nitrite_db (DEV Only), generic_config, dsf_settings
+  wbToolsConfigServerUrl: "https://transact.dev.corebanking.uala.mx/dsf-iris"
+  wbToolsBuildDbLimit: "10"
+  otelEnabled: "false"
+  otelExporterEndpoint: ""
+  saasWorkbenchInstance: "24d2028c-ae87-4069-a624-66089d957ef9"
+  saasWorkbenchBlueprint: "14d2028c-ae87-4069-a624-66089d957ef9"
+  authProvider: "basic"   # oidc, basic
+  oidcAuthServerUrl: ""   # none for basic auth
+  oidcClientId: ""
+  gitProvider: "none" # gitlab, bitbucket, none
+  gitServerUrl: ""
+  gitProject: ""
+  gitRepository: "" # only incase of bitbucket
+  gitAdminAccessToken: ""
+  gitRepoRoot: "/wbgitfs/repos"
+  manageGitUsers: "true"
+  manageGitProjects: "true"
+  manageL3Binaries: "false"
+  repoProvider: "none" # jfrog, local, none
+  artifactoryBaseUrl: ""
+  artifactoryKey: ""
+  tenantArtifactoryRepo: ""
+  notificationProvider: "none" # kafka, none
+  kafkaBootstrapServers: "core-shs-notifications-euw1.servicebus.windows.net:9093"
+  kafkaProducerTopic: "sbx-notification-engine"
+  kafkaSecurityProtocol: "SASL_SSL"
+  kafkaSaslMechanism: "PLAIN"
+  kafkaSecurityPassword: org.apache.kafka.common.security.plain.PlainLoginModule required username="admin" password="Endpoint=sb://core-shs-notifications-euw1.servicebus.windows.net/;SharedAccessKeyName=producer;SharedAccessKey=H9UWf/lrNasndB5JHztDSgDWLnznWP/Rwq+Y8uhoASg=;EntityPath=sbx-notification-engine"  
+  
+fileShare:
+  storageClassName: workbenchtools-awsebs
+  pvcName: workbenchtools-pvc
+  provisioner: kubernetes.io/aws-ebs
+  storageSize: 10Gi
+
+resources: 
+  limits:
+    cpu: "2"
+    memory: "4G"
+  requests:
+    cpu: "1"
+    memory: "2G"
+    
+ingress:
+  enabled: true
+  controller: "awsalbcontroller"
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internal
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":80}, {"HTTPS":443}]'
+    alb.ingress.kubernetes.io/inbound-cidrs: 10.10.25.0/24, 10.210.50.59/32, 10.210.32.0/19, 10.205.192.0/19
+    external-dns.alpha.kubernetes.io/hostname: wbtools.dev.corebanking.uala.mx
+    alb.ingress.kubernetes.io/ssl-redirect: '443'
+  usePrivateIp: true
+  gatewayPrivateIP: ""
+  domainName: ""
+  hosts: "wbtools.dev.corebanking.uala.mx"
+  paths:
+  - path: /wb-tools/*
+  
+networkpolicy:
+  # if true then network policy will be deployed in dsf-workbench-tools namespace
+  enabled: false

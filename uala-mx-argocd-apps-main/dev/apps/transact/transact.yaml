@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: transact
+  namespace: argocd
+spec:
+  destination:
+    namespace: transact
+    server: https://kubernetes.default.svc
+  project: transact-prj
+  sources:
+    - repoURL: https://github.com/Bancar/uala-mx-argocd-charts.git
+      path: temenos-transact-helm
+      targetRevision: main
+      helm:
+        valueFiles:
+          - $values/dev/apps/transact/values.yaml
+    - repoURL: https://github.com/Bancar/uala-mx-argocd-apps.git
+      targetRevision: main
+      ref: values
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
