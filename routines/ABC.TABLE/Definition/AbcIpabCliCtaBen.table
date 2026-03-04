@@ -1,0 +1,21 @@
+private table AbcIpabCliCtaBen {
+    t24: ABC.IPAB.CLI.CTA.BEN
+    fields:{
+        Personalidad(IPAB.CLI.CTA.BEN.PERSONALIDAD) = 1
+        Nombre(IPAB.CLI.CTA.BEN.NOMBRE) = 2
+        ApellidoPaterno(IPAB.CLI.CTA.BEN.APELLIDO.PATERNO) = 3
+        ApellidoMaterno(IPAB.CLI.CTA.BEN.APELLIDO.MATERNO) = 4
+        CalleNumero(IPAB.CLI.CTA.BEN.CALLE.NUMERO) = 5
+        Colonia(IPAB.CLI.CTA.BEN.COLONIA) = 6
+        Municipio(IPAB.CLI.CTA.BEN.MUNICIPIO) = 7
+        CodPos(IPAB.CLI.CTA.BEN.COD.POS) = 8
+        Pais(IPAB.CLI.CTA.BEN.PAIS) = 9
+        Estado(IPAB.CLI.CTA.BEN.ESTADO) = 10
+        RFC(IPAB.CLI.CTA.BEN.RFC) = 11
+        Curp(IPAB.CLI.CTA.BEN.CURP) = 12
+        Telefono(IPAB.CLI.CTA.BEN.TELEFONO) = 13
+        Email(IPAB.CLI.CTA.BEN.EMAIL) = 14
+        FechaNacimiento(IPAB.CLI.CTA.BEN.FECHA.NACIMIENTO) = 15
+        SaldoCompensado(IPAB.CLI.CTA.BEN.SALDO.COMPENSADO) = 16
+    }
+}

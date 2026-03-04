@@ -1,0 +1,45 @@
+public table AbcAaPreProcess {
+    t24: ABC.AA.PRE.PROCESS
+    fields:{
+        CustomerId(ABC.AA.CUSTOMER.ID)                      = 1
+        Currency(ABC.AA.CURRENCY)                           = 2
+        EffectiveDate(ABC.AA.EFFECTIVE.DATE)                = 3
+        AccountId(ABC.AA.ACCOUNT.ID)                        = 4
+        Product(ABC.AA.PRODUCT)                             = 5
+        Amount(ABC.AA.AMOUNT)                               = 6
+        Term(ABC.AA.TERM)                                   = 7
+        SimFlag(ABC.AA.SIM.FLAG)                            = 8
+        NewInterestRate(ABC.AA.NEW.INTEREST.RATE)           = 9
+        MarginOper(ABC.AA.MARGIN.OPER)                      = 10
+        MarginRate(ABC.AA.MARGIN.RATE)                      = 11
+        ArrangementId(ABC.AA.ARRANGEMENT.ID)                = 12
+        ActRefId(ABC.AA.ACT.REF.ID)                         = 13
+        RevFlag(ABC.AA.REV.FLAG)                            = 14
+        InterestRate(ABC.AA.INTEREST.RATE)                  = 15
+        MatDate(ABC.AA.MAT.DATE)                            = 16
+        DateConvention(ABC.AA.DATE.CONVENTION)              = 17
+        Capitalization(ABC.AA.CAPITALIZATION)               = 18
+        InternetBanking(ABC.AA.INTERNET.BANKING)            = 19
+        Reserved10(ABC.AA.RESERVED.10)                      = 20
+        Reserved9(ABC.AA.RESERVED.9)                        = 21
+        Reserved8(ABC.AA.RESERVED.8)                        = 22
+        Reserved7(ABC.AA.RESERVED.7)                        = 23
+        Reserved6(ABC.AA.RESERVED.6)                        = 24
+        Reserved5(ABC.AA.RESERVED.5)                        = 25
+        Reserved4(ABC.AA.RESERVED.4)                        = 26
+        Reserved3(ABC.AA.RESERVED.3)                        = 27
+        Reserved2(ABC.AA.RESERVED.2)                        = 28
+        Reserved1(ABC.AA.RESERVED.1)                        = 29
+        LocalRef(ABC.AA.LOCAL.REF)                          = 30
+        Override(ABC.AA.OVERRIDE)                           = 31
+        RecordStatus(ABC.AA.RECORD.STATUS)                  = 32
+        CurrNo(ABC.AA.CURR.NO)                              = 33
+        Inputter(ABC.AA.INPUTTER)                           = 34
+        DateTime(ABC.AA.DATE.TIME)                          = 35
+        Authoriser(ABC.AA.AUTHORISER)                       = 36
+        CoCode(ABC.AA.CO.CODE)                              = 37
+        DeptCode(ABC.AA.DEPT.CODE)                          = 38
+        AuditorCode(ABC.AA.AUDITOR.CODE)                    = 39
+        AuditDateTime(ABC.AA.AUDIT.DATE.TIME)               = 40
+    }
+}

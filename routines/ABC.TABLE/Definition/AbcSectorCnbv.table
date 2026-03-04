@@ -1,0 +1,25 @@
+public table AbcSectorCnbv {
+    t24: ABC.SECTOR.CNBV
+    fields:{
+        Id(ABC.SECTOR.CNBV.ID) = 1
+        Sector(ABC.SECTOR.CNBV.SECTOR) = 2
+        TipoIpabGar(ABC.SECTOR.CNBV.TIPO.IPAB.GAR) = 3
+
+        Reserved5(ABC.SECTOR.CNBV.RESERVED.05) = 4
+        Reserved4(ABC.SECTOR.CNBV.RESERVED.04) = 5
+        Reserved3(ABC.SECTOR.CNBV.RESERVED.03) = 6
+        Reserved2(ABC.SECTOR.CNBV.RESERVED.02) = 7
+        Reserved1(ABC.SECTOR.CNBV.RESERVED.01) = 8
+
+        LocalRef(ABC.SECTOR.CNBV.LOCAL.REF) = 9
+        RecordStatus(ABC.SECTOR.CNBV.RECORD.STATUS) = 10
+        CurrNo(ABC.SECTOR.CNBV.CURR.NO) = 11
+        Inputter(ABC.SECTOR.CNBV.INPUTTER) = 12
+        DateTime(ABC.SECTOR.CNBV.DATE.TIME) = 13
+        Authoriser(ABC.SECTOR.CNBV.AUTHORISER) = 14
+        CoCode(ABC.SECTOR.CNBV.CO.CODE) = 15
+        DeptCode(ABC.SECTOR.CNBV.DEPT.CODE) = 16
+        AuditorCode(ABC.SECTOR.CNBV.AUDITOR.CODE) = 17
+        AuditDateTime(ABC.SECTOR.CNBV.AUDIT.DATE.TIME) = 18
+    }
+}

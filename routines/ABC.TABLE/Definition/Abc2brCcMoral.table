@@ -1,0 +1,18 @@
+public table Abc2brCcMoral {
+    t24: ABC.2BR.CC.MORAL
+    fields:{
+        Mnemonic(CC.MORAL.MNEMONIC) = 1
+        Account(CC.MORAL.ACCOUNT) = 2
+        Transaction(CC.MORAL.TRANSACTION) = 3
+
+        RecordStatus(CC.MORAL.RECORD.STATUS) = 4
+        CurrNo(CC.MORAL.CURR.NO) = 5
+        Inputter(CC.MORAL.INPUTTER) = 6
+        DateTime(CC.MORAL.DATE.TIME) = 7
+        Authoriser(CC.MORAL.AUTHORISER) = 8
+        CoCode(CC.MORAL.CO.CODE) = 9
+        DeptCode(CC.MORAL.DEPT.CODE) = 10
+        AuditorCode(CC.MORAL.AUDITOR.CODE) = 11
+        AuditDateTime(CC.MORAL.AUDIT.DATE.TIME) = 12
+    }
+}

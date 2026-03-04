@@ -1,0 +1,87 @@
+component AbcTaxes
+
+# Component Isolation Definition
+metamodelVersion 1.6
+
+ 
+
+
+private method abcTaxIsrDia (
+    INOUT passCustomer string,
+    INOUT passDealAmount string,
+    INOUT passDealCcy string,
+    INOUT passCcyMkt string,
+    INOUT passCrossRate string,
+    INOUT passCrossCcy string,
+    INOUT passDwnCcy string,
+    INOUT passData string,
+    INOUT passCustCdn string,
+    INOUT rTax string,
+    INOUT chargeAmount string
+)
+{
+    jBC: ABC.TAX.ISR.DIA
+}
+
+private method abcTestCallBasic (
+)
+{
+    jBC: ABC.TEST.CALL.BASIC
+}
+
+private method abcTestSomeRtn (
+)
+{
+    jBC: ABC.TEST.SOME.RTN
+}
+
+private method abcTaxIsrAa (
+   INOUT passCustomer string,
+   INOUT passDealAmount string,
+   INOUT passDealCcy string,
+   INOUT passCcyMkt string,
+   INOUT passCrossRate string,
+   INOUT passCrossCcy string,
+   INOUT passDwnCcy string,
+   INOUT passData string,
+   INOUT passCustCdn string,
+   INOUT rTax string,
+   INOUT chargeAmount string
+)
+{
+   jBC: ABC.TAX.ISR.AA
+}
+
+
+
+private method fygAaScheduleProjector (
+   INOUT arrangementId string,
+   INOUT simulationRef string,
+   INOUT noReset string,
+   INOUT dateRange string,
+   INOUT totPayment string,
+   INOUT dueDates string
+)
+{
+   jBC: FYG.AA.SCHEDULE.PROJECTOR
+}
+
+
+
+private method abcTaxIsr (
+   INOUT passCustomer string,
+   INOUT passDealAmount string,
+   INOUT passDealCcy string,
+   INOUT passCcyMkt string,
+   INOUT passCrossRate string,
+   INOUT passCrossCcy string,
+   INOUT passDwnCcy string,
+   INOUT passData string,
+   INOUT passCustCdn string,
+   INOUT rTax string,
+   INOUT chargeAmount string
+)
+{
+   jBC: ABC.TAX.ISR
+}
+

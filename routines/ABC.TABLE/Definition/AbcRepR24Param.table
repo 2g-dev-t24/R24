@@ -1,0 +1,31 @@
+public table AbcRepR24Param {
+    t24: ABC.REP.R24.PARAM
+    fields:{
+        Category(ARRP.CATEGORY) = 1
+        ClaveDep(ARRP.CLAVE.DEP) = 2
+        TransDep(ARRP.TRANS.DEP) = 3
+        ClaveRet(ARRP.CLAVE.RET) = 4
+        TransRet(ARRP.TRANS.RET) = 5
+        Ruta(ARRP.RUTA) = 6
+        NombreArchivo(ARRP.NOMBRE.ARCHIVO) = 7
+        Extension(ARRP.EXTENSION) = 8
+
+        Reserved5(ARRP.RESERVED.05) = 9
+        Reserved4(ARRP.RESERVED.04) = 10
+        Reserved3(ARRP.RESERVED.03) = 11
+        Reserved2(ARRP.RESERVED.02) = 12
+        Reserved1(ARRP.RESERVED.01) = 13
+
+        LocalRef(ARRP.LOCAL.REF) = 14
+        RecordStatus(ARRP.RECORD.STATUS) = 15
+        CurrNo(ARRP.CURR.NO) = 16
+        Inputter(ARRP.INPUTTER) = 17
+        DateTime(ARRP.DATE.TIME) = 18
+        Authoriser(ARRP.AUTHORISER) = 19
+        CoCode(ARRP.CO.CODE) = 20
+        DeptCode(ARRP.DEPT.CODE) = 21
+        AuditorCode(ARRP.AUDITOR.CODE) = 22
+        AuditDateTime(ARRP.AUDIT.DATE.TIME) = 23
+    }
+}
+

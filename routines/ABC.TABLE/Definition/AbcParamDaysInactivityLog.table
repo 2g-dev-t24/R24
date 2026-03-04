@@ -1,0 +1,22 @@
+public table AbcParamDaysInactivityLog {
+    t24: ABC.PARAM.DAYS.INACTIVITY.LOG
+    fields:{
+        FechaProceso(DAY.LOG.FECHA.PROCESO) = 1
+        Usuario(DAY.LOG.ID.USUARIO) = 2
+        NoDays(DAY.LOG.NO.DAYS) = 3
+        Reserved3(DAY.LOG.RESERVED.3) = 4
+        Reserved2(DAY.LOG.RESERVED.2) = 5
+        Reserved1(DAY.LOG.RESERVED.1) = 6
+        LocalRef(DAY.LOG.LOCAL.REF) = 7
+        Override(DAY.LOG.OVERRIDE) = 8
+        RecordStatus(DAY.LOG.RECORD.STATUS) = 9
+        CurrNo(DAY.LOG.CURR.NO) = 10
+        Inputter(DAY.LOG.INPUTTER) = 11
+        DateTime(DAY.LOG.DATE.TIME) = 12
+        Authoriser(DAY.LOG.AUTHORISER) = 13
+        CoCode(DAY.LOG.CO.CODE) = 14
+        DeptCode(DAY.LOG.DEPT.CODE) = 15
+        AuditorCode(DAY.LOG.AUDITOR.CODE) = 16
+        AuditDateTime(DAY.LOG.AUDIT.DATE.TIME) = 17
+    }
+}

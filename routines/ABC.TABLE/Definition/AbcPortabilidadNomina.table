@@ -1,0 +1,52 @@
+public table AbcPortabilidadNomina {
+    t24: ABC.PORTABILIDAD.NOMINA
+    fields:{
+        NoCliente(PN.NO.CLIENTE) = 1
+        TO(PN.T.O) = 2
+        TipoCtaBen(PN.TIPO.CTA.BEN) = 3
+        CtaBen(PN.CTA.BEN) = 4
+        Clabe(PN.CLABE) = 5
+        BancoBen(PN.BANCO.BEN) = 6
+        Nombre(PN.NOMBRE) = 7
+        Rfc(PN.RFC) = 8
+        Curp(PN.CURP) = 9
+        FecNac(PN.FEC.NAC) = 10
+        TipoCtaOrd(PN.TIPO.CTA.ORD) = 11
+        CtaOrd(PN.CTA.ORD) = 12        
+        BancoOrd(PN.BANCO.ORD) = 13
+        FechaSolicitud(PN.FECHA.SOLICITUD) = 14
+        FolioSolicitud(PN.FOLIO.SOLICITUD) = 15
+        TipoOpera(PN.TIPO.OPERA) = 16
+        Estatus(PN.ESTATUS) = 17
+        CveAcepRech(PN.CVE.ACEP.RECH) = 18
+        FecAcepRech(PN.FEC.ACEP.RECH) = 19
+        FecCancelacion(PN.FEC.CANCELACION) = 20
+        FolioCancelacion(PN.FOLIO.CANCELACION) = 21       
+                                        
+        Reserved15(PN.RESERVED.15) = 22
+        Reserved14(PN.RESERVED.14) = 23
+        Reserved13(PN.RESERVED.13) = 24
+        Reserved12(PN.RESERVED.12) = 25
+        Reserved11(PN.RESERVED.11) = 26
+        Reserved10(PN.RESERVED.10) = 27
+        Reserved9(PN.RESERVED.9) = 28
+        Reserved8(PN.RESERVED.8) = 29
+        Reserved7(PN.RESERVED.7) = 30
+        Reserved6(PN.RESERVED.6) = 31
+        Reserved5(PN.RESERVED.5) = 32
+        Reserved4(PN.RESERVED.4) = 33
+        Reserved3(PN.RESERVED.3) = 34
+        Reserved2(PN.RESERVED.2) = 35
+        Reserved1(PN.RESERVED.1) = 36
+
+        RecordStatus(PN.RECORD.STATUS) = 37
+        CurrNo(PN.CURR.NO) = 38
+        Inputter(PN.INPUTTER) = 39
+        DateTime(PN.DATE.TIME) = 40
+        Authoriser(PN.AUTHORISER) = 41
+        CoCode(PN.CO.CODE) = 42
+        DeptCode(PN.DEPT.CODE) = 43
+        AuditorCode(PN.AUDITOR.CODE) = 44
+        AuditDateTime(PN.AUDIT.DATE.TIME) = 45
+    }
+}

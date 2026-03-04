@@ -1,0 +1,18 @@
+private table Abc2lnCustClassDep {
+    t24: ABC.2LN.CUST.CLASS.DEP
+    fields:{
+        Category(CUS.CLA.DEP.CATEGORY) = 1
+        Percentage(CUS.CLA.PERCENTAGE) = 2
+        Tolerance(CUS.CLA.TOLERANCE) = 3
+
+        RecordStatus(CUS.CLA.RECORD.STATUS) = 4
+        CurrNo(CUS.CLA.CURR.NO) = 5
+        Inputter(CUS.CLA.INPUTTER) = 6
+        DateTime(CUS.CLA.DATE.TIME) = 7
+        Authoriser(CUS.CLA.AUTHORISER) = 8
+        CoCode(CUS.CLA.CO.CODE) = 9
+        DeptCode(CUS.CLA.DEPT.CODE) = 10
+        AuditorCode(CUS.CLA.AUDITOR.CODE) = 11
+        AuditDateTime(CUS.CLA.AUDIT.DATE.TIME) = 12
+    }
+}

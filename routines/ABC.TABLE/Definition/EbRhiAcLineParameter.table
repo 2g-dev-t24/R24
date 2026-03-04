@@ -1,0 +1,21 @@
+private table EbRhiAcLineParameter {
+    t24: EB.RHI.AC.LINE.PARAMETER
+    fields:{
+        Field1(EB.RHI.PAR.FIELD1) = 1
+        Field2(EB.RHI.PAR.FIELD2) = 2
+        Field3(EB.RHI.PAR.FIELD3) = 3
+        Field4(EB.RHI.PAR.FIELD4) = 4
+        Field5(EB.RHI.PAR.FIELD5) = 5
+        Field6(EB.RHI.PAR.FIELD6) = 6
+        Field7(EB.RHI.PAR.FIELD7) = 7
+        RecordStatus(EB.RHI.PAR.RECORD.STATUS) = 8
+        CurrNo(EB.RHI.PAR.CURR.NO) = 9
+        Inputter(EB.RHI.PAR.INPUTTER) = 10
+        DateTime(EB.RHI.PAR.DATE.TIME) = 11
+        Authoriser(EB.RHI.PAR.AUTHORISER) = 12
+        CoCode(EB.RHI.PAR.CO.CODE) = 13
+        DeptCode(EB.RHI.PAR.DEPT.CODE) = 14
+        AuditorCode(EB.RHI.PAR.AUDITOR.CODE) = 15
+        AuditDateTime(EB.RHI.PAR.AUDIT.DATE.TIME) = 16
+    }
+}

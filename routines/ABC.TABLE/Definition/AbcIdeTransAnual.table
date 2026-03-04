@@ -1,0 +1,38 @@
+private table AbcIdeTransAnual {
+    t24: T24.NAME
+    fields:{
+        Currency(ABC.ITA.CURRENCY)                  = 1
+        Mes(ABC.ITA.MES)                            = 2
+        CodTrans(ABC.ITA.COD.TRANS)                 = 3
+        NoTrans(ABC.ITA.NO.TRANS)                   = 4
+        MtoTrans(ABC.ITA.MTO.TRANS)                 = 5
+        CodTransLn(ABC.ITA.COD.TRANS.LN)            = 6
+        MtoTransLn(ABC.ITA.MTO.TRANS.LN)            = 7
+        FolTransLn(ABC.ITA.FOL.TRANS.LN)            = 8
+        FecTransLn(ABC.ITA.FEC.TRANS.LN)            = 9
+        MovDep(ABC.ITA.MOV.DEP)                     = 10
+        
+        Reserved10(ABC.ITA.RESERVED.10)                = 11
+        Reserved9(ABC.ITA.RESERVED.09)                 = 12
+        Reserved8(ABC.ITA.RESERVED.08)                 = 13
+        Reserved7(ABC.ITA.RESERVED.07)                 = 14
+        Reserved6(ABC.ITA.RESERVED.06)                 = 15
+        Reserved5(ABC.ITA.RESERVED.05)                 = 16
+        Reserved4(ABC.ITA.RESERVED.04)                 = 17
+        Reserved3(ABC.ITA.RESERVED.03)                 = 18
+        Reserved2(ABC.ITA.RESERVED.02)                 = 19
+        Reserved1(ABC.ITA.RESERVED.01)                 = 20
+        
+        LocalRef(ABC.ITA.LOCAL.REF)                    = 21
+        Override(ABC.ITA.OVERRIDE)                     = 22
+        RecordStatus(ABC.ITA.RECORD.STATUS)            = 23
+        CurrNo(ABC.ITA.CURR.NO)                        = 24
+        Inputter(ABC.ITA.INPUTTER)                     = 25
+        DateTime(ABC.ITA.DATE.TIME)                    = 26
+        Authoriser(ABC.ITA.AUTHORISER)                 = 27
+        CoCode(ABC.ITA.CO.CODE)                        = 28
+        DeptCode(ABC.ITA.DEPT.CODE)                    = 29
+        AuditorCode(ABC.ITA.AUDITOR.CODE)              = 30
+        AuditDateTime(ABC.ITA.AUDIT.DATE.TIME)         = 31
+    }
+}

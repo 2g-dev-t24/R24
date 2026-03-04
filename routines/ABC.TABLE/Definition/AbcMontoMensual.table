@@ -1,0 +1,22 @@
+private table AbcMontoMensual {
+    t24: ABC.MONTO.MENSUAL
+    fields:{
+        
+        Description(GIC.TITLE.DESCRIPTION)               = 1
+        Currency(GIC.TITLE.CURRENCY)                  = 2
+        
+        Reserved3(GIC.TITLE.RESERVED.3)             = 3
+        Reserved2(GIC.TITLE.RESERVED.2)             = 4
+        Reserved1(GIC.TITLE.RESERVED.1)             = 5
+        
+        RecordStatus(GIC.TITLE.RECORD.STATUS)       = 6
+        CurrNo(GIC.TITLE.CURR.NO)                   = 7
+        Inputter(GIC.TITLE.INPUTTER)                = 8
+        DateTime(GIC.TITLE.DATE.TIME)               = 9
+        Authoriser(GIC.TITLE.AUTHORISER)            = 10
+        CoCode(GIC.TITLE.CO.CODE)                   = 11
+        DeptCode(GIC.TITLE.DEPT.CODE)               = 12
+        AuditorCode(GIC.TITLE.AUDITOR.CODE)         = 13
+        AuditDateTime(GIC.TITLE.AUDIT.DATE.TIME)    = 14
+    }
+}

@@ -1,0 +1,35 @@
+private table AbcAaLPrePro {
+    t24: ABC.AA.L.PRE.PRO
+    fields:{
+        IdAaPreProcess(PAG.APP.ID.AA.PRE.PROCESS)            = 1
+        StatusPreProcess(PAG.APP.STATUS.PRE.PROCESS)         = 2
+        IdAaArrangement(PAG.APP.ID.AA.ARRANGEMENT)           = 3
+        StatusAaArr(PAG.APP.STATUS.AA.ARR)                   = 4
+        IdArrangementAct(PAG.APP.ID.ARRANGEMENT.ACT)         = 5
+        StatusArrAct(PAG.APP.STATUS.ARR.ACT)                 = 6
+        FechaInicPrepro(PAG.APP.FECHA.INIC.PREPRO)           = 7
+        FechaFinPrePro(PAG.APP.FECHA.FIN.PREPRO)             = 8
+        
+        Reserved10(PAG.APP.RESERVED.10)                      = 9
+        Reserved9(PAG.APP.RESERVED.9)                        = 10
+        Reserved8(PAG.APP.RESERVED.8)                        = 11
+        Reserved7(PAG.APP.RESERVED.7)                        = 12
+        Reserved6(PAG.APP.RESERVED.6)                        = 13
+        Reserved5(PAG.APP.RESERVED.5)                        = 14
+        Reserved4(PAG.APP.RESERVED.4)                        = 15
+        Reserved3(PAG.APP.RESERVED.3)                        = 16
+        Reserved2(PAG.APP.RESERVED.2)                        = 17
+        Reserved1(PAG.APP.RESERVED.1)                        = 18
+        LocalRef(PAG.APP.LOCAL.REF)                          = 19
+        Override(PAG.APP.OVERRIDE)                           = 20
+        RecordStatus(PAG.APP.RECORD.STATUS)                  = 21
+        CurrNo(PAG.APP.CURR.NO)                              = 22
+        Inputter(PAG.APP.INPUTTER)                           = 23
+        DateTime(PAG.APP.DATE.TIME)                          = 24
+        Authoriser(PAG.APP.AUTHORISER)                       = 25
+        CoCode(PAG.APP.CO.CODE)                              = 26
+        DeptCode(PAG.APP.DEPT.CODE)                          = 27
+        AuditorCode(PAG.APP.AUDITOR.CODE)                    = 28
+        AuditDateTime(PAG.APP.AUDIT.DATE.TIME)               = 29
+    }
+}

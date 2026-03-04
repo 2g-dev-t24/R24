@@ -1,0 +1,252 @@
+* @ValidationCode : MjotMTAzOTE2NDE1OkNwMTI1MjoxNzYwMzI1ODI5ODc0Okx1aXMgQ2FwcmE6LTE6LTE6MDowOmZhbHNlOk4vQTpSMjRfU1AxLjA6LTE6LTE=
+* @ValidationInfo : Timestamp         : 13 Oct 2025 00:23:49
+* @ValidationInfo : Encoding          : Cp1252
+* @ValidationInfo : User Name         : Luis Capra
+* @ValidationInfo : Nb tests success  : N/A
+* @ValidationInfo : Nb tests failure  : N/A
+* @ValidationInfo : Rating            : N/A
+* @ValidationInfo : Coverage          : N/A
+* @ValidationInfo : Strict flag       : N/A
+* @ValidationInfo : Bypass GateKeeper : false
+* @ValidationInfo : Compiler Version  : R24_SP1.0
+* @ValidationInfo : Copyright Temenos Headquarters SA 1993-2025. All rights reserved.
+$PACKAGE AbcCob
+SUBROUTINE ABC.REP.MULTI.R24D24.41.42.LOAD
+
+    $USING EB.DataAccess
+    $USING EB.SystemTables
+    $USING EB.API
+    $USING EB.Updates
+    $USING AbcGetGeneralParam
+    $USING AbcTable
+    $USING EB.Service
+    
+    TODAY = EB.SystemTables.getToday()
+    
+    GOSUB ABRE.TABLAS
+    GOSUB CALCULA.FECHA
+    GOSUB EXTRAE.PARAMAMETROS
+    GOSUB CREA.ARCHIVOS
+
+RETURN
+
+************
+ABRE.TABLAS:
+************
+    FN.FUNDS.TRANSFER = 'F.FUNDS.TRANSFER'
+    F.FUNDS.TRANSFER = ''
+    EB.DataAccess.Opf(FN.FUNDS.TRANSFER,F.FUNDS.TRANSFER)
+    AbcCob.setFnFundsTransfer(FN.FUNDS.TRANSFER)
+    AbcCob.setFFundsTransfer(F.FUNDS.TRANSFER)
+
+    FN.ACCOUNT = 'F.ACCOUNT'
+    F.ACCOUNT = ''
+    EB.DataAccess.Opf(FN.ACCOUNT,F.ACCOUNT)
+    AbcCob.setFnAccountR24(FN.ACCOUNT)
+    AbcCob.setFAccountR24(F.ACCOUNT)
+
+    FN.FUNDS.TRANSFER.HIS = 'F.FUNDS.TRANSFER$HIS'
+    F.FUNDS.TRANSFER.HIS = ''
+    EB.DataAccess.Opf(FN.FUNDS.TRANSFER.HIS,F.FUNDS.TRANSFER.HIS)
+    AbcCob.setFnFundsTransferHis(FN.FUNDS.TRANSFER.HIS)
+    AbcCob.setFFundsTransferHis(F.FUNDS.TRANSFER.HIS)
+
+    FN.STMT.ENTRY = 'F.STMT.ENTRY'
+    F.STMT.ENTRY = ''
+    EB.DataAccess.Opf(FN.STMT.ENTRY,F.STMT.ENTRY)
+    AbcCob.setFnStmtEntry24(FN.STMT.ENTRY)
+    AbcCob.setFStmtEntry24(F.STMT.ENTRY)
+
+    FN.ABC.REP.R24.PARAM = 'F.ABC.REP.R24.PARAM'
+    F.ABC.REP.R24.PARAM = ''
+    EB.DataAccess.Opf(FN.ABC.REP.R24.PARAM,F.ABC.REP.R24.PARAM)
+
+    FN.ABC.GENERAL.PARAM = 'F.ABC.GENERAL.PARAM'
+    F.ABC.GENERAL.PARAM = ''
+    EB.DataAccess.Opf(FN.ABC.GENERAL.PARAM,F.ABC.GENERAL.PARAM)
+    AbcCob.setFnAbcGeneralParamR24(FN.ABC.GENERAL.PARAM)
+    AbcCob.setFAbcGeneralParamR24(F.ABC.GENERAL.PARAM)
+
+    FN.CUSTOMER = "F.CUSTOMER"
+    F.CUSTOMER  = ""
+    EB.DataAccess.Opf(FN.CUSTOMER,F.CUSTOMER)
+    AbcCob.setFnCustomerR24(FN.CUSTOMER)
+    AbcCob.setFCustomerR24(F.CUSTOMER)
+
+    FN.ABC.AA.PRE.PROCESS = "F.ABC.AA.PRE.PROCESS"
+    F.ABC.AA.PRE.PROCESS = ""
+    EB.DataAccess.Opf(FN.ABC.AA.PRE.PROCESS,F.ABC.AA.PRE.PROCESS)
+
+    FN.ABC.ACCT.LCL.FLDS = 'F.ABC.ACCT.LCL.FLDS'
+    F.ABC.ACCT.LCL.FLDS = ''
+    EB.DataAccess.Opf(FN.ABC.ACCT.LCL.FLDS,F.ABC.ACCT.LCL.FLDS)
+    AbcCob.setFnAbcAcctLclFldsR24(FN.ABC.ACCT.LCL.FLDS)
+    AbcCob.setFAbcAcctLclFldsR24(F.ABC.ACCT.LCL.FLDS)
+ 
+    EB.Updates.MultiGetLocRef("CUSTOMER", "ID.COMISIONISTA", YPOS.ID.COMISIONISTA)
+    EB.Updates.MultiGetLocRef("FUNDS.TRANSFER", "CANAL", YPOS.CANAL)
+    AbcCob.setYPosIdComisionista(YPOS.ID.COMISIONISTA)
+    AbcCob.setYPosCanal(YPOS.CANAL)
+
+RETURN
+
+********************
+EXTRAE.PARAMAMETROS:
+********************
+
+    Y.ID.PARAM = 'CANALES.REPORTE'
+    EB.DataAccess.FRead(FN.ABC.GENERAL.PARAM,Y.ID.PARAM,REC.GENERAL.PARAM,F.ABC.GENERAL.PARAM,ERR.GRAL.PARAM)
+    IF REC.GENERAL.PARAM THEN
+        Y.ARR.NOM.PARAM.CANAL = REC.GENERAL.PARAM<AbcTable.AbcGeneralParam.NombParametro>
+        Y.ARR.DAT.PARAM.CANAL = REC.GENERAL.PARAM<AbcTable.AbcGeneralParam.DatoParametro>
+        AbcCob.setYArrNomParamCanal(Y.ARR.NOM.PARAM.CANAL)
+        AbcCob.setYArrDatParamCanal(Y.ARR.DAT.PARAM.CANAL)
+    END
+
+    FIND 'USUARIOS.CELULAR' IN Y.ARR.NOM.PARAM.CANAL SETTING AvCan, VpCan, SmCan THEN
+        Y.USUARIOS.CELULAR = Y.ARR.DAT.PARAM.CANAL<AvCan,VpCan>
+    END
+    AbcCob.setYUsuariosCelular(Y.USUARIOS.CELULAR)
+
+    FIND 'CATEGORIAS.CELULAR' IN Y.ARR.NOM.PARAM.CANAL SETTING AvCan, VpCan, SmCan THEN
+        Y.CATEGORIAS.CELULAR = Y.ARR.DAT.PARAM.CANAL<AvCan,VpCan>
+    END
+    AbcCob.setYCategoriasCelular(Y.CATEGORIAS.CELULAR)
+    CHANGE "*" TO @FM IN Y.USUARIOS.CELULAR
+    CHANGE "*" TO @FM IN Y.CATEGORIAS.CELULAR
+
+    NO.USER = DCOUNT(Y.USUARIOS.CELULAR,@FM)
+    AbcCob.setNoUser4142(NO.USER)
+
+    Y.ID.PARAM = 'TRANSACCIONES.R2441.R2442'
+    EB.DataAccess.FRead(FN.ABC.GENERAL.PARAM,Y.ID.PARAM,REC.GENERAL.PARAM,F.ABC.GENERAL.PARAM,ERR.GRAL.PARAM)
+    IF REC.GENERAL.PARAM THEN
+        Y.ARR.NOM.PARAM.REP = REC.GENERAL.PARAM<AbcTable.AbcGeneralParam.NombParametro>
+        Y.ARR.DAT.PARAM.REP = REC.GENERAL.PARAM<AbcTable.AbcGeneralParam.DatoParametro>
+        CONVERT ',' TO @SM IN Y.ARR.DAT.PARAM.REP
+    END
+    AbcCob.setYArrNomParamRep(Y.ARR.NOM.PARAM.REP)
+    AbcCob.setYArrDatParamRep(Y.ARR.DAT.PARAM.REP)
+    FORMULARIO.2441 = '2441'
+    FORMULARIO.2442 = '2442'
+
+    Y.ARR.NOM.PARAM = ''
+    Y.ARR.DAT.PARAM = ''
+    Y.ID.PARAM = 'PARAMETROS.R2441.R2442'
+    AbcGetGeneralParam.AbcGetGeneralParam(Y.ID.PARAM, Y.ARR.NOM.PARAM, Y.ARR.DAT.PARAM)
+    AbcCob.setYArrNomParam(Y.ARR.NOM.PARAM)
+    AbcCob.setYArrDatParam(Y.ARR.DAT.PARAM)
+    NUM.LINEAS = DCOUNT(Y.ARR.NOM.PARAM,@FM)
+
+    LOCATE "CATEGORIAS.2441" IN Y.ARR.NOM.PARAM SETTING POS THEN
+        J.CATEG.2441 = Y.ARR.DAT.PARAM<POS>
+        CHANGE "," TO "' '" IN J.CATEG.2441
+    END
+    AbcCob.setJCateg2441(J.CATEG.2441)
+
+    LOCATE "RUTA.2441" IN Y.ARR.NOM.PARAM SETTING POS THEN
+        J.RUTA.2441 = Y.ARR.DAT.PARAM<POS>
+        J.RUTA.2441 := "/TEMP"
+    END
+    AbcCob.setJRuta2441(J.RUTA.2441)
+    
+    
+    LOCATE "NOMBRE.ARCHIVO.2441" IN Y.ARR.NOM.PARAM SETTING POS THEN
+        J.NOM.ARC.2441 = Y.ARR.DAT.PARAM<POS>
+    END
+    AbcCob.setJNomArch2441(J.NOM.ARC.2441)
+
+    LOCATE "EXTENSION.2441" IN Y.ARR.NOM.PARAM SETTING POS THEN
+        J.EXT.2441 = Y.ARR.DAT.PARAM<POS>
+    END
+    AbcCob.setJExt2441(J.EXT.2441)
+
+    LOCATE "RUTA.2442" IN Y.ARR.NOM.PARAM SETTING POS THEN
+        J.RUTA.2442 = Y.ARR.DAT.PARAM<POS>
+        J.RUTA.2442 := "/TEMP"
+    END
+    AbcCob.setJRuta2442(J.RUTA.2442)
+    
+    LOCATE "NOMBRE.ARCHIVO.2442" IN Y.ARR.NOM.PARAM SETTING POS THEN
+        J.NOM.ARC.2442 = Y.ARR.DAT.PARAM<POS>
+    END
+    AbcCob.setJNomArch2442(J.NOM.ARC.2442)
+
+    LOCATE "EXTENSION.2442" IN Y.ARR.NOM.PARAM SETTING POS THEN
+        J.EXT.2442 = Y.ARR.DAT.PARAM<POS>
+    END
+    AbcCob.setJExt2442(J.EXT.2442)
+
+    LOCATE "CLAVE.REP.REG" IN Y.ARR.NOM.PARAM SETTING POS THEN
+        CLAVE.ENT = Y.ARR.DAT.PARAM<POS>
+    END
+    AbcCob.setClaveEnt(CLAVE.ENT)
+
+    LOCATE "CANAL.COMISIONISTA" IN Y.ARR.NOM.PARAM SETTING POS THEN
+        CANAL.COMISIONISTA = Y.ARR.DAT.PARAM<POS>
+    END
+    AbcCob.setCanalComisionaste(CANAL.COMISIONISTA)
+    
+    LOCATE "NIVEL.2" IN Y.ARR.NOM.PARAM SETTING POS THEN
+        Y.TIPO.AC.TRANS.NVL2 = Y.ARR.DAT.PARAM<POS>
+    END
+    AbcCob.setYTipoAcTransNvl2(Y.TIPO.AC.TRANS.NVL2)
+
+    LOCATE "NIVEL.4L" IN Y.ARR.NOM.PARAM SETTING POS THEN
+        Y.TIPO.AC.TRANS.NVL4L = Y.ARR.DAT.PARAM<POS>
+    END
+    AbcCob.setYTipoAcTransNvl4(Y.TIPO.AC.TRANS.NVL4L)
+
+    J.NOM.ARCHIVO.2441 = J.NOM.ARC.2441:J.EXT.2441
+    J.NOM.ARCHIVO.2442 = J.NOM.ARC.2442:J.EXT.2442
+
+RETURN
+
+**************
+CALCULA.FECHA:
+**************
+
+    NUMERO.DIAS.PERIODO = ''
+    FECHA.SISTEMA = ''
+    PERIODO = ''
+    FEC.FIN.PER = ''
+    FEC.INI.PER = ''
+
+    FECHA.SISTEMA = TODAY
+    FEC.FIN.PER = TODAY
+    FEC.INI.PER = FEC.FIN.PER[1,6]:'01'
+    PERIODO = FEC.INI.PER[1,6]
+    NUMERO.DIAS.PERIODO = 'C'
+    EB.API.Cdd('',FEC.INI.PER,FEC.FIN.PER,NUMERO.DIAS.PERIODO)
+    AbcCob.setYFechaIniPer(FEC.INI.PER)
+    AbcCob.setYFechaFinPer(FEC.FIN.PER)
+    AbcCob.setYNumeroDiasPeriodo(NUMERO.DIAS.PERIODO)
+
+RETURN
+
+**************
+CREA.ARCHIVOS:
+**************
+
+    F.SFILE = ""
+    F.SFILE.1 = ""
+
+    AGENT.NUMBER    = EB.Service.getAgentNumber()
+
+    J.NOM.ARCHIVO.2441.DESG = J.NOM.ARC.2441:'.DESG.':AGENT.NUMBER:J.EXT.2441
+    OPENSEQ J.RUTA.2441,J.NOM.ARCHIVO.2441.DESG TO F.SFILE ELSE
+        CREATE F.SFILE ELSE
+        END
+    END
+
+    J.NOM.ARCHIVO.2442.DESG = J.NOM.ARC.2442:'.DESG.':AGENT.NUMBER:J.EXT.2442
+    OPENSEQ J.RUTA.2442,J.NOM.ARCHIVO.2442.DESG TO F.SFILE.1 ELSE
+        CREATE F.SFILE.1 ELSE
+        END
+    END
+
+    AbcCob.setFSFile(F.SFILE)
+    AbcCob.setFSFile1(F.SFILE.1)
+RETURN
+
+END

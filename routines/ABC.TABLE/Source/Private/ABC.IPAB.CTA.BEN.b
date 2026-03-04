@@ -1,0 +1,39 @@
+* @ValidationCode : MjotMzE3ODUxNjIzOkNwMTI1MjoxNzU5NzExODA3NTQ5Okx1aXMgQ2FwcmE6LTE6LTE6MDowOmZhbHNlOk4vQTpSMjRfU1AxLjA6LTE6LTE=
+* @ValidationInfo : Timestamp         : 05 Oct 2025 21:50:07
+* @ValidationInfo : Encoding          : Cp1252
+* @ValidationInfo : User Name         : Luis Capra
+* @ValidationInfo : Nb tests success  : N/A
+* @ValidationInfo : Nb tests failure  : N/A
+* @ValidationInfo : Rating            : N/A
+* @ValidationInfo : Coverage          : N/A
+* @ValidationInfo : Strict flag       : N/A
+* @ValidationInfo : Bypass GateKeeper : false
+* @ValidationInfo : Compiler Version  : R24_SP1.0
+* @ValidationInfo : Copyright Temenos Headquarters SA 1993-2025. All rights reserved.
+$PACKAGE AbcTable
+
+SUBROUTINE ABC.IPAB.CTA.BEN
+*-----------------------------------------------------------------------------
+*
+    $USING EB.SystemTables
+    $USING EB.Template
+    $USING AA.Framework
+    $USING EB.Interface
+*-----------------------------------------------------------------------------
+    EB.Template.setTableName('ABC.IPAB.CTA.BEN')       ;* Full application name including product prefix
+    EB.Template.setTableTitle('IPAB Cuentas para Beneficencia')   ;* Screen title
+    EB.Template.setTableStereotype('L')    ;* H, U, L, W or T
+    EB.Template.setTableProduct('EB')      ;* Must be on EB.PRODUCT
+    EB.Template.setTableSubproduct('')     ;* Must be on EB.SUB.PRODUCT
+    EB.Template.setTableClassification('INT')        ;* As per FILE.CONTROL
+    EB.Template.setTableSystemclearfile('N')         ;* As per FILE.CONTROL
+    EB.Template.setTableRelatedfiles('')   ;* As per FILE.CONTROL
+    EB.Template.setTableIspostclosingfile('')        ;* As per FILE.CONTROL
+    EB.Template.setTableEquateprefix('IPAB.CTA.BEN')          ;* Use to create I_F.EB.LOG.PARAMETER
+*-----------------------------------------------------------------------------
+    EB.Template.setTableIdprefix('')       ;* Used by EB.FORMAT.ID if set
+    EB.Template.setTableBlockedfunctions('')         ;* Space delimeted list of blocked functions
+    EB.Template.setTableTriggerfield('')        ;* Trigger field used for OPERATION style fields
+*-----------------------------------------------------------------------------
+
+RETURN

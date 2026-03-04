@@ -1,0 +1,23 @@
+private table AbcClubAhorro {
+    t24: ABC.CLUB.AHORRO
+    fields:{
+        NombreGrupo(ACA.NOMBRE.GRUPO) = 1
+        GroupClssific(ACA.GROUP.CLASSIFIC) = 2
+        Cuenta(ACA.CUENTA) = 3
+        Cliente(ACA.CLIENTE) = 4
+        EsTitular(ACA.ES.TITULAR) = 5
+        Empleado(ACA.EMPLEADO) = 6
+        Parentesco(ACA.PARENTESCO) = 7
+        Accionista(ACA.ACCIONISTA) = 8
+        
+        RecordStatus(ACA.RECORD.STATUS) = 9
+        CurrNo(ACA.CURR.NO) = 10
+        Inputter(ACA.INPUTTER) = 11
+        DateTime(ACA.DATE.TIME) = 12
+        Authoriser(ACA.AUTHORISER) = 13
+        CoCode(ACA.CO.CODE) = 14
+        DeptCode(ACA.DEPT.CODE) = 15
+        AuditorCode(ACA.AUDITOR.CODE) = 16
+        AuditDateTime(ACA.AUDIT.DATE.TIME) = 17
+    }
+}

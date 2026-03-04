@@ -1,0 +1,32 @@
+public table AbcPnCodOper {
+    t24: ABC.PN.COD.OPER
+    fields:{
+        Descripcion(PN.ST.DESCRIPCION) = 1
+
+        Reserved15(PN.ST.RESERVED.15) = 2
+        Reserved14(PN.ST.RESERVED.14) = 3
+        Reserved13(PN.ST.RESERVED.13) = 4
+        Reserved12(PN.ST.RESERVED.12) = 5
+        Reserved11(PN.ST.RESERVED.11) = 6
+        Reserved10(PN.ST.RESERVED.10) = 7
+        Reserved9(PN.ST.RESERVED.9) = 8
+        Reserved8(PN.ST.RESERVED.8) = 9
+        Reserved7(PN.ST.RESERVED.7) = 10
+        Reserved6(PN.ST.RESERVED.6) = 11
+        Reserved5(PN.ST.RESERVED.5) = 12
+        Reserved4(PN.ST.RESERVED.4) = 13
+        Reserved3(PN.ST.RESERVED.3) = 14
+        Reserved2(PN.ST.RESERVED.2) = 15
+        Reserved1(PN.ST.RESERVED.1) = 16
+
+        RecordStatus(PN.ST.RECORD.STATUS) = 17
+        CurrNo(PN.ST.CURR.NO) = 18
+        Inputter(PN.ST.INPUTTER) = 19
+        DateTime(PN.ST.DATE.TIME) = 20
+        Authoriser(PN.ST.AUTHORISER) = 21
+        CoCode(PN.ST.CO.CODE) = 22
+        DeptCode(PN.ST.DEPT.CODE) = 23
+        AuditorCode(PN.ST.AUDITOR.CODE) = 24
+        AuditDateTime(PN.ST.AUDIT.DATE.TIME) = 25
+    }
+}

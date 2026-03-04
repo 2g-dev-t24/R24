@@ -1,0 +1,56 @@
+private table GenericExtractParamLv {
+    t24: GENERIC.EXTRACT.PARAM.LV
+    fields:{
+        
+        Header(GEN.EXT.HEADER)                              = 1
+        Separador(GEN.EXT.SEPARADOR)                        = 2
+        VmSep(GEN.EXT.VM.SEP)                               = 3
+        SmSep(GEN.EXT.SM.SEP)                               = 4
+        FilePath(GEN.EXT.FILE.PATH)                         = 5
+        FileName(GEN.EXT.FILE.NAME)                         = 6
+        FileExt(GEN.EXT.FILE.EXT)                           = 7
+        Company(GEN.EXT.COMPANY)                            = 8
+        LoadType(GEN.EXT.LOAD.TYPE)                         = 9
+        LoadDateIni(GEN.EXT.LOAD.DATE.INI)                  = 10
+        LoadDateFin(GEN.EXT.LOAD.DATE.FIN)                  = 11
+        HelpFile(GEN.EXT.HELP.FILE)                         = 12
+        Field(GEN.EXT.FIELD)                                = 13
+        LocalName(GEN.EXT.LOCAL.NAME)                       = 14
+        SpecVmSep(GEN.EXT.SPEC.VM.SEP)                      = 15
+        NoPosVm(GEN.EXT.NO.POS.VM)                          = 16
+        SpecSmSep(GEN.EXT.SPEC.SM.SEP)                      = 17
+        NoPosSm(GEN.EXT.NO.POS.SM)                          = 18
+        FldHedrName(GEN.EXT.FLD.HEDR.NAME)                  = 19
+        Operador(GEN.EXT.OPERADOR)                          = 20
+        Operando(GEN.EXT.OPERANDO)                          = 21
+        Visualiza(GEN.EXT.VISUALIZA)                        = 22
+        LinkAppField(GEN.EXT.LINK.APP.FIELD)                = 23
+        Reserved02(GEN.EXT.RESERVED02)                      = 24
+        Reserved03(GEN.EXT.RESERVED03)                      = 25
+        Reserved04(GEN.EXT.RESERVED04)                      = 26
+        Reserved05(GEN.EXT.RESERVED05)                      = 27
+        SelFilterRoutine(GEN.EXT.SEL.FILTER.ROUTINE)        = 28
+        
+        
+        Reserved10(GEN.EXT.PRESERVED.10)                      = 29
+        Reserved9(GEN.EXT.PRESERVED.9)                        = 30
+        Reserved8(GEN.EXT.PRESERVED.8)                        = 31
+        Reserved7(GEN.EXT.PRESERVED.7)                        = 32
+        Reserved6(GEN.EXT.PRESERVED.6)                        = 33
+        Reserved5(GEN.EXT.PRESERVED.5)                        = 34
+        Reserved4(GEN.EXT.PRESERVED.4)                        = 35
+        Reserved3(GEN.EXT.PRESERVED.3)                        = 36
+        Reserved2(GEN.EXT.PRESERVED.2)                        = 37
+        Reserved1(GEN.EXT.PRESERVED.1)                        = 38
+
+        RecordStatus(GEN.EXT.PRECORD.STATUS)                  = 39
+        CurrNo(GEN.EXT.PCURR.NO)                              = 40
+        Inputter(GEN.EXT.PINPUTTER)                           = 41
+        DateTime(GEN.EXT.PDATE.TIME)                          = 42
+        Authoriser(GEN.EXT.PAUTHORISER)                       = 43
+        CoCode(GEN.EXT.PCO.CODE)                              = 44
+        DeptCode(GEN.EXT.PDEPT.CODE)                          = 45
+        AuditorCode(GEN.EXT.PAUDITOR.CODE)                    = 46
+        AuditDateTime(GEN.EXT.PAUDIT.DATE.TIME)               = 47
+    }
+}

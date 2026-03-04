@@ -1,0 +1,16 @@
+public table AbcAaPreProcessList {
+    t24: ABC.AA.PRE.PROCESS.LIST
+    fields:{
+        Rec(AA.PRE.PROCESS.LIST.REC)                            = 1
+        Reserved10(AA.PRE.PROCESS.LIST.RESERVED.10)             = 2
+        Reserved9(AA.PRE.PROCESS.LIST.RESERVED.9)               = 3
+        Reserved8(AA.PRE.PROCESS.LIST.RESERVED.8)               = 4
+        Reserved7(AA.PRE.PROCESS.LIST.RESERVED.7)               = 5
+        Reserved6(AA.PRE.PROCESS.LIST.RESERVED.6)               = 6
+        Reserved5(AA.PRE.PROCESS.LIST.RESERVED.5)               = 7
+        Reserved4(AA.PRE.PROCESS.LIST.RESERVED.4)               = 8
+        Reserved3(AA.PRE.PROCESS.LIST.RESERVED.3)               = 9
+        Reserved2(AA.PRE.PROCESS.LIST.RESERVED.2)               = 10
+        Reserved1(AA.PRE.PROCESS.LIST.RESERVED.1)               = 11
+    }
+}

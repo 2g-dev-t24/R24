@@ -1,0 +1,815 @@
+component AbcTeller
+# Component Isolation Definition
+metamodelVersion 1.6
+
+private method AbcEnvEmailLimCajaBow ()
+{
+    jBC: ABC.ENV.EMAIL.LIM.CAJA.BOV
+}
+
+# ------------------ METHOD END ------------------
+
+private method AbcNombreCompleto(INOUT YInputData string)
+{
+    jBC: ABC.NOMBRE.COMPLETO
+}
+
+private method Abc2brChkLimamtAcct(INOUT AccountId string, INOUT TransAmt string, INOUT Msgtext string)
+{
+    jBC: ABC.2BR.CHK.LIMAMT.ACCT
+}
+
+private method Abc2brMonto(
+    INOUT InMonto string
+)
+{
+    jBC: ABC.2BR.MONTO
+}
+
+private method AbcEFtAbcCcRev(
+    INOUT RData string
+)
+{
+    jBC: ABC.E.FT.ABC.CC.REV
+}
+
+private method Abc2brENofielTellerTranRev(
+    INOUT RData string
+)
+{
+    jBC: ABC.2BR.E.NOFILE.TELLER.TRAN.REV
+}
+
+
+private method Abc2brENofileTtStock(
+    INOUT RData string
+)
+{
+    jBC: ABC.2BR.E.NOFILE.TT.STOCK
+}
+
+private method Abc2brENofileTellerConsulta(
+    INOUT RData string
+)
+{
+    jBC: ABC.2BR.E.NOFILE.TELLER.CONSULTA
+}
+
+private method Abc2brENofileTellerTran(
+    INOUT RData string
+)
+{
+    jBC: ABC.2BR.E.NOFILE.TELLER.TRAN
+}
+
+
+private method Abc2BuildOperUsdEfec(
+    INOUT EnqParam string
+)
+{
+    jBC: ABC.BUILD.OPER.USD.EFEC
+}
+
+private method Abc2brFiltraCorte(
+    INOUT EnqParam string
+)
+{
+    jBC: ABC.2BR.FILTRA.CORTE
+}
+
+private method AbcEBldGetFecha(
+    INOUT EnqParam string
+)
+{
+    jBC: ABC.E.BLD.GET.FECHA
+}
+
+
+private method Abc2brTraeCajaMixta(
+    INOUT EnqParam string
+)
+{
+    jBC: ABC.2BR.TRAE.CAJA.MIXTA
+}
+
+private method Abc2brTraeCajaMixtaFs (
+    INOUT EnqParam string
+)
+{
+    jBC: ABC.2BR.TRAE.CAJA.MIXTA.FS
+}
+
+private method Abc2brEExtraeBoveda (
+    INOUT EnqParam string
+)
+{
+    jBC: ABC.2BR.E.EXTRAE.BOVEDA
+}
+
+public method BaTtValSucver (
+)
+{
+    jBC: BA.TT.VAL.SUC.VER
+}
+
+public method Abc2brCajasxboveda (
+)
+{
+    jBC: ABC.2BR.CAJASXBOVEDA
+}
+
+
+public method AbcESbcOve (
+)
+{
+    jBC: ABC.E.SBC.OVE
+}
+
+public method AbcValidaCustEnrolTell (
+)
+{
+    jBC: ABC.VALIDA.CUST.ENROL.TELL
+}
+
+public method AbcPruebaRevCaja (
+)
+{
+    jBC: ABC.PRUEBA.REV.CAJA
+}
+
+public method Abc2brChkLimamtDr (
+)
+{
+    jBC: ABC.2BR.CHK.LIMAMT.DR
+}
+
+public method AbcConvGenReporteArq (
+)
+{
+    jBC: ABC.CONV.GEN.REPORTE.ARQ
+}
+
+public method AbcEnvEmailLimiteCierreCaja (
+)
+{
+    jBC: ABC.ENV.EMAIL.LIMITE.CIERRE.CAJA
+}
+
+
+public method Abc2brDesinhibeLector (
+)
+{
+    jBC: ABC.2BR.DESINHIBE.LECTOR
+}
+
+public method AbcValidaIngresoChqSbc (
+)
+{
+    jBC: ABC.VALIDA.INGRESO.CHQ.SBC
+}
+
+public method AbcV2ttGetTellerIdOne (
+)
+{
+    jBC: ABC.V.2TT.GET.TELLER.ID.1
+}
+
+
+public method Abc2TtNivelLimMonto (
+)
+{
+    jBC: ABC.TT.NIVEL.LIM.MONTO
+}
+
+
+public method Abc2brAssignChknumNew (
+)
+{
+    jBC: ABC.2BR.ASSIGN.CHKNUM.NEW
+}
+
+public method AbcLimpiaTablaTmp (
+)
+{
+    jBC: ABC.LIMPIA.TABLA.TMP
+}
+
+public method AbcLimpiaLectoraChq (
+)
+{
+    jBC: ABC.LIMPIA.LECTORA.CHQ
+}
+
+public method Abc2brNoDupSbc (
+)
+{
+    jBC: ABC.2BR.NO.DUP.SBC
+}
+
+public method Abc2brValidaAtencion (
+)
+{
+    jBC: ABC.2BR.VALIDA.ATENCION
+}
+
+
+public method Abc2brValidaRecepcion (
+)
+{
+    jBC: ABC.2BR.VALIDA.RECEPCION
+}
+
+public method Bmv2brVDenomRec (
+)
+{
+    jBC: BMV.2BR.V.DENOM.REC
+}
+
+public method ABc2brValidaReferencia (
+)
+{
+    jBC: ABC.2BR.VALIDA.REFERENCIA
+}
+
+public method ABc2brSumTotDenom (
+)
+{
+    jBC: ABC.2BR.SUM.TOT.DENOM
+}
+
+public method ABc2brExtraeBovedaDos (
+)
+{
+    jBC: ABC.2BR.EXTRAE.BOVEDA.2
+}
+
+public method ABc2brExtraeBovedaTres (
+)
+{
+    jBC: ABC.EXTRAE.BOVEDA.3
+}
+
+
+
+public method ABc2brExtraeCaja (
+)
+{
+    jBC: ABC.2BR.EXTRAE.CAJA
+}
+
+
+public method ABc2brActualizaRec (
+)
+{
+    jBC: ABC.2BR.ACTUALIZA.REC
+}
+
+public method ABc2brActualizaSol (
+)
+{
+    jBC: ABC.2BR.ACTUALIZA.SOL
+}
+
+public method ABc2brRecibeData (
+)
+{
+    jBC: ABC.2BR.RECIBE.DATA
+}
+
+public method ABc2brFechaDia (
+)
+{
+    jBC: ABC.2BR.FECHA.DIA
+}
+
+public method ABcAccCusName (
+)
+{
+    jBC: ABC.ACC.CUS.NAME
+}
+
+public method ABc2brLigaTeller (
+)
+{
+    jBC: ABC.2BR.LIGA.TELLER
+}
+
+public method ABcIniciaValArqSistema (
+)
+{
+    jBC: ABC.INICIA.VAL.ARQ.SISTEMA
+}
+
+public method ABcEnvEmailTrasAcBen (
+)
+{
+    jBC: ABC.ENV.EMAIL.TRAS.AC.BEN
+}
+
+public method ABcBr2TelidChkLmt (
+)
+{
+    jBC: ABC.BR2.TELID.CHK.LMT
+}
+
+
+public method ABc2brTTCloseDos (
+)
+{
+    jBC: ABC.2BR.TT.CLOSE.2
+}
+
+public method ABcBr2TeldenomTot2 (
+)
+{
+    jBC: ABC.BR2.TELDENOM.TOT2
+}
+
+public method ABcEmailRetiroEfectivo (
+)
+{
+    jBC: ABC.EMAIL.RETIRO.EFECTIVO
+}
+
+public method ABcVGetTellerId (
+)
+{
+    jBC: ABC.V.GET.TELLER.ID
+}
+
+public method ABcVCheckCuadreSbc (
+)
+{
+    jBC: ABC.V.CHECK.CUADRE.SBC
+}
+
+
+public method ABcVCloseTillSbc (
+)
+{
+    jBC: ABC.V.CLOSE.TILL.SBC
+}
+
+public method ABc2BrValidaBovedaCajero (
+)
+{
+    jBC: ABC.2BR.VALIDA.BOVEDA.CAJERO
+}
+
+
+public method ABc2BrExtraeBoveda (
+)
+{
+    jBC: ABC.2BR.EXTRAE.BOVEDA
+}
+
+public method AbcUpdtConcatRepCaja (
+)
+{
+    jBC: ABC.UPDT.CONCAT.REP.CAJA
+}
+
+public method Abc2BrTtTillToTill1 (
+)
+{
+    jBC: ABC.2BR.TT.TILL.TO.TILL.1
+}
+
+public method AbcAccCusName (
+)
+{
+    jBC: ABC.ACC.CUS.NAME
+}
+
+public method AbcSumaTotalDenomSistema (
+)
+{
+    jBC: ABC.SUMA.TOTAL.DENOM.SISTEMA
+}
+
+public method Abc2brInhibeLector (
+)
+{
+    jBC: ABC.2BR.INHIBE.LECTOR
+}
+
+public method Abc2brVCcyTellerSbc (
+)
+{
+    jBC: ABC.2BR.V.CCY.TELLER.SBC
+}
+
+public method Abc2brChkLimamt (
+)
+{
+    jBC: ABC.2BR.CHK.LIMAMT
+}
+
+
+public method Abc2brValidaDigitoTarjeta (
+)
+{
+    jBC: ABC.2BR.VALIDA.DIGITO.TARJETA
+}
+
+public method AbcBr2TeldenomTot (
+)
+{
+    jBC: ABC.BR2.TELDENOM.TOT
+}
+
+
+public method AbcValMntMnorUdiTell (
+)
+{
+    jBC: ABC.VAL.MNT.MNOR.UDI.TELL
+}
+
+
+public method Abc2brRtnNoCambioChqdep (
+)
+{
+    jBC: ABC.2BR.RTN.NO.CAMBIO.CHQDEP
+}
+
+
+public method Abc2brTeldenomTotUnit (
+)
+{
+    jBC: ABC.2BR.TELDENOM.TOT.UNIT
+}
+
+public method AbcV2ttGetTellerId2 (
+)
+{
+    jBC: ABC.V.2TT.GET.TELLER.ID.2
+}
+
+public method AbcValidaTellerFolVal (
+)
+{
+    jBC: ABC.VALIDA.TELLER.FOL.VAL
+}
+
+public method AbcValidaTransTypeAc (
+)
+{
+    jBC: ABC.VALIDA.TRANS.TYPE.AC
+}
+
+public method Abc2brValidaDenomNoTc (
+)
+{
+    jBC: ABC.2BR.VALIDA.DENOM.NO.TC
+}
+
+
+public method AbcValRevCajero (
+)
+{
+    jBC: ABC.VAL.REV.CAJERO
+}
+
+public method AbcValUserTrasAcc (
+)
+{
+    jBC: ABC.VAL.USER.TRAS.ACC
+}
+
+public method Abc2BrExtraeDefault (
+)
+{
+    jBC: ABC.2BR.EXTRAE.DEFAULT
+}
+
+
+public method Abc2BrFaltanteSobrante (
+)
+{
+    jBC: ABC.2BR.FALTANTE.SOBRANTE
+}
+
+public method AbcEmailDepositoEfectivo (
+)
+{
+    jBC: ABC.EMAIL.DEPOSITO.EFECTIVO
+}
+
+public method BamCheckBalCashWthd (
+)
+{
+    jBC: BAM.CHECK.BAL.CASH.WTHD
+}
+
+public method AbcEmailOperaValUsdEfec (
+)
+{
+    jBC: ABC.EMAIL.OPERA.VAL.USD.EFEC
+}
+
+public method AbcValAmtUsdEmailAuth (
+    INOUT YFLAG string
+)
+{
+    jBC: ABC.VAL.AMT.USD.EMAIL.AUTH
+}
+
+public method VGicAcctCcy (
+)
+{
+    jBC: V.GIC.ACCT.CCY
+}
+
+public method Abc2brValNarr (
+)
+{
+    jBC: ABC.2BR.VAL.NARR
+}
+
+public method AbcBr2TeldenomTotCambio (
+)
+{
+    jBC: ABC.BR2.TELDENOM.TOT.CAMBIO
+}
+
+public method Abc2brChecaCajaAbierto (
+)
+{
+    jBC: ABC.2BR.CHECA.CAJA.ABIERTO
+}
+
+public method Abc2brChecaCajaCerrada (
+)
+{
+    jBC: ABC.2BR.CHECA.CAJA.CERRADA
+}
+
+public method Abc2BrTtChkallowAmt (
+)
+{
+    jBC: ABC.2BR.TT.CHKALLOW.AMT
+}
+
+public method AbcBr2TtChkLimit (
+)
+{
+    jBC: ABC.BR2.TT.CHK.LIMIT
+}
+
+public method AbcValAmtUsdOpera (
+)
+{
+    jBC: ABC.VAL.AMT.USD.OPERA
+}
+
+public method BmvTtChklimit (
+)
+{
+    jBC: BMV.TT.CHKLIMIT
+}
+
+
+public method Abc2BrAutoAcct (
+)
+{
+    jBC: ABC.2BR.AUTO.ACCT
+}
+
+public method AbcFtRevCajero (
+)
+{
+    jBC: ABC.FT.REV.CAJERO
+}
+
+public method AbcVAcctCcy (
+)
+{
+    jBC: ABC.V.ACCT.CCY
+}
+
+public method Bam2brValCheckDup (
+)
+{
+    jBC: BAM.2BR.VAL.CHECK.DUP
+}
+
+public method AbcTraeDatosLectora (
+    INOUT YIdAcct string
+)
+{
+    jBC: ABC.TRAE.DATOS.LECTORA
+}
+
+public method AbcRetornaTipoInst (
+    INOUT inClabe string,
+    INOUT outTipoInst string
+)
+{
+    jBC: ABC.RETORNA.TIPO.INST
+}
+
+public method Abc2brDenominaciones (
+)
+{
+    jBC: ABC.2BR.DENOMINACIONES
+}
+
+public method BamVValidateStock (
+)
+{
+    jBC: BAM.V.VALIDATE.STOCK
+}
+
+public method Abc2brFormatoDsf (
+    INOUT InFormato string
+)
+{
+    jBC: ABC.2BR.FORMATO.DSF
+}
+
+public method Abc2brVUnit (
+)
+{
+    jBC: ABC.2BR.V.UNIT
+}
+
+public method Abc2brTot1Tot2 (
+)
+{
+    jBC: ABC.2BR.TOT1.TOT2
+}
+
+public method AbcFecAppPagoTc (
+    INOUT YDt string
+)
+{
+    jBC: ABC.FEC.APP.PAGO.TC
+}
+
+public method AbcTimeProce (
+    INOUT YDt string
+)
+{
+    jBC: ABC.TIME.PROCE
+}
+
+public method AbcTimeApli (
+    INOUT YDt string
+)
+{
+    jBC: ABC.TIME.APLI
+}
+
+public method AbcAccCusNameDb (
+)
+{
+    jBC: ABC.ACC.CUS.NAME.DB
+}
+
+public method Abc2brEExtraeNombre (
+)
+{
+    jBC: ABC.2BR.E.EXTRAE.NOMBRE
+}
+
+public method Abc2brETipoOperacion (
+)
+{
+    jBC: ABC.2BR.E.TIPO.OPERACION
+}
+
+public method Abc2brESituacion (
+)
+{
+    jBC: ABC.2BR.E.SITUACION
+}
+
+public method Abc2brEExtraeCtaNostro (
+    INOUT enqParam string
+)
+{
+    jBC: ABC.2BR.E.EXTRAE.CTA.NOSTRO
+}
+
+public method AbcDatosRecTmp (
+)
+{
+    jBC: ABC.DATOS.REC.TMP
+}
+
+public property readwrite YAmount : string {
+}
+
+public property readwrite arregloAviable : string {
+}
+
+public method Abc2brGetAmount (
+)
+{
+    jBC: ABC.2BR.GET.AMOUNT
+}
+
+public method AbcValCuentaChq (
+)
+{
+    jBC: ABC.VAL.CUENTA.CHQ
+}
+
+public method AbcTraeDatChq (
+)
+{
+    jBC: ABC.TRAE.DAT.CHQ
+}
+
+public method AbcRegistraEmailChq (
+)
+{
+    jBC: ABC.REGISTRA.EMAIL.CHQ
+}
+
+public method AbcEnviaOfsTt (
+)
+{
+    jBC: ABC.ENVIA.OFS.TT
+}
+public method AbcEliminaChqTmp (
+)
+{
+    jBC: ABC.ELIMINA.CHQ.TMP
+}
+
+public method RetornaRuta (
+)
+{
+    jBC: RETORNA.RUTA
+}
+
+public method Abc2brAmtWrdsDs (
+    INOUT yAmount string
+)
+{
+    jBC: ABC.2BR.AMT.WRDS.DS
+}
+
+public property readwrite LinkDataAux : string {
+}
+
+public method AbcArchivoPagostcProsa (
+)
+{
+    jBC: ABC.ARCHIVO.PAGOSTC.PROSA
+}
+
+
+public method AbcETraeCajero (
+    INOUT EnqParam string
+)
+{
+    jBC: ABC.E.TRAE.CAJERO
+}
+
+public method Abc2brENofileTtReversoOper (
+    INOUT RData string
+)
+{
+    jBC: ABC.2BR.E.NOFILE.TT.REVERSO.OPER
+}
+
+public method Abc2brECcy (
+)
+{
+    jBC: ABC.2BR.E.CCY
+}
+
+public method AbcTtSortByDenom1 (
+)
+{
+    jBC: ABC.TT.SORT.BY.DENOM.1
+}
+
+public method Abc2brENofileVaultStock (
+    INOUT RData string
+)
+{
+    jBC: ABC.2BR.NOFILE.VAULT.STOCK
+}
+
+public method AbcFileSolConc (
+)
+{
+    jBC: ABC.FILE.SOL.CONC
+}
+
+public method Abc2brEPosEfecRegion (
+    INOUT EnqParam string
+)
+{
+    jBC: ABC.2BR.E.POS.EFEC.REGION
+}
+
+private method Abc2brExtraeEfectivo (
+)
+{
+   jBC: ABC.2BR.EXTRAE.EFECTIVO
+}
+

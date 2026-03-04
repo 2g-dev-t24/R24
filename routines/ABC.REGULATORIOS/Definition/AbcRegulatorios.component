@@ -1,0 +1,168 @@
+component AbcRegulatorios
+
+# Component Isolation Definition
+metamodelVersion 1.6
+
+
+ 
+private method AbcNewGetGat (
+    INOUT yFechaInflacion string,
+    INOUT tasaBruta string,
+    INOUT plazo string,
+    INOUT tipo string,
+    INOUT gatNominal string,
+    INOUT gatReal string
+)
+{
+    jBC: ABC.NEW.GET.GAT
+}
+
+
+
+private method AbcRptIdeRetenidoV1 (
+)
+{
+    jBC: ABC.RPT.IDE.RETENIDO.V1
+}
+
+
+
+private method AbcIdeCobroImptoDiarioRtn (
+)
+{
+    jBC: ABC.IDE.COBRO.IMPTO.DIARIO.RTN
+}
+
+
+
+private method AbcIdeCobroImptoRtn (
+    INOUT pPer string,
+    INOUT pClie string,
+    INOUT pCuenta string,
+    INOUT pMtoCobro string,
+    INOUT pFolCobro string
+)
+{
+    jBC: ABC.IDE.COBRO.IMPTO.RTN
+}
+
+
+
+private method AbcOemnGeneraSecc2 (
+)
+{
+    jBC: ABC.OEMN.GENERA.SECC2
+}
+
+
+
+private method AbcOemnGeneraSecc6 (
+)
+{
+    jBC: ABC.OEMN.GENERA.SECC6
+}
+
+
+
+private method AbcSortd (
+    INOUT inpDarray string,
+    INOUT outDarray string,
+    INOUT sortOrder string
+)
+{
+    jBC: ABC.SORTD
+}
+
+
+public property readwrite RutaPdf : string {}
+public property readwrite RutaXml : string {}
+public property readwrite RutaJrxml : string {}
+
+public property readwrite NombreJrPag : string {}
+public property readwrite NombrePdfPag : string {}
+
+public property readwrite NombreJrF : string {}
+public property readwrite NombrePdfF : string {}
+
+public property readwrite NombreJrCede : string {}
+public property readwrite NombrePdfCede : string {}
+
+public property readwrite NombreJar : string {}
+
+public property readwrite RutaImagenJr : string {}
+public property readwrite RutaSubreporteJr : string {}
+public property readwrite RutaFicheroVector : string {}
+public property readwrite NombreFicheroVector : string {}
+public property readwrite NombreFichero : string {}
+public property readwrite NombFolder : string {}
+public property readwrite FnAaArrAct : string {}
+public property readwrite FnActiHis : string {}
+public property readwrite FnParaProd : string {}
+public property readwrite FnDao : string {}
+public property readwrite FnProducto : string {}
+public property readwrite FnCliente : string {}
+public property readwrite FnCuenta : string {}
+public property readwrite FnTax : string {}
+public property readwrite FnAaArrangement : string {}
+public property readwrite FnActiHisHis : string {}
+
+public property readwrite FAaArrAct : string {}
+public property readwrite FAaActivityHistory : string {}
+public property readwrite FAbcParamContProd : string {}
+public property readwrite FDeptAcctOfficer : string {}
+public property readwrite FAaProduct : string {}
+public property readwrite FCustomer : string {}
+public property readwrite FAccount : string {}
+public property readwrite FTax : string {}
+public property readwrite FAaArrangement : string {}
+public property readwrite FAaActivityHistoryHis : string {}
+public property readwrite YposExentoImpuesto : string {}
+public property readwrite YCarpetaCedes : string {
+}
+
+
+private method AbcGeneraReporteCedesLoad (
+)
+{
+    jBC: ABC.GENERA.REPORTE.CEDES.LOAD
+}
+
+
+
+private method AbcGeneraReporteCedesSelect (
+)
+{
+    jBC: ABC.GENERA.REPORTE.CEDES.SELECT
+}
+
+
+
+private method AbcGeneraReporteCedes (
+    INOUT yIdToProcess string
+)
+{
+    jBC: ABC.GENERA.REPORTE.CEDES
+}
+
+
+
+private method AbcIdeCargaMovAnualRtn (
+)
+{
+   jBC: ABC.IDE.CARGA.MOV.ANUAL.RTN
+}
+
+
+
+public method abcOemnSel (
+   INOUT fechaIni string,
+   INOUT codTrans string,
+   INOUT fechaFin string,
+   INOUT listTt string,
+   INOUT noRegTt string,
+   INOUT condTtAdd string
+)
+{
+   jBC: ABC.OEMN.SEL
+}
+

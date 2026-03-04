@@ -1,0 +1,40 @@
+component AbcUdis
+# Component Isolation Definition
+metamodelVersion 1.6
+# -------------------------------------------------
+
+
+private method abcIUdisCtrl (
+)
+{
+   jBC: ABC.I.UDIS.CTRL
+}
+
+
+
+private method AbcSetTransactionType (
+)
+{
+   jBC: ABC.SET.TRANSACTION.TYPE
+}
+
+
+
+private method AbcBUdisCleanup (
+)
+{
+   jBC: ABC.B.UDIS.CLEANUP
+}
+
+
+
+
+
+
+
+private method AbcHisNivelLimite (
+)
+{
+   jBC: ABC.HIS.NIVEL.LIMITE
+}
+

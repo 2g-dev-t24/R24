@@ -1,0 +1,40 @@
+public table AbcEmailSmsParameter {
+    t24: ABC.EMAIL.SMS.PARAMETER
+    fields:{
+        AbcAespOfsSource(ABC.AESP.OFS.SOURCE) = 1
+        AbcAespNumMensaje(ABC.AESP.NUM.MENSAJE) = 2
+        AbcAespSmsActivo(ABC.AESP.SMS.ACTIVO) = 3
+        AbcAespBankId(ABC.AESP.BANK.ID) = 4
+        AbcAespBankCust(ABC.AESP.BANK.CUST) = 5
+        AbcAespBankName(ABC.AESP.BANK.NAME) = 6
+        AbcAespTranType(ABC.AESP.TRAN.TYPE) = 7
+        AbcAespTransaction(ABC.AESP.TRANSACTION) = 8
+        AbcAespSubject(ABC.AESP.SUBJECT) = 9      
+        AbcAespPhoneOne(ABC.AESP.PHONE.1) = 10
+        AbcAespPhoneTwo(ABC.AESP.PHONE.2) = 11
+        AbcAespTranTypeTwo(ABC.AESP.TRAN.TYPE.2) = 12
+        AbcAespEnvCambioEst(ABC.AESP.ENV.CAMBIO.EST) = 13
+        AbcAespEmailUsuario(ABC.AESP.EMAIL.USUARIO) = 14
+        AbcAespEmailOperacion(ABC.AESP.EMAIL.OPERACION) = 15
+        AbcAespEmailAccMin(ABC.AESP.EMAIL.ACC.MIN) = 16
+        AbcAespEmailDomMin(ABC.AESP.EMAIL.DOM.MIN) = 17
+        AbcAespEmailMaxDot(ABC.AESP.EMAIL.MAX.DOT) = 18
+        AbcAespEmailValGenDom(ABC.AESP.EMAIL.VAL.GEN.DOM) = 19
+        AbcAespInvalidChar(ABC.AESP.INVALID.CHAR) = 20
+        AbcAespReserved4(ABC.AESP.RESERVED.4) = 21
+        AbcAespReserved3(ABC.AESP.RESERVED.3) = 22
+        AbcAespReserved2(ABC.AESP.RESERVED.2) = 23
+        AbcAespReserved1(ABC.AESP.RESERVED.1) = 24
+        AbcAespLocalRef(ABC.AESP.LOCAL.REF) = 25
+        AbcAespOverride(ABC.AESP.OVERRIDE) = 26
+        AbcAespRecordStatus(ABC.AESP.RECORD.STATUS) = 27
+        AbcAespCurrNo(ABC.AESP.CURR.NO) = 28
+        AbcAespInputter(ABC.AESP.INPUTTER) = 29
+        AbcAespDateTime(ABC.AESP.DATE.TIME) = 30
+        AbcAespAuthoriser(ABC.AESP.AUTHORISER) = 31
+        AbcAespCoCode(ABC.AESP.CO.CODE) = 32
+        AbcAespDeptCode(ABC.AESP.DEPT.CODE) = 33
+        AbcAespAuditorCode(ABC.AESP.AUDITOR.CODE) = 34
+        AbcAespAuditDateTime(ABC.AESP.AUDIT.DATE.TIME) = 35
+    }
+}

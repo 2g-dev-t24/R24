@@ -1,0 +1,20 @@
+public table PbsDcStatus {
+    t24: PBS.DC.STATUS
+    fields:{
+        Descripcion(PBS.DC.STA.DESCRIPCION)                     = 1
+        Reserved5(PBS.DC.STA.RESERVED.5)                        = 2
+        Reserved4(PBS.DC.STA.RESERVED.4)                        = 3
+        Reserved3(PBS.DC.STA.RESERVED.3)                        = 4
+        Reserved2(PBS.DC.STA.RESERVED.2)                        = 5
+        Reserved1(PBS.DC.STA.RESERVED.1)                        = 6
+        RecordStatus(PBS.DC.STA.RECORD.STATUS)                  = 7
+        CurrNo(PBS.DC.STA.CURR.NO)                              = 8
+        Inputter(PBS.DC.STA.INPUTTER)                           = 9
+        DateTime(PBS.DC.STA.DATE.TIME)                          = 10
+        Authoriser(PBS.DC.STA.AUTHORISER)                       = 11
+        CoCode(PBS.DC.STA.CO.CODE)                              = 12
+        DeptCode(PBS.DC.STA.DEPT.CODE)                          = 13
+        AuditorCode(PBS.DC.STA.AUDITOR.CODE)                    = 14
+        AuditDateTime(PBS.DC.STA.AUDIT.DATE.TIME)               = 15
+    }
+}

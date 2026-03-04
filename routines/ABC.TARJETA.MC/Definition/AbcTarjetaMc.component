@@ -1,0 +1,323 @@
+component AbcTarjetaMc
+# Component Isolation Definition
+metamodelVersion 1.6
+# -------------------------------------------------
+private method AbcValExistePrn (
+)
+{
+    jBC: ABC.VAL.EXISTE.PRN
+}
+
+
+
+private method AbcGetClabeTdcUala (
+)
+{
+    jBC: ABC.GET.CLABE.TDC.UALA
+}
+
+private method AbcCalculaCcc (
+    INOUT inCadena string,
+    INOUT outError string
+)
+{
+    jBC: ABC.CALCULA.CCC
+}
+
+private method AbcActConcatFiserv (
+)
+{
+    jBC: ABC.ACT.CONCAT.FISERV
+}
+
+
+
+private method AbcTdcValId (
+)
+{
+    jBC: ABC.TDC.VAL.ID
+}
+
+
+
+private method AbcGetAccAbonoPagoTdc (
+)
+{
+    jBC: ABC.GET.ACC.ABONO.PAGO.TDC
+}
+
+
+
+private method AbcEmailPagoTdcUala2 (
+)
+{
+    jBC: ABC.EMAIL.PAGO.TDC.UALA.2
+}
+
+
+
+private method AbcNivelLimMonto (
+)
+{
+    jBC: ABC.NIVEL.LIM.MONTO
+}
+
+
+
+private method AbcValCategType (
+    INOUT yDebitAcct string,
+    INOUT yCreditAcct string,
+    INOUT yTransTypeFt string
+)
+{
+    jBC: ABC.VAL.CATEG.TYPE
+}
+
+private method AbcValBloqueoTarjGar (
+)
+{
+    jBC: ABC.VAL.BLOQUEO.TARJ.GAR
+}
+
+private method AbcValSdoCtaBloqueo (
+)
+{
+    jBC: ABC.VAL.SDO.CTA.BLOQUEO
+}
+
+private method AbcGuardaBloqueoTarjGar (
+)
+{
+    jBC: ABC.GUARDA.BLOQUEO.TARJ.GAR
+}
+
+private method AbcValBloqueoAplicado (
+)
+{
+    jBC: ABC.VAL.BLOQUEO.APLICADO
+}
+
+private method AbcValCanalFtGarantia (
+)
+{
+    jBC: ABC.VAL.CANAL.FT.GARANTIA
+}
+
+private method AbcObtCreditAccCtaGar (
+)
+{
+    jBC: ABC.OBT.CREDIT.ACC.CTA.GAR
+}
+
+private method AbcDesbloqAclkGarantia (
+)
+{
+    jBC: ABC.DESBLOQ.ACLK.GARANTIA
+}
+
+private method AbcGuardaAplicaTarjGar (
+)
+{
+    jBC: ABC.GUARDA.APLICA.TARJ.GAR
+}
+
+private method AbcEnvEmailPosDev (
+)
+{
+    jBC: ABC.ENV.EMAIL.POS.DEV
+}
+
+private method AbcValTarjGar (
+)
+{
+    jBC: ABC.VAL.TARJ.GAR
+}
+
+private method AbcValPostRestCus (
+)
+{
+    jBC: ABC.VAL.POST.REST.CUS
+}
+
+private method AbcGuardaCtaTarjGar (
+)
+{
+    jBC: ABC.GUARDA.CTA.TARJ.GAR
+}
+
+private method AbcStartCaratService (
+)
+{
+    jBC: ABC.START.CARAT.SERVICE
+}
+
+private method AbcCreateAaGarantizada (
+)
+{
+    jBC: ABC.CREATE.AA.GARANTIZADA
+}
+
+private method AbcCreaArchCtaGaranLoad (
+)
+{
+    jBC: ABC.CREA.ARCH.CTA.GARAN.LOAD
+}
+
+private method AbcCreaArchCtaGaranSelect (
+)
+{
+    jBC: ABC.CREA.ARCH.CTA.GARAN.SELECT
+}
+
+private method AbcCreaArchCtaGaran (
+    INOUT YIdCuenta string
+)
+{
+    jBC: ABC.CREA.ARCH.CTA.GARAN
+}
+
+private method AbcCreaArchCtaGaranPost (
+)
+{
+    jBC: ABC.CREA.ARCH.CTA.GARAN.POST
+}
+
+public property readwrite FnStmt : string {
+}
+
+public property readwrite FStmt : string {
+}
+
+public property readwrite FnAccount : string {
+}
+
+public property readwrite FAccount : string {
+}
+
+public property readwrite FnAbcAcctLclFlds : string {
+}
+
+public property readwrite FAbcAcctLclFlds : string {
+}
+
+public property readwrite FnAcctGenCondition : string {
+}
+
+public property readwrite FAcctGenCondition : string {
+}
+
+public property readwrite FnStmtAcctCr : string {
+}
+
+public property readwrite FStmtAcctCr : string {
+}
+
+public property readwrite FnGroupCreditInt : string {
+}
+
+public property readwrite FGroupCreditInt : string {
+}
+
+public property readwrite YFecha : string {
+}
+
+public property readwrite YFechaInicio : string {
+}
+
+public property readwrite YCategorias : string {
+}
+
+public property readwrite YTransactionCodeList : string {
+}
+
+public property readwrite YMaximoRegistros : string {
+}
+
+public property readwrite YRutaArchivo : string {
+}
+
+public property readwrite YRecordType : string {
+}
+
+public property readwrite YHeader : string {
+}
+
+public property readwrite YClientId : string {
+}
+
+public property readwrite YFileName : string {
+}
+
+public property readwrite YRecordTypeB : string {
+}
+
+public property readwrite YAccountIdType : string {
+}
+
+public property readwrite YTransactionType : string {
+}
+
+public property readwrite YTransactionSubType : string {
+}
+
+public property readwrite YRecordTypeF : string {
+}
+
+public property readwrite YProgramId : string {
+}
+
+public property readwrite YLocationType : string {
+}
+
+public property readwrite YLocationId : string {
+}
+
+public property readwrite YTransactionDescriptor : string {
+}
+
+public property readwrite YTransactionIdentifier : string {
+}
+
+public property readwrite YRutaArchivoTemp : string {
+}
+
+public property readwrite YDesc1 : string {
+}
+
+public property readwrite YDesc2 : string {
+}
+
+public property readwrite YDesc3 : string {
+}
+
+public property readwrite YDesc4 : string {
+}
+
+public property readwrite YCatList : string {
+}
+
+public property readwrite FnStmtEntryDetail : string {
+}
+
+public property readwrite FStmtEntryDetail : string {
+}
+
+public property readwrite FnAaInterestAccruals : string {
+}
+
+public property readwrite FAaInterestAccruals : string {
+}
+
+private method AbcObtDatCtaGar (
+)
+{
+   jBC: ABC.OBT.DAT.CTA.GAR
+}
+
+
+private method AbcCancelacionTarjGar (
+)
+{
+   jBC: ABC.CANCELACION.TARJ.GAR
+}
+

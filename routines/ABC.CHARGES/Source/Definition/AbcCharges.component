@@ -1,0 +1,14 @@
+component AbcCharges
+# Component Isolation Definition
+metamodelVersion 1.6
+# -------------------------------------------------
+
+private method AbcIsrCalcRtn (
+    INOUT chargeProperty string,
+    INOUT rPropertyRecord string,
+    INOUT baseAmount string,
+    INOUT chargeAmount string
+)
+{
+    jBC: ABC.ISR.CALC.RTN
+}

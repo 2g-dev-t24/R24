@@ -1,0 +1,30 @@
+component AbcAccountApi
+# Component Isolation Definition
+metamodelVersion 1.6
+# -------------------------------------------------
+
+
+
+
+private method AbcCuentaL4ApiRtn (
+)
+{
+    jBC: ABC.CUENTA.L4.API.RTN
+}
+
+
+
+private method AbcCreateArrangemnt (
+)
+{
+   jBC: ABC.CREATE.ARRANGEMNT
+}
+
+
+
+private method AbcBefUpdCus (
+)
+{
+   jBC: ABC.BEF.UPD.CUS
+}
+

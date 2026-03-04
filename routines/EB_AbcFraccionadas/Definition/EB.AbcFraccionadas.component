@@ -1,0 +1,20 @@
+component EB.AbcFraccionadas
+# Component Isolation Definition
+metamodelVersion 1.6
+# -------------------------------------------------
+
+
+private method abcGetAcFrac (
+)
+{
+    jBC: ABC.GET.AC.FRAC
+}
+
+
+
+private method abcGetAccFrac (
+)
+{
+    jBC: ABC.GET.ACC.FRAC
+}
+

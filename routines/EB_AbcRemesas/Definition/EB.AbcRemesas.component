@@ -1,0 +1,43 @@
+component EB.AbcRemesas
+# Component Isolation Definition
+metamodelVersion 1.6
+# -------------------------------------------------
+
+private method abcValIdCustReme (
+)
+{
+    jBC: ABC.VAL.ID.CUST.REME
+}
+
+
+private method abcEActiEcono (
+    INOUT enqParam string
+)
+{
+    jBC: ABC.E.ACTI.ECONO
+}
+
+
+
+private method abcUpdActiEconom (
+)
+{
+    jBC: ABC.UPD.ACTI.ECONOM
+}
+
+
+
+private method abcLlenaDebitRemesas (
+)
+{
+    jBC: ABC.LLENA.DEBIT.REMESAS
+}
+
+
+
+private method abcEnvEmailRemesa (
+)
+{
+    jBC: ABC.ENV.EMAIL.REMESA
+}
+

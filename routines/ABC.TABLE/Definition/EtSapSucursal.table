@@ -1,0 +1,36 @@
+public table EtSapSucursal {
+    t24: ET.SAP.SUCURSAL
+    fields:{
+        Nombre(SUC.NOMBRE) = 1
+        Calle(SUC.CALLE) = 2 
+        NumExt(SUC.NUM.EXT) = 3 
+        NumInt(SUC.NUM.INT) = 4 
+        Edo(SUC.EDO) = 5 
+        DelMun(SUC.DEL.MUN) = 6 
+        Col(SUC.COL) = 7 
+        Country(SUC.COUNTRY) = 8 
+        CP(SUC.C.P) = 9 
+        Dao(SUC.DAO) = 10
+        Reserved10(SUC.RESERVED.10) = 11
+        Reserved9(SUC.RESERVED.9) = 12
+        Reserved8(SUC.RESERVED.8) = 13
+        Reserved7(SUC.RESERVED.7) = 14
+        Reserved6(SUC.RESERVED.6) = 15
+        Reserved5(SUC.RESERVED.5) = 16
+        Reserved4(SUC.RESERVED.4) = 17
+        Reserved3(SUC.RESERVED.3) = 18
+        Reserved2(SUC.RESERVED.2) = 19
+        Reserved1(SUC.RESERVED.1) = 20
+        LocalRef(SUC.LOCAL.REF) = 21
+        Override(SUC.OVERRIDE) = 22
+        RecordStatus(SUC.RECORD.STATUS) = 23
+        CurrNo(SUC.CURR.NO) = 24
+        Inputter(SUC.INPUTTER) = 25
+        DateTime(SUC.DATE.TIME) = 26
+        Authoriser(SUC.AUTHORISER) = 27
+        CoCode(SUC.CO.CODE) = 28
+        DeptCode(SUC.DEPT.CODE) = 29
+        AuditorCode(SUC.AUDITOR.CODE) = 30
+        AuditDateTime(SUC.AUDIT.DATE.TIME) = 31
+    }
+}

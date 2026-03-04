@@ -1,0 +1,306 @@
+component AbcAccount
+# Component Isolation Definition
+metamodelVersion 1.6
+
+private method AbcCambCatRemunera ()
+{
+    jBC: ABC.CAMB.CAT.REMUNERA
+}
+
+# ------------------ METHOD END ------------------
+
+
+private method abcValidaEmailBen (
+)
+{
+    jBC: ABC.VALIDA.EMAIL.BEN
+}
+
+
+
+private method abcValFlagUpdateNvl (
+)
+{
+    jBC: ABC.VAL.FLAG.UPDATE.NVL
+}
+
+
+
+private method abcValPorcBenefN4l (
+)
+{
+    jBC: ABC.VAL.PORC.BENEF.N4L
+}
+
+
+
+public method SapCheckBalCashWthd (
+    INOUT yinCuenta string,
+    INOUT yinMonto string,
+    INOUT yinComision string,
+    INOUT yout string
+)
+{
+    jBC: SAP.CHECK.BAL.CASH.WTHD
+}
+
+private method AbcAcctYaexiste (
+)
+{
+    jBC: ABC.ACCT.YAEXISTE
+}
+
+private method AbcActCamUsoPrdCta (
+)
+{
+    jBC: ABC.ACT.CAM.USO.PRD.CTA
+}
+
+private method AbcActCampFonTerPld (
+)
+{
+    jBC: ABC.ACT.CAMP.FON.TER.PLD
+}
+
+private method AbcActCampPldAccBan (
+)
+{
+    jBC: ABC.ACT.CAMP.PLD.ACC.BAN
+}
+
+private method AbcActCampPldFunPub (
+)
+{
+    jBC: ABC.ACT.CAMP.PLD.FUN.PUB
+}
+
+private method AbcActValidaActOff (
+)
+{
+    jBC: ABC.ACT.VALIDA.ACT.OFF
+}
+
+private method AbcBeneficiarioPorcj (
+)
+{
+    jBC: ABC.BENEFICIARIO.PORCJ
+}
+
+private method AbcCalcPorcTitularidad (
+)
+{
+    jBC: ABC.CALC.PORC.TITULARIDAD
+}
+
+private method AbcCtaAltCel (
+)
+{
+    jBC: ABC.CTA.ALT.CEL
+}
+
+private method AbcReplicaModCtaInv (
+)
+{
+    jBC: ABC.REPLICA.MOD.CTA.INV
+}
+
+private method AbcVGetAdress (
+)
+{
+    jBC: ABC.V.GET.ADRESS
+}
+
+private method AbcVPopulateAcc (
+)
+{
+    jBC: ABC.V.POPULATE.ACC
+}
+
+private method AbcVPopulateAccMoral (
+)
+{
+    jBC: ABC.V.POPULATE.ACC.MORAL
+}
+
+private method AbcValRegimenCta (
+)
+{
+    jBC: ABC.VAL.REGIMEN.CTA
+}
+
+private method AbcValidaCustIubBiom (
+)
+{
+    jBC: ABC.VALIDA.CUST.IUB.BIOM
+}
+
+private method AbcValidaCustIubN4 (
+)
+{
+    jBC: ABC.VALIDA.CUST.IUB.N4
+}
+
+private method AbcValidaExentoImpuesto (
+)
+{
+    jBC: ABC.VALIDA.EXENTO.IMPUESTO
+}
+
+private method BaGetIdCtaAhorro (
+)
+{
+    jBC: BA.GET.ID.CTA.AHORRO
+}
+
+private method PbsGetAdressUso (
+)
+{
+    jBC: PBS.GET.ADRESS.USO
+}
+
+public method AbcActValidaTodo(
+    INOUT YValActual string, 
+    INOUT YOrigen string
+)
+{
+    jBC: ABC.ACT.VALIDA.TODO
+}
+
+private method AbcVGetClabe (
+)
+{
+    jBC: ABC.V.GET.CLABE
+}
+
+public method AbcRtnAccInhibeCb(
+    INOUT YTipoCte string
+)
+{
+    jBC: ABC.RTN.ACC.INHIBE.CB
+}
+
+public method AbcCalculaTes(
+    INOUT InCadena string, 
+    INOUT OutError string
+)
+{
+    jBC: ABC.CALCULA.TES
+}
+
+public method PbsDireccionSepomex(
+    INOUT YCodPost string, 
+    INOUT YCadSalida string
+)
+{
+    jBC: PBS.DIRECCION.SEPOMEX
+}
+
+public method AbcESelColUso(
+    INOUT EnqParam string
+)
+{
+    jBC: ABC.E.SEL.COL.USO
+}
+
+private method AbcValidaCuenta (
+)
+{
+    jBC: ABC.VALIDA.CUENTA
+}
+
+
+
+private method AbcFmtAmt (
+)
+{
+    jBC: ABC.FMT.AMT
+}
+
+
+
+private method AbcValidaCuentaCliente (
+)
+{
+    jBC: ABC.VALIDA.CUENTA.CLIENTE
+}
+
+
+
+private method AbcValPlazo (
+)
+{
+    jBC: ABC.VAL.PLAZO
+}
+
+
+
+private method AbcInputExtTransidPag (
+)
+{
+    jBC: ABC.INPUT.EXT.TRANSID.PAG
+}
+
+
+
+private method AbcValCuentaDtMkt (
+)
+{
+    jBC: ABC.VAL.CUENTA.DT.MKT
+}
+
+
+
+private method AbcMontoIvaBonificacionMkt (
+)
+{
+    jBC: ABC.MONTO.IVA.BONIFICACION.MKT
+}
+
+
+
+private method AbcValExtIdMkt2 (
+)
+{
+    jBC: ABC.VAL.EXT.ID.MKT.2
+}
+
+
+
+private method AbcValCuentaCtMkt (
+)
+{
+    jBC: ABC.VAL.CUENTA.CT.MKT
+}
+
+
+
+private method AbcIntUpdate (
+    INOUT accNo string,
+    INOUT effectiveDate string,
+    INOUT noOfDays string,
+    INOUT currAmt string,
+    INOUT product string,
+    INOUT retArray string
+)
+{
+    jBC: ABC.INT.UPDATE
+}
+
+public method BaClubAhorroGetSaldo(
+)
+{
+    jBC: BA.CLUB.AHORRO.GET.SALDO
+}
+
+private method abcValPrChangeProd (
+)
+{
+    jBC: ABC.VAL.PR.CHANGE.PROD
+}
+
+private method abcActSetAccountTittle (
+)
+{
+    jBC: ABC.ACT.SET.ACCOUNT.TITTLE
+}
+

@@ -1,0 +1,44 @@
+public table AbcDc {
+    t24: ABC.DC
+    fields:{
+        ValueDate(ABC.DC.VALUE.DATE)                     = 1
+        NombreArch(ABC.DC.NOMBRE.ARCH)                   = 2
+        SignD(ABC.DC.SIGN.D)                             = 3
+        TransactionCodeD(ABC.DC.TRANSACTION.CODE.D)      = 4
+        AccountNumberD(ABC.DC.ACCOUNT.NUMBER.D)          = 5
+        CategoryPlD(ABC.DC.CATEGORY.PL.D)                = 6
+        CategoryProdD(ABC.DC.CATEGORY.PROD.D)            = 7
+        CustomerD(ABC.DC.CUSTOMER.D)                     = 8
+        DeptOffD(ABC.DC.DEPT.OFF.D)                      = 9
+        AmountLcyD(ABC.DC.AMOUNT.LCY.D)                  = 10
+        NarrativeD(ABC.DC.NARRATIVE.D)                   = 11
+        SignC(ABC.DC.SIGN.C)                             = 12
+        TransactionCodeC(ABC.DC.TRANSACTION.CODE.C)      = 13
+        AccountNumberC(ABC.DC.ACCOUNT.NUMBER.C)          = 14
+        CategoryPlC(ABC.DC.CATEGORY.PL.C)                = 15
+        CategoryProdC(ABC.DC.CATEGORY.PROD.C)            = 16
+        CustomerC(ABC.DC.CUSTOMER.C)                     = 17
+        DeptOffC(ABC.DC.DEPT.OFF.C)                      = 18
+        AmountLcyC(ABC.DC.AMOUNT.LCY.C)                  = 19
+        NarrativeC(ABC.DC.NARRATIVE.C)                   = 20
+        Status(ABC.DC.STATUS)                            = 21
+        TotalAmtD(ABC.DC.TOTAL.AMT.D)                    = 22
+        TotalAmtC(ABC.DC.TOTAL.AMT.C)                    = 23
+        IdDc(ABC.DC.ID.DC)                               = 24
+        Descripcion(ABC.DC.DESCRIPCION)                  = 25
+        Reserved5(ABC.DC.RESERVED.5)                     = 26
+        Reserved4(ABC.DC.RESERVED.4)                     = 27
+        Reserved3(ABC.DC.RESERVED.3)                     = 28
+        Reserved2(ABC.DC.RESERVED.2)                     = 29
+        Reserved1(ABC.DC.RESERVED.1)                     = 30
+        RecordStatus(ABC.DC.RECORD.STATUS)               = 32
+        CurrNo(ABC.DC.CURR.NO)                           = 33
+        Inputter(ABC.DC.INPUTTER)                        = 34
+        DateTime(ABC.DC.DATE.TIME)                       = 35
+        Authoriser(ABC.DC.AUTHORISER)                    = 36
+        CoCode(ABC.DC.CO.CODE)                           = 37
+        DeptCode(ABC.DC.DEPT.CODE)                       = 38
+        AuditorCode(ABC.DC.AUDITOR.CODE)                 = 39
+        AuditDateTime(ABC.DC.AUDIT.DATE.TIME)            = 40
+    }
+}

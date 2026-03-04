@@ -1,0 +1,39 @@
+public table AbcTarjetaCredUala {
+    t24: ABC.TARJETA.CRED.UALA
+    fields:{
+        Clabe(TARJ.CRED.CLABE) = 1
+        Customer(TARJ.CRED.CUSTOMER) = 2
+        Estatus(TARJ.CRED.ESTATUS) = 3
+        Reserved20(TARJ.CRED.RESERVED.20) = 4
+        Reserved19(TARJ.CRED.RESERVED.19) = 5
+        Reserved18(TARJ.CRED.RESERVED.18) = 6
+        Reserved17(TARJ.CRED.RESERVED.17) = 7
+        Reserved16(TARJ.CRED.RESERVED.16) = 8
+        Reserved15(TARJ.CRED.RESERVED.15) = 9
+        Reserved14(TARJ.CRED.RESERVED.14) = 10
+        Reserved13(TARJ.CRED.RESERVED.13) = 11
+        Reserved12(TARJ.CRED.RESERVED.12) = 12
+        Reserved11(TARJ.CRED.RESERVED.11) = 13
+        Reserved10(TARJ.CRED.RESERVED.10) = 14
+        Reserved9(TARJ.CRED.RESERVED.9) = 15
+        Reserved8(TARJ.CRED.RESERVED.8) = 16
+        Reserved7(TARJ.CRED.RESERVED.7) = 17
+        Reserved6(TARJ.CRED.RESERVED.6) = 18
+        Reserved5(TARJ.CRED.RESERVED.5) = 19
+        Reserved4(TARJ.CRED.RESERVED.4) = 20
+        Reserved3(TARJ.CRED.RESERVED.3) = 21
+        Reserved2(TARJ.CRED.RESERVED.2) = 22
+        Reserved1(TARJ.CRED.RESERVED.1) = 23
+        LocalRef(TARJ.CRED.LOCAL.REF) = 24
+        Override(TARJ.CRED.OVERRIDE) = 25
+        RecordStatus(TARJ.CRED.RECORD.STATUS) = 26
+        CurrNo(TARJ.CRED.CURR.NO) = 27
+        Inputter(TARJ.CRED.INPUTTER) = 28
+        DateTime(TARJ.CRED.DATE.TIME) = 29
+        Authoriser(TARJ.CRED.AUTHORISER) = 30
+        CoCode(TARJ.CRED.CO.CODE) = 31
+        DeptCode(TARJ.CRED.DEPT.CODE) = 32
+        AuditorCode(TARJ.CRED.AUDITOR.CODE) = 33
+        AuditDateTime(TARJ.CRED.AUDIT.DATE.TIME) = 34
+    }
+}

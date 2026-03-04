@@ -1,0 +1,52 @@
+private table AbcCustomerFisNv4Api {
+    t24: ABC.CUSTOMER.FIS.NV4.API
+    fields:{
+        
+        
+        OtherNationality(ABC.NV4.OTHER.NATIONALITY) = 1
+        Nationality(ABC.NV4.NATIONALITY)            = 2
+        TaxId(ABC.NV4.TAX.ID)                       = 3
+        DomFisc(ABC.NV4.DOM.FISC)                   = 4
+        RegFiscal(ABC.NV4.REG.FISCAL)               = 5
+        UsoCfdi(ABC.NV4.USO.CFDI)                   = 6
+        Iub(ABC.NV4.IUB)                            = 7
+        LegalDocName(ABC.NV4.LEGAL.DOC.NAME)        = 8
+        LegalId(ABC.NV4.LEGAL.ID)                   = 9
+        LegalIssDate(ABC.NV4.LEGAL.ISS.DATE)        = 10
+        LegalExpDate(ABC.NV4.LEGAL.EXP.DATE)        = 11
+        CompDom(ABC.NV4.COMP.DOM)                   = 12
+        Street(ABC.NV4.STREET)                      = 13
+        Address1(ABC.NV4.ADDRESS.1)                 = 14
+        Address2(ABC.NV4.ADDRESS.2)                 = 15
+        PostCode(ABC.NV4.POST.CODE)                 = 16
+        DirColonia(ABC.NV4.DIR.COLONIA)             = 17
+        TownCountry(ABC.NV4.TOWN.COUNTRY)           = 18
+        DirCdEdo(ABC.NV4.DIR.CD.EDO)                = 19
+        Country(ABC.NV4.COUNTRY)                    = 20
+        Localidad(ABC.NV4.LOCALIDAD)                = 21
+        ActividadEcono(ABC.NV4.ACTIVIDAD.ECONO)     = 22
+        Profesion(ABC.NV4.PROFESION)                = 23
+        OrigenRecursos(ABC.NV4.ORIGEN.RECURSOS)     = 24
+        DestinoRecurs(ABC.NV4.DESTINO.RECURS)       = 25
+        PldFunPub(ABC.NV4.PLD.FUN.PUB)              = 26
+        PuestoUltAnio(ABC.NV4.PUESTO.ULT.ANIO)      = 27
+        RelPersonaExp(ABC.NV4.REL.PERSONA.EXP)      = 28
+        NomPerPolExp(ABC.NV4.NOM.PER.POL.EXP)       = 29
+        TipoPerPolExp(ABC.NV4.TIPO.PER.POL.EXP)     = 30
+        Canal(ABC.NV4.CANAL)                        = 31
+        IdCustomer(ABC.NV4.ID.CUSTOMER)             = 32
+        Residence(ABC.NV4.RESIDENCE)                = 33
+        TipoEmpOtro(ABC.NV4.TIPO.EMP.OTRO)          = 34
+        
+        RecordStatus(ABC.NV4.RECORD.STATUS)              = 35
+        CurrNo(ABC.NV4.CURR.NO)                          = 36
+        Inputter(ABC.NV4.INPUTTER)                       = 37
+        DateTime(ABC.NV4.DATE.TIME)                      = 38
+        Authoriser(ABC.NV4.AUTHORISER)                   = 39
+        CoCode(ABC.NV4.CO.CODE)                          = 40
+        DeptCode(ABC.NV4.DEPT.CODE)                      = 41
+        AuditorCode(ABC.NV4.AUDITOR.CODE)                = 42
+        AuditDateTime(ABC.NV4.AUDIT.DATE.TIME)           = 43         
+        
+    }
+}

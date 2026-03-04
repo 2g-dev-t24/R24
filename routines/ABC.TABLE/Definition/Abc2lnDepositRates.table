@@ -1,0 +1,18 @@
+private table Abc2lnDepositRates {
+    t24: ABC.2LN.DEPOSIT.RATES
+    fields:{
+        DayPeriod(DEP.RAT.DAY.PERIOD) = 1
+        Amount(DEP.RAT.AMOUNT) = 2
+        Percentage(DEP.RAT.PERCENTAGE) = 3
+
+        RecordStatus(DEP.RAT.RECORD.STATUS) = 4
+        CurrNo(DEP.RAT.CURR.NO) = 5
+        Inputter(DEP.RAT.INPUTTER) = 6
+        DateTime(DEP.RAT.DATE.TIME) = 7
+        Authoriser(DEP.RAT.AUTHORISER) = 8
+        CoCode(DEP.RAT.CO.CODE) = 9
+        DeptCode(DEP.RAT.DEPT.CODE) = 10
+        AuditorCode(DEP.RAT.AUDITOR.CODE) = 11
+        AuditDateTime(DEP.RAT.AUDIT.DATE.TIME) = 12
+    }
+}

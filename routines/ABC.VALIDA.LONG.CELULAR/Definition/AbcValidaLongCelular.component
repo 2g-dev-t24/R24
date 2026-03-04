@@ -1,0 +1,11 @@
+component AbcValidaLongCelular
+
+# Component Isolation Definition
+metamodelVersion 1.6
+
+private method AbcValidaLongCelular (
+)
+{
+    jBC: ABC.VALIDA.LONG.CELULAR
+}
+

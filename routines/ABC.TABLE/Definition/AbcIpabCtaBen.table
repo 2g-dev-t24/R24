@@ -1,0 +1,13 @@
+private table AbcIpabCtaBen {
+    t24: ABC.IPAB.CTA.BEN
+    fields:{
+        Cliente(IPAB.CTA.BEN.CLIENTE) = 1
+        SaldoCuenta(IPAB.CTA.BEN.SALDO.CUENTA) = 2
+        Intereses(IPAB.CTA.BEN.INTERESES) = 3
+        RetencionImpuestos(IPAB.CTA.BEN.RETENCION.IMPUESTO) = 4
+        SaldoNeto(IPAB.CTA.BEN.SALDO.NETO) = 5
+        FechaCorte(IPAB.CTA.BEN.FECHA.CORTE) = 6
+        Tasa(IPAB.CTA.BEN.TASA) = 7
+        SaldoPromedio(IPAB.CTA.BEN.SALDO.PROMEDIO) = 8
+    }
+}

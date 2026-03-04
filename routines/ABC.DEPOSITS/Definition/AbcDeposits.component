@@ -1,0 +1,58 @@
+component AbcDeposits
+# Component Isolation Definition
+metamodelVersion 1.6
+
+
+# ------------------ METHOD END ------------------
+
+private method AbcTermAmountUpdInterest (
+)
+{
+    jBC: ABC.TERM.AMOUNT.UPD.INTEREST
+}
+
+
+
+private method AbcToUpdInvstAccount (
+)
+{
+    jBC: ABC.TO.UPD.INVST.ACCOUNT
+}
+
+
+
+private method AbcUpdDepAccDetails (
+)
+{
+    jBC: ABC.UPD.DEP.ACC.DETAILS
+}
+
+
+
+private method AbcUpdSetAccDetails (
+)
+{
+    jBC: ABC.UPD.SET.ACC.DETAILS
+}
+
+
+
+private method AbcUpdInterestRevaisable (
+)
+{
+    jBC: ABC.UPD.INTEREST.REVAISABLE
+}
+
+
+
+private method AbcUpdDepAccDetailsModify (
+)
+{
+    jBC: ABC.UPD.DEP.ACC.DETAILS.MODIFY
+}
+
+private method AbcUpdDepFecs (
+)
+{
+    jBC: ABC.UPD.DEP.FECS
+}

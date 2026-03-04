@@ -1,0 +1,27 @@
+public table AbcClubInvierteParam {
+    t24: ABC.CLUB.INVIERTE.PARAM
+    fields:{
+        ImporteMinimo(CI.PAR.IMPORTE.MINIMO)       = 1
+        Reserved10(CI.PAR.RESERVED.10)             = 2
+        Reserved9(CI.PAR.RESERVED.9)               = 3
+        Reserved8(CI.PAR.RESERVED.8)               = 4
+        Reserved7(CI.PAR.RESERVED.7)               = 5
+        Reserved6(CI.PAR.RESERVED.6)               = 6
+        Reserved5(CI.PAR.RESERVED.5)               = 7
+        Reserved4(CI.PAR.RESERVED.4)               = 8
+        Reserved3(CI.PAR.RESERVED.3)               = 9
+        Reserved2(CI.PAR.RESERVED.2)               = 10
+        Reserved1(CI.PAR.RESERVED.1)               = 11
+        LocalRef(CI.PAR.LOCAL.REF)                 = 12
+        Override(CI.PAR.OVERRIDE)                  = 13
+        RecordStatus(CI.PAR.RECORD.STATUS)         = 14
+        CurrNo(CI.PAR.CURR.NO)                     = 15
+        Inputter(CI.PAR.INPUTTER)                  = 16
+        DateTime(CI.PAR.DATE.TIME)                 = 17
+        Authoriser(CI.PAR.AUTHORISER)              = 18
+        CoCode(CI.PAR.CO.CODE)                     = 19
+        DeptCode(CI.PAR.DEPT.CODE)                 = 20
+        AuditorCode(CI.PAR.AUDITOR.CODE)           = 21
+        AuditDateTime(CI.PAR.AUDIT.DATE.TIME)      = 22
+    }
+}

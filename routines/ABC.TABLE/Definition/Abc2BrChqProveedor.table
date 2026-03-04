@@ -1,0 +1,29 @@
+public table Abc2BrChqProveedor {
+    t24: ABC.2BR.CHQ.PROVEEDOR
+    fields:{
+        CodProveedor(VCHP.COD.PROVEEDOR)                = 1
+        NombreSuc(VCHP.NOMBRE.SUC)                      = 2
+        Calle(VCHP.CALLE)                          = 3
+        NumExt(VCHP.NUM.EXT)                            = 4
+        NumInt(VCHP.NUM.INT)                            = 5
+        Colonia(VCHP.COLONIA)                           = 6
+        CodPostal(VCHP.COD.POSTAL)                      = 7
+        Telefono(VCHP.TELEFONO)                         = 8
+        Fax(VCHP.FAX)                                   = 9
+        Responsable(VCHP.RESPONSABLE)                   = 10
+        Reserved5(VCHP.RESERVED.5)                      = 11
+        Reserved4(VCHP.RESERVED.4)                      = 12
+        Reserved3(VCHP.RESERVED.3)                      = 13
+        Reserved2(VCHP.RESERVED.2)                      = 14
+        Reserved1(VCHP.RESERVED.1)                      = 15
+        RecordStatus(VCHP.RECORD.STATUS)                = 16
+        CurrNo(VCHP.CURR.NO)                            = 17
+        Inputter(VCHP.INPUTTER)                         = 18
+        DateTime(VCHP.DATE.TIME)                        = 19
+        Authoriser(VCHP.AUTHORISER)                     = 20
+        CoCode(VCHP.CO.CODE)                            = 21
+        DeptCode(VCHP.DEPT.CODE)                        = 22
+        AuditorCode(VCHP.AUDITOR.CODE)                  = 23
+        AuditDateTime(VCHP.AUDIT.DATE.TIME)             = 24
+    }
+}

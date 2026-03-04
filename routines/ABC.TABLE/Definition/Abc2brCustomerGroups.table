@@ -1,0 +1,17 @@
+private table Abc2brCustomerGroups {
+    t24: ABC.2BR.CUSTOMER.GROUPS
+    fields:{
+        ShortDesc(CUS.GRP.SHORT.DESC) = 1
+        Description(CUS.GRP.DESCRIPTION) = 2
+
+        RecordStatus(CUS.GRP.RECORD.STATUS) = 3
+        CurrNo(CUS.GRP.CURR.NO) = 4
+        Inputter(CUS.GRP.INPUTTER) = 5
+        DateTime(CUS.GRP.DATE.TIME) = 6
+        Authoriser(CUS.GRP.AUTHORISER) = 7
+        CoCode(CUS.GRP.CO.CODE) = 8
+        DeptCode(CUS.GRP.DEPT.CODE) = 9
+        AuditorCode(CUS.GRP.AUDITOR.CODE) = 10
+        AuditDateTime(CUS.GRP.AUDIT.DATE.TIME) = 11
+    }
+}

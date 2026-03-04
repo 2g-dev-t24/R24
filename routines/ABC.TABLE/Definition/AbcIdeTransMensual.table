@@ -1,0 +1,39 @@
+public table AbcIdeTransMensual {
+    t24: ABC.IDE.TRANS.MENSUAL
+    fields:{
+        Moneda(ABC.ITM.MONEDA) = 1
+        CodTrans(ABC.ITM.COD.TRANS) = 2
+        NoTrans(ABC.ITM.NO.TRANS) = 3
+        MtoTrans(ABC.ITM.MTO.TRANS) = 4
+        CodTransLn(ABC.ITM.COD.TRANS.LN) = 5
+        MtoTransLn(ABC.ITM.MTO.TRANS.LN) = 6
+        FolTransLn(ABC.ITM.FOL.TRANS.LN) = 7
+        IdeTransLn(ABC.ITM.IDE.TRANS.LN) = 8
+        FecTransLn(ABC.ITM.FEC.TRANS.LN) = 9
+        MovDep(ABC.ITM.MOV.DEP) = 10
+
+        Reservado10(ABC.ITM.RESERVADO.10) = 11
+        Reservado9(ABC.ITM.RESERVADO.09) = 12
+        Reservado8(ABC.ITM.RESERVADO.08) = 13
+        Reservado7(ABC.ITM.RESERVADO.07) = 14
+        Reservado6(ABC.ITM.RESERVADO.06) = 15
+        Reservado5(ABC.ITM.RESERVADO.05) = 16
+        Reservado4(ABC.ITM.RESERVADO.04) = 17
+        Reservado3(ABC.ITM.RESERVADO.03) = 18
+        Reservado2(ABC.ITM.RESERVADO.02) = 19
+        Reservado1(ABC.ITM.RESERVADO.01) = 20
+
+        LocalRef(ABC.ITM.LOCAL.REF) = 21
+        Override(ABC.ITM.OVERRIDE) = 22
+        RecordStatus(ABC.ITM.RECORD.STATUS) = 23
+        CurrNo(ABC.ITM.CURR.NO) = 24
+        Inputter(ABC.ITM.INPUTTER) = 25
+        DateTime(ABC.ITM.DATE.TIME) = 26
+        Authoriser(ABC.ITM.AUTHORISER) = 27
+        CoCode(ABC.ITM.CO.CODE) = 28
+        DeptCode(ABC.ITM.DEPT.CODE) = 29
+        AuditorCode(ABC.ITM.AUDITOR.CODE) = 30
+        AuditDateTime(ABC.ITM.AUDIT.DATE.TIME) = 31
+    }
+}
+

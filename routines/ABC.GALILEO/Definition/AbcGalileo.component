@@ -1,0 +1,117 @@
+component AbcGalileo
+# Component Isolation Definition
+metamodelVersion 1.6
+
+private method Abc2brSetTodayLocked (
+)
+{
+    jBC: ABC.2BR.SET.TODAY.LOCKED
+}
+
+private method AbcCalcCambioAcLckd (
+)
+{
+    jBC: ABC.CALC.CAMBIO.AC.LCKD
+}
+
+private method Abc2brShowAtmBal (
+)
+{
+    jBC: ABC.2BR.SHOW.ATM.BAL
+}
+
+private method Abc2brShowAtmBalLock (
+)
+{
+    jBC: ABC.2BR.SHOW.ATM.BAL.LOCK
+}
+
+private method AbcCalcTipoCambio (
+)
+{
+    jBC: ABC.CALC.TIPO.CAMBIO
+}
+
+private method AbcCalcCambioAclkAtm (
+)
+{
+    jBC: ABC.CALC.CAMBIO.ACLK.ATM
+}
+
+private method AbcCheckRtnGeneFt (
+)
+{
+    jBC: ABC.CHECK.RTN.GENE.FT
+}
+
+private method AbcCheckAuhtidAclk (
+)
+{
+    jBC: ABC.CHECK.AUHTID.ACLK
+}
+
+private method AbcEmailBonificacionMkt (
+)
+{
+    jBC: ABC.EMAIL.BONIFICACION.MKT
+}
+
+private method AbcEnvEmailPos (
+)
+{
+    jBC: ABC.ENV.EMAIL.POS
+}
+
+private method AbcEnvEmailAtmAtm (
+)
+{
+    jBC: ABC.ENV.EMAIL.ATM.ATM
+}
+
+private method AbcEnvEmailPosRev (
+)
+{
+    jBC: ABC.ENV.EMAIL.POS.REV
+}
+
+private method AbcReversaAuthId (
+)
+{
+    jBC: ABC.REVERSA.AUTH.ID
+}
+
+private method AbcStoreInfoRevEmail (
+)
+{
+    jBC: ABC.STORE.INFO.REV.EMAIL
+}
+
+private method AbcValidaAuthidAclk (
+)
+{
+    jBC: ABC.VALIDA.AUTHID.ACLK
+}
+
+private method AbcUpdateAuthidAclk (
+)
+{
+    jBC: ABC.UPDATE.AUTHID.ACLK
+}
+
+private method BaAcLockBalCheck (
+)
+{
+    jBC: BA.AC.LOCK.BAL.CHECK
+}
+
+private method BamAcctErrAtm (
+)
+{
+    jBC: BAM.ACCT.ERR.ATM
+}
+
+private method AbcTpvAjusteCierre (
+)
+{
+    jBC: ABC.TPV.AJUSTE.CIERRE
+}

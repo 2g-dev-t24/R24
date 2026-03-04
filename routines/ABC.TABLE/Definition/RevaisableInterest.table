@@ -1,0 +1,21 @@
+public table RevaisableInterest {
+    t24: REVAISABLE.INTEREST
+    fields:{
+        InterestRate(ABC.RI.INTEREST.RATE)              = 1
+        NegIntRate(ABC.RI.NEG.INT.RATE)                 = 2
+        Reserved5(ABC.RI.RESERVED.5)                    = 3
+        Reserved4(ABC.RI.RESERVED.4)                    = 4
+        Reserved3(ABC.RI.RESERVED.3)                    = 5
+        Reserved2(ABC.RI.RESERVED.2)                    = 6
+        Reserved1(ABC.RI.RESERVED.1)                    = 7
+        RecordStatus(ABC.RI.RECORD.STATUS)              = 8
+        CurrNo(ABC.RI.CURR.NO)                          = 9
+        Inputter(ABC.RI.INPUTTER)                       = 10
+        DateTime(ABC.RI.DATE.TIME)                      = 11
+        Authoriser(ABC.RI.AUTHORISER)                   = 12
+        CoCode(ABC.RI.CO.CODE)                          = 13
+        DeptCode(ABC.RI.DEPT.CODE)                      = 14
+        AuditorCode(ABC.RI.AUDITOR.CODE)                = 15
+        AuditDateTime(ABC.RI.AUDIT.DATE.TIME)           = 16
+    }
+}

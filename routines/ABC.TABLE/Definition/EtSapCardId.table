@@ -1,0 +1,7 @@
+public table EtSapCardId {
+    t24: ET.SAP.CARD.ID
+    fields:{
+        Descripcion(ESCI.ID.ET.SAP) = 1
+
+    }
+}

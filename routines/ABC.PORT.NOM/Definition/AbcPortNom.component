@@ -1,0 +1,30 @@
+component AbcPortNom
+
+# Component Isolation Definition
+metamodelVersion 1.6
+
+
+
+
+private method AbcClabePn (
+)
+{
+    jBC: ABC.CLABE.PN
+}
+
+
+
+private method AbcCuentaPn (
+)
+{
+    jBC: ABC.CUENTA.PN
+}
+
+
+
+private method AbcDatosPn (
+)
+{
+    jBC: ABC.DATOS.PN
+}
+

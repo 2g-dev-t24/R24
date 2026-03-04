@@ -1,0 +1,24 @@
+public table AbcCapturaInflacion {
+    t24: ABC.CAPTURA.INFLACION
+    fields:{
+        Inflacion(ABC.INF.INFLACION) = 1
+        UltModif(ABC.INF.ULT.MODIF)  = 2
+
+        Reserved5(ABC.INF.RESERVED.5)              = 3
+        Reserved4(ABC.INF.RESERVED.4)              = 4
+        Reserved3(ABC.INF.RESERVED.3)              = 5
+        Reserved2(ABC.INF.RESERVED.2)              = 6
+        Reserved1(ABC.INF.RESERVED.1)              = 7
+
+        RecordStatus(ABC.INF.RECORD.STATUS)        = 8
+        CurrNo(ABC.INF.CURR.NO)                    = 9
+        Inputter(ABC.INF.INPUTTER)                 = 10
+        DateTime(ABC.INF.DATE.TIME)                = 11
+        Authoriser(ABC.INF.AUTHORISER)             = 12
+        CoCode(ABC.INF.CO.CODE)                    = 13
+        DeptCode(ABC.INF.DEPT.CODE)                = 14
+        AuditorCode(ABC.INF.AUDITOR.CODE)          = 15
+        AuditDateTime(ABC.INF.AUDIT.DATE.TIME)     = 16
+        LocalRef(ABC.INF.LOCAL.REF)                 = 17
+    }
+}

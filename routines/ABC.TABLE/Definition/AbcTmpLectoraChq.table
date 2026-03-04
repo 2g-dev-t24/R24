@@ -1,0 +1,28 @@
+public table AbcTmpLectoraChq {
+    t24: ABC.TMP.LECTORA.CHQ
+    fields:{
+        CadenaChq(TMP.LEC.CADENA.CHQ)                       = 1
+        NameImAnv(TMP.LEC.NAME.IM.ANV)                      = 2
+        NameImRev(TMP.LEC.NAME.IM.REV)                      = 3
+        ContadorChq(TMP.LEC.CONTADOR.CHQ)                   = 4
+        Reserved10(TMP.LEC.RESERVED.10)                     = 5
+        Reserved9(TMP.LEC.RESERVED.9)                       = 6
+        Reserved8(TMP.LEC.RESERVED.8)                       = 7
+        Reserved7(TMP.LEC.RESERVED.7)                       = 8
+        Reserved6(TMP.LEC.RESERVED.6)                       = 9
+        Reserved5(TMP.LEC.RESERVED.5)                       = 10
+        Reserved4(TMP.LEC.RESERVED.4)                       = 11
+        Reserved3(TMP.LEC.RESERVED.3)                       = 12
+        Reserved2(TMP.LEC.RESERVED.2)                       = 13
+        Reserved1(TMP.LEC.RESERVED.1)                       = 14
+        RecordStatus(TMP.LEC.RECORD.STATUS)                 = 15
+        CurrNo(TMP.LEC.CURR.NO)                             = 16
+        Inputter(TMP.LEC.INPUTTER)                          = 17
+        DateTime(TMP.LEC.DATE.TIME)                         = 18
+        Authoriser(TMP.LEC.AUTHORISER)                      = 19
+        CoCode(TMP.LEC.CO.CODE)                             = 20
+        DeptCode(TMP.LEC.DEPT.CODE)                         = 21
+        AuditorCode(TMP.LEC.AUDITOR.CODE)                   = 22
+        AuditDateTime(TMP.LEC.AUDIT.DATE.TIME)              = 23
+    }
+}

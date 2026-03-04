@@ -1,0 +1,44 @@
+$PACKAGE AbcCob
+SUBROUTINE ABC.CAL.SDO.NETO.SELECT
+
+    $USING EB.DataAccess
+    $USING EB.SystemTables
+    $USING EB.Service
+    $USING AC.AccountOpening
+    $USING AbcGetGeneralParam
+    
+    GOSUB OBTIENE.PARAMETRIZACION
+    GOSUB SELECCIONA
+
+RETURN
+
+************************
+OBTIENE.PARAMETRIZACION:
+************************
+
+    Y.ID.GEN.PARAM = 'ABC.IPAB.SDO.NETO'
+    Y.LIST.PARAMS = ''
+    Y.LIST.VALUES = ''
+    AbcGetGeneralParam.AbcGetGeneralParam(Y.ID.GEN.PARAM, Y.LIST.PARAMS, Y.LIST.VALUES)
+
+    CHANGE @FM TO ' ' IN Y.LIST.VALUES
+
+    Y.CATEGORIAS = Y.LIST.VALUES
+
+RETURN
+
+***********
+SELECCIONA:
+***********
+
+    FN.ACCOUNT = AbcCob.getFnAccount()
+    SELECT.STATEMENT  = "SELECT ":FN.ACCOUNT:" WITH (CATEGORY EQ ":Y.CATEGORIAS:")"
+    CUSTOMER.LIST = ''; LIST.NAME = '': SELECTED = ''; SYSTEM.RETURN.CODE = ''
+
+    EB.DataAccess.Readlist(SELECT.STATEMENT,CUSTOMER.LIST,LIST.NAME,SELECTED,SYSTEM.RETURN.CODE)
+
+    EB.Service.BatchBuildList('',CUSTOMER.LIST)
+
+RETURN
+
+END

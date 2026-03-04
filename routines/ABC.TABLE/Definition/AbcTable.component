@@ -1,0 +1,1811 @@
+component AbcTable
+
+# Component Isolation Definition
+metamodelVersion 1.6
+# -------------------------------------------------
+private method AbcParamDaysInactivityLog ()
+{
+    jBC: ABC.PARAM.DAYS.INACTIVITY.LOG
+}
+
+private method AbcParamDaysInactivityLogFields ()
+{
+    jBC: ABC.PARAM.DAYS.INACTIVITY.LOG.FIELDS
+}
+# -------------------------------------------------
+private method AbcChangeGroup ()
+{
+    jBC: ABC.CHANGE.GROUP
+}
+
+private method AbcChangeGroupFields ()
+{
+    jBC: ABC.CHANGE.GROUP.FIELDS
+}
+# -------------------------------------------------
+private method AbcParametrosSpei ()
+{
+    jBC: ABC.PARAMETROS.SPEI
+}
+
+private method AbcParametrosSpeiFields ()
+{
+    jBC: ABC.PARAMETROS.SPEI.FIELDS
+}
+# -------------------------------------------------
+private method AbcTarjetaCredUala ()
+{
+    jBC: ABC.TARJETA.CRED.UALA
+}
+
+private method AbcTarjetaCredUalaFields ()
+{
+    jBC: ABC.TARJETA.CRED.UALA.FIELDS
+}
+# -------------------------------------------------
+private method EtSapCardId ()
+{
+    jBC: ET.SAP.CARD.ID
+}
+
+private method EtSapCardIdFields ()
+{
+    jBC: ET.SAP.CARD.ID.FIELDS
+}
+
+# -------------------------------------------------
+private method AbcTtArqueo ()
+{
+    jBC: ABC.TT.ARQUEO
+}
+
+private method AbcTtArqueoFields ()
+{
+    jBC: ABC.TT.ARQUEO.FIELDS
+}
+
+# -------------------------------------------------
+private method AbcActividadEconomica ()
+{
+    jBC: ABC.ACTIVIDAD.ECONOMICA
+}
+
+private method AbcActividadEconomicaFields ()
+{
+    jBC: ABC.ACTIVIDAD.ECONOMICA.FIELDS
+}
+
+# -------------------------------------------------
+private method SectorEconomico ()
+{
+    jBC: SECTOR.ECONOMICO
+}
+
+private method SectorEconomicoFields ()
+{
+    jBC: SECTOR.ECONOMICO.FIELDS
+}
+
+# -------------------------------------------------
+private method AbcAtm ()
+{
+    jBC: ABC.ATM
+}
+
+private method AbcAtmFields ()
+{
+    jBC: ABC.ATM.FIELDS
+}
+
+# -------------------------------------------------
+
+private method AbcBonificacionCashIn ()
+{
+    jBC: ABC.BONIFICACION.CASH.IN
+}
+
+private method AbcBonificacionCashInFields ()
+{
+    jBC: ABC.BONIFICACION.CASH.IN.FIELDS
+}
+
+# -------------------------------------------------
+private method AbcCausaBaja ()
+{
+    jBC: ABC.CAUSA.BAJA
+}
+
+private method AbcCausaBajaFields ()
+{
+    jBC: ABC.CAUSA.BAJA.FIELDS
+}
+
+
+# -------------------------------------------------
+private method AbcComisionistas ()
+{
+    jBC: ABC.COMISIONISTAS
+}
+
+private method AbcComisionistasFields ()
+{
+    jBC: ABC.COMISIONISTAS.FIELDS
+}
+
+
+
+# -------------------------------------------------
+private method AbcComisionistasAdmin ()
+{
+    jBC: ABC.COMISIONISTAS.ADMIN
+}
+
+private method AbcComisionistasAdminFields ()
+{
+    jBC: ABC.COMISIONISTAS.ADMIN.FIELDS
+}
+
+
+
+# -------------------------------------------------
+private method AbcComisionistasFileConcat ()
+{
+    jBC: ABC.COMISIONISTAS.FILE.CONCAT
+}
+
+private method AbcComisionistasFileConcatFields ()
+{
+    jBC: ABC.COMISIONISTAS.FILE.CONCAT.FIELDS
+}
+
+
+
+# -------------------------------------------------
+private method AbcComisionistasFileDetail ()
+{
+    jBC: ABC.COMISIONISTAS.FILE.DETAIL
+}
+
+private method AbcComisionistasFileDetailFields ()
+{
+    jBC: ABC.COMISIONISTAS.FILE.DETAIL.FIELDS
+}
+
+
+# -------------------------------------------------
+
+private method AbcComisionistasRelacion ()
+{
+    jBC: ABC.COMISIONISTAS.RELACION
+}
+
+private method AbcComisionistasRelacionFields ()
+{
+    jBC: ABC.COMISIONISTAS.RELACION.FIELDS
+}
+
+
+
+# -------------------------------------------------
+private method AbcFirmanteContrato ()
+{
+    jBC: ABC.FIRMANTE.CONTRATO
+}
+
+private method AbcFirmanteContratoFields ()
+{
+    jBC: ABC.FIRMANTE.CONTRATO.FIELDS
+}
+
+# -------------------------------------------------
+private method AbcGeneralParam ()
+{
+    jBC: ABC.GENERAL.PARAM
+}
+
+private method AbcGeneralParamFields ()
+{
+    jBC: ABC.GENERAL.PARAM.FIELDS
+}
+
+# -------------------------------------------------
+private method AbcRegistroComisionistas ()
+{
+    jBC: ABC.REGISTRO.COMISIONISTAS
+}
+
+private method AbcRegistroComisionistasFields ()
+{
+    jBC: ABC.REGISTRO.COMISIONISTAS.FIELDS
+}
+
+# -------------------------------------------------
+
+private method AbcUploadFileConcat ()
+{
+    jBC: ABC.UPLOAD.FILE.CONCAT
+}
+
+private method AbcUploadFileConcatFields ()
+{
+    jBC: ABC.UPLOAD.FILE.CONCAT.FIELDS
+}
+
+
+# -------------------------------------------------
+private method AbcUploadFileDetail ()
+{
+    jBC: ABC.UPLOAD.FILE.DETAIL
+}
+
+private method AbcUploadFileDetailFields ()
+{
+    jBC: ABC.UPLOAD.FILE.DETAIL.FIELDS
+}
+
+# -------------------------------------------------
+private method AbcUploadFileParam ()
+{
+    jBC: ABC.UPLOAD.FILE.PARAM
+}
+
+private method AbcUploadFileParamFields ()
+{
+    jBC: ABC.UPLOAD.FILE.PARAM.FIELDS
+}
+
+# -------------------------------------------------
+private method AbcComisionistasEstabl ()
+{
+    jBC: ABC.COMISIONISTAS.ESTABL
+}
+
+private method AbcComisionistasEstablFields ()
+{
+    jBC: ABC.COMISIONISTAS.ESTABL.FIELDS
+}
+
+
+# -------------------------------------------------
+
+
+
+private method AbcComisionistasFileLayout ()
+{
+    jBC: ABC.COMISIONISTAS.FILE.LAYOUT
+}
+
+private method AbcComisionistasFileLayoutFields ()
+{
+    jBC: ABC.COMISIONISTAS.FILE.LAYOUT.FIELDS
+}
+
+# -------------------------------------------------
+private method AbcComisionistasFileParam ()
+{
+    jBC: ABC.COMISIONISTAS.FILE.PARAM
+}
+
+private method AbcComisionistasFileParamFields()
+{
+    jBC: ABC.COMISIONISTAS.FILE.PARAM.FIELDS
+}
+
+private method AbcComisionistasFileParamValidate()
+{
+    jBC: ABC.COMISIONISTAS.FILE.PARAM.VALIDATE
+}
+
+# -------------------------------------------------
+
+
+
+private method AbcVecCusAcc ()
+{
+    jBC: ABC.VEC.CUS.ACC
+}
+
+private method AbcVecCusAccFields ()
+{
+    jBC: ABC.VEC.CUS.ACC.FIELDS
+}
+# -------------------------------------------------
+
+
+
+private method AbcGeneralMapping ()
+{
+    jBC: ABC.GENERAL.MAPPING
+}
+
+private method AbcGeneralMappingFields ()
+{
+    jBC: ABC.GENERAL.MAPPING.FIELDS
+}
+
+# -------------------------------------------------
+
+
+# -------------------------------------------------
+
+
+
+private method AbcCodigoPostal ()
+{
+    jBC: ABC.CODIGO.POSTAL
+}
+
+private method AbcCodigoPostalFields ()
+{
+    jBC: ABC.CODIGO.POSTAL.FIELDS
+}
+
+
+# -------------------------------------------------
+
+
+
+private method AbcCiudad ()
+{
+    jBC: ABC.CIUDAD
+}
+
+private method AbcCiudadFields ()
+{
+    jBC: ABC.CIUDAD.FIELDS
+}
+
+
+# -------------------------------------------------
+
+private method AbcCanal ()
+{
+    jBC: ABC.CANAL
+}
+
+private method AbcCanalFields ()
+{
+    jBC: ABC.CANAL.FIELDS
+}
+
+private method AbcMunicipio (
+)
+{
+    jBC: ABC.MUNICIPIO
+}
+
+
+
+private method AbcMunicipioFields (
+)
+{
+    jBC: ABC.MUNICIPIO.FIELDS
+}
+
+private method AbcColonia (
+)
+{
+    jBC: ABC.COLONIA
+}
+
+private method AbcColoniaFields (
+)
+{
+    jBC: ABC.COLONIA.FIELDS
+}
+
+private method AbcBaOccamMastCodeTemp (
+)
+{
+    jBC: ABC.BA.OCCAM.MAST.CODE.TEMP
+}
+
+private method AbcBaOccamMastCodeTempFields (
+)
+{
+    jBC: ABC.BA.OCCAM.MAST.CODE.TEMP.FIELDS
+}
+
+private method AbcEstado (
+)
+{
+    jBC: ABC.ESTADO
+}
+
+private method AbcEstadoFields (
+)
+{
+    jBC: ABC.ESTADO.FIELDS
+}
+
+
+
+private method AbcBancos (
+)
+{
+    jBC: ABC.BANCOS
+}
+
+
+
+private method AbcBancosFields (
+)
+{
+    jBC: ABC.BANCOS.FIELDS
+}
+
+
+private method AbcAaBulkAuthorise (){
+    jBC: ABC.AA.BULK.AUTHORISE
+}
+private method AbcAaBulkAuthoriseFields (){
+    jBC: ABC.AA.BULK.AUTHORISE.FIELDS
+}
+
+private method AbcClubInvierteParam (){
+    jBC: ABC.CLUB.INVIERTE.PARAM
+}
+private method AbcClubInvierteParamFields (){
+    jBC: ABC.CLUB.INVIERTE.PARAM.FIELDS
+}
+
+private method AbcActividadComisionista (){
+    jBC: ABC.ACTIVIDAD.COMISIONISTA
+}
+private method AbcActividadComisionistaFields (){
+    jBC: ABC.ACTIVIDAD.COMISIONISTA.FIELDS
+}
+
+private method AbcAccCfdiInfo (
+)
+{
+    jBC: ABC.ACC.CFDI.INFO
+}
+
+
+
+private method AbcAccCfdiInfoFields (
+)
+{
+    jBC: ABC.ACC.CFDI.INFO.FIELDS
+}
+
+
+
+private method AbcLocalidades (
+)
+{
+    jBC: ABC.LOCALIDADES
+}
+
+
+
+private method AbcLocalidadesFields (
+)
+{
+    jBC: ABC.LOCALIDADES.FIELDS
+}
+
+
+private method BaEmpleadosNomina (
+)
+{
+    jBC: BA.EMPLEADOS.NOMINA
+}
+
+
+private method BaEmpleadosNominaFields (
+)
+{
+    jBC: BA.EMPLEADOS.NOMINA.FIELDS
+}
+
+
+private method AbcValidacionBiometricos (
+)
+{
+    jBC: ABC.VALIDACION.BIOMETRICOS
+}
+
+
+
+private method AbcValidacionBiometricosFields (
+)
+{
+    jBC: ABC.VALIDACION.BIOMETRICOS.FIELDS
+}
+
+
+private method AbcClubInvstAccount (
+)
+{
+    jBC: ABC.CLUB.INVST.ACCOUNT
+}
+
+
+private method AbcClubInvstAccountFields (
+)
+{
+    jBC: ABC.CLUB.INVST.ACCOUNT.FIELDS
+}
+
+private method AbcCompraInstrumento (
+)
+{
+    jBC: ABC.COMPRA.INSTRUMENTO
+}
+
+
+
+private method AbcCompraInstrumentoFields (
+)
+{
+    jBC: ABC.COMPRA.INSTRUMENTO.FIELDS
+}
+
+private method AbcCustomerFisNv4Api (
+)
+{
+    jBC: ABC.CUSTOMER.FIS.NV4.API
+}
+
+
+
+private method AbcCustomerFisNv4ApiFields (
+)
+{
+    jBC: ABC.CUSTOMER.FIS.NV4.API.FIELDS
+}
+
+
+
+private method AbcCustomerAbcAltaDigitalApi (
+)
+{
+    jBC: ABC.CUSTOMER.ABC.ALTA.DIGITAL.API
+}
+
+
+
+private method AbcCustomerAbcAltaDigitalApiFields (
+)
+{
+    jBC: ABC.CUSTOMER.ABC.ALTA.DIGITAL.API.FIELDS
+}
+
+
+
+private method AbcRelacionClientes (
+)
+{
+    jBC: ABC.RELACION.CLIENTES
+}
+
+
+
+private method AbcRelacionClientesFields (
+)
+{
+    jBC: ABC.RELACION.CLIENTES.FIELDS
+}
+
+
+private method AbcCnbvGrpEconomico (
+)
+{
+    jBC: ABC.CNBV.GRP.ECONOMICO
+}
+
+
+
+private method AbcCnbvGrpEconomicoFields (
+)
+{
+    jBC: ABC.CNBV.GRP.ECONOMICO.FIELDS
+}
+
+private method AbcParamMtosSpei ()
+{
+    jBC: ABC.PARAM.MTOS.SPEI
+}
+
+private method AbcParamMtosSpeiFields ()
+{
+    jBC: ABC.PARAM.MTOS.SPEI.FIELDS
+}
+
+private method AbcParamMtosSpeiId ()
+{
+    jBC: ABC.PARAM.MTOS.SPEI.ID
+}
+
+
+private method AbcCtasAutorizadasFields ()
+{
+    jBC: ABC.CTAS.AUTORIZADAS.FIELDS
+}
+
+private method AbcCtasAutorizadas ()
+{
+    jBC: ABC.CTAS.AUTORIZADAS
+}
+
+private method AbcParametrosBanxicoFields ()
+{
+    jBC: ABC.PARAMETROS.BANXICO.FIELDS
+}
+
+private method AbcParametrosBanxico ()
+{
+    jBC: ABC.PARAMETROS.BANXICO
+}
+
+private method AbcCuentasDestinoFields ()
+{
+    jBC: ABC.CUENTAS.DESTINO.FIELDS
+}
+
+private method AbcCuentasDestino ()
+{
+    jBC: ABC.CUENTAS.DESTINO
+}
+
+private method Abc2brCtlgOpRemesasFields ()
+{
+    jBC: ABC.2BR.CTLG.OP.REMESAS.FIELDS
+}
+
+private method Abc2brCtlgOpRemesas ()
+{
+    jBC: ABC.2BR.CTLG.OP.REMESAS
+}
+
+private method AbcMoDeCeFields ()
+{
+    jBC: ABC.MO.DE.CE.FIELDS
+}
+
+private method AbcMoDeCe ()
+{
+    jBC: ABC.MO.DE.CE
+}
+
+
+private method AbcCuentaL4Api (
+)
+{
+    jBC: ABC.CUENTA.L4.API
+}
+
+
+
+private method AbcCuentaL4ApiFields (
+)
+{
+    jBC: ABC.CUENTA.L4.API.FIELDS
+}
+
+private method AbcSmsEmailEnviarFields ()
+{
+    jBC: ABC.SMS.EMAIL.ENVIAR.FIELDS
+}
+
+private method AbcSmsEmailEnviar ()
+{
+    jBC: ABC.SMS.EMAIL.ENVIAR
+}
+
+private method AbcMovsCtaComisionistaFields ()
+{
+    jBC: ABC.MOVS.CTA.COMISIONISTA.FIELDS
+}
+
+private method AbcMovsCtaComisionista ()
+{
+    jBC: ABC.MOVS.CTA.COMISIONISTA
+}
+
+private method AbcMovsCtaNivel2Fields ()
+{
+    jBC:ABC.MOVS.CTA.NIVEL2.FIELDS
+}
+
+private method AbcMovsCtaNivel2 ()
+{
+    jBC: ABC.MOVS.CTA.NIVEL2
+}
+
+private method AbcNivelCuentaFields ()
+{
+    jBC: ABC.NIVEL.CUENTA.FIELDS
+}
+
+private method AbcNivelCuenta ()
+{
+    jBC: ABC.NIVEL.CUENTA
+}
+
+private method AbcLFtTxnDetailFields ()
+{
+    jBC: ABC.L.FT.TXN.DETAIL.FIELDS
+}
+
+private method AbcLFtTxnDetail ()
+{
+    jBC: ABC.L.FT.TXN.DETAIL
+}
+
+private method AbcUdisConcat ()
+{
+    jBC: ABC.UDIS.CONCAT
+}
+
+private method AbcUdisConcatFields ()
+{
+    jBC: ABC.UDIS.CONCAT.FIELDS
+}
+
+private method AbcUdisConcatHis ()
+{
+    jBC: ABC.UDIS.CONCAT.HIS
+}
+
+private method AbcUdisConcatHisFields ()
+{
+    jBC: ABC.UDIS.CONCAT.HIS.FIELDS
+}
+
+
+
+private method AbcParamProceso (
+)
+{
+    jBC: ABC.PARAM.PROCESO
+}
+
+
+
+private method AbcParamProcesoFields (
+)
+{
+    jBC: ABC.PARAM.PROCESO.FIELDS
+}
+
+
+
+private method AbcParamProcesoValidate (
+)
+{
+    jBC: ABC.PARAM.PROCESO.VALIDATE
+}
+
+private method AbcEmailSmsParameter (
+)
+{
+    jBC: ABC.EMAIL.SMS.PARAMETER
+}
+
+
+
+private method AbcEmailSmsParameterFields (
+)
+{
+    jBC: ABC.EMAIL.SMS.PARAMETER.FIELDS
+}
+
+private method AbcSmsEmailToSend (
+)
+{
+    jBC: ABC.SMS.EMAIL.TO.SEND
+}
+
+
+
+private method AbcSmsEmailToSendFields (
+)
+{
+    jBC: ABC.SMS.EMAIL.TO.SEND.FIELDS
+}
+
+private method AbcBancIntImp (
+)
+{
+    jBC: ABC.BANC.INT.IMP
+}
+
+
+
+private method AbcBancIntImpFields (
+)
+{
+    jBC: ABC.BANC.INT.IMP.FIELDS
+}
+
+private method AbcOperacionesContratadas (
+)
+{
+    jBC: ABC.OPERACIONES.CONTRATADAS
+}
+
+
+
+private method AbcOperacionesContratadasFields (
+)
+{
+    jBC: ABC.OPERACIONES.CONTRATADAS.FIELDS
+}
+
+
+
+private method AbcAcctLclFlds (
+)
+{
+    jBC: ABC.ACCT.LCL.FLDS
+}
+
+
+
+private method AbcAcctLclFldsFields (
+)
+{
+    jBC: ABC.ACCT.LCL.FLDS.FIELDS
+}
+
+
+
+private method AbcTarjetasMc (
+)
+{
+    jBC: ABC.TARJETAS.MC
+}
+
+
+
+private method AbcTarjetasMcFields (
+)
+{
+    jBC: ABC.TARJETAS.MC.FIELDS
+}
+
+
+
+private method AbcProductosGalileo (
+)
+{
+    jBC: ABC.PRODUCTOS.GALILEO
+}
+
+
+
+private method AbcProductosGalileoFields (
+)
+{
+    jBC: ABC.PRODUCTOS.GALILEO.FIELDS
+}
+
+
+
+private method AbcMontoMensual (
+)
+{
+    jBC: ABC.MONTO.MENSUAL
+}
+
+
+
+private method AbcMontoMensualFields (
+)
+{
+    jBC: ABC.MONTO.MENSUAL.FIELDS
+}
+
+
+
+private method AbcOcupacion (
+)
+{
+    jBC: ABC.OCUPACION
+}
+
+
+
+private method AbcOcupacionFields (
+)
+{
+    jBC: ABC.OCUPACION.FIELDS
+}
+
+
+
+private method AbcCatagRangos (
+)
+{
+    jBC: ABC.CATAG.RANGOS
+}
+
+
+
+private method AbcCatagRangosFields (
+)
+{
+    jBC: ABC.CATAG.RANGOS.FIELDS
+}
+
+
+
+private method AbcPromEnlace (
+)
+{
+    jBC: ABC.PROM.ENLACE
+}
+
+
+
+private method AbcPromEnlaceFields (
+)
+{
+    jBC: ABC.PROM.ENLACE.FIELDS
+}
+
+private method AbcConcatGalileo (
+)
+{
+    jBC: ABC.CONCAT.GALILEO
+}
+
+
+
+private method AbcConcatGalileoFields (
+)
+{
+    jBC: ABC.CONCAT.GALILEO.FIELDS
+}
+
+
+
+private method AbcTempGeneFt (
+)
+{
+    jBC: ABC.TEMP.GENE.FT
+}
+
+
+
+private method AbcTempGeneFtFields (
+)
+{
+    jBC: ABC.TEMP.GENE.FT.FIELDS
+}
+
+
+
+private method AbcTempGeneFtId (
+)
+{
+    jBC: ABC.TEMP.GENE.FT.ID
+}
+
+private method AbcTempGeneFtAuthorise (
+)
+{
+    jBC: ABC.TEMP.GENE.FT.AUTHORISE
+}
+
+
+private method Abc2brBovedas (
+)
+{
+    jBC: ABC.2BR.BOVEDAS
+}
+
+
+private method Abc2brBovedasFields (
+)
+{
+    jBC: ABC.2BR.BOVEDAS.FIELDS
+
+}
+
+
+
+private method Abc2brLimitesCaja (
+)
+{
+    jBC: ABC.2BR.LIMITES.CAJA
+}
+
+
+private method Abc2brLimitesCajaFields (
+)
+{
+    jBC: ABC.2BR.LIMITES.CAJA.FIELDS
+
+}
+
+
+private method AbcAcctLclFldsId (
+)
+{
+    jBC: ABC.ACCT.LCL.FLDS.ID
+}
+
+private method AbcDc (
+)
+{
+    jBC: ABC.DC
+}
+
+
+private method AbcDcFields (
+)
+{
+    jBC: ABC.DC.FIELDS
+
+}
+
+private method BaAcFolios (
+)
+{
+    jBC: BA.AC.FOLIOS
+}
+
+
+private method BaAcFoliosFields (
+)
+{
+    jBC: BA.AC.FOLIOS.FIELDS
+
+}
+
+private method BaAcSucursales (
+)
+{
+    jBC: BA.AC.SUCURSALES
+}
+
+
+private method BaAcSucursalesFields (
+)
+{
+    jBC: BA.AC.SUCURSALES.FIELDS
+
+}
+
+private method PbsDcStatus (
+)
+{
+    jBC: PBS.DC.STATUS
+}
+
+
+private method PbsDcStatusFields (
+)
+{
+    jBC: PBS.DC.STATUS.FIELDS
+
+}
+
+private method BaAcProductos (
+)
+{
+    jBC: BA.AC.PRODUCTOS
+}
+
+
+private method BaAcProductosFields (
+)
+{
+    jBC: BA.AC.PRODUCTOS.FIELDS
+
+}
+
+private method AbcPendientesGalileo (
+)
+{
+    jBC: ABC.PENDIENTES.GALILEO
+}
+
+
+
+private method AbcPendientesGalileoFields (
+)
+{
+    jBC: ABC.PENDIENTES.GALILEO.FIELDS
+}
+
+
+private method EtSapTarjeta ()
+{
+    jBC: ET.SAP.TARJETA
+}
+
+
+private method EtSapTarjetaFields ()
+{
+    jBC: ET.SAP.TARJETA.FIELDS
+}
+
+private method EtSapPerfil ()
+{
+    jBC: ET.SAP.PERFIL
+}
+
+
+private method EtSapPerfilFields ()
+{
+    jBC: ET.SAP.PERFIL.FIELDS
+}
+
+private method EtSapProducto ()
+{
+    jBC: ET.SAP.PRODUCTO
+}
+
+private method EtSapProductoFields ()
+{
+    jBC: ET.SAP.PRODUCTO.FIELDS
+}
+
+private method EtSapSucursal ()
+{
+    jBC: ET.SAP.SUCURSAL
+}
+
+private method EtSapSucursalFields ()
+{
+    jBC: ET.SAP.SUCURSAL.FIELDS
+}
+
+private method AbcInfoFiserv (
+)
+{
+    jBC: ABC.INFO.FISERV
+}
+
+
+
+private method AbcInfoFiservFields (
+)
+{
+    jBC: ABC.INFO.FISERV.FIELDS
+}
+
+# -------------------------------------------------
+private method AbcCapturaInflacion ()
+{
+    jBC: ABC.CAPTURA.INFLACION
+}
+
+private method AbcCapturaInflacionFields ()
+{
+    jBC: ABC.CAPTURA.INFLACION.FIELDS
+}
+
+private method AbcCapturaInflacionId ()
+{
+    jBC: ABC.CAPTURA.INFLACION.ID
+}
+
+# -------------------------------------------------
+private method AbcCatComisiones ()
+{
+    jBC: ABC.CAT.COMISIONES
+}
+
+private method AbcCatComisionesFields ()
+{
+    jBC: ABC.CAT.COMISIONES.FIELDS
+}
+
+# -------------------------------------------------
+private method AbcParamContProd ()
+{
+    jBC: ABC.PARAM.CONT.PROD
+}
+
+private method AbcParamContProdFields ()
+{
+    jBC: ABC.PARAM.CONT.PROD.FIELDS
+}
+
+# -------------------------------------------------
+private method Abc2brCcMoral ()
+{
+    jBC: ABC.2BR.CC.MORAL
+}
+
+private method Abc2brCcMoralFields ()
+{
+    jBC: ABC.2BR.CC.MORAL.FIELDS
+}
+
+private method Abc2brCcMoralId ()
+{
+    jBC: ABC.2BR.CC.MORAL.ID
+}
+
+private method Abc2brCcMoralValidate ()
+{
+    jBC: ABC.2BR.CC.MORAL.VALIDATE
+}
+
+private method AbcBeneficiariosAccount (
+)
+{
+    jBC: ABC.BENEFICIARIOS.ACCOUNT
+}
+
+
+
+private method AbcBeneficiariosAccountFields (
+)
+{
+    jBC: ABC.BENEFICIARIOS.ACCOUNT.FIELDS
+}
+
+
+
+private method AbcPnCodOper (
+)
+{
+    jBC: ABC.PN.COD.OPER
+}
+
+
+
+private method AbcPnCodOperFields (
+)
+{
+    jBC: ABC.PN.COD.OPER.FIELDS
+}
+
+
+
+private method AbcPnEstatus (
+)
+{
+    jBC: ABC.PN.ESTATUS
+}
+
+
+
+private method AbcPnEstatusFields (
+)
+{
+    jBC: ABC.PN.ESTATUS.FIELDS
+}
+
+
+
+private method AbcPnCodigos (
+)
+{
+    jBC: ABC.PN.CODIGOS
+}
+
+
+
+private method AbcPnCodigosFields (
+)
+{
+    jBC: ABC.PN.CODIGOS.FIELDS
+}
+
+
+
+private method AbcPortabilidadNomina (
+)
+{
+    jBC: ABC.PORTABILIDAD.NOMINA
+}
+
+
+
+private method AbcPortabilidadNominaFields (
+)
+{
+    jBC: ABC.PORTABILIDAD.NOMINA.FIELDS
+}
+
+private method AbcTmpLectoraChq (
+)
+{
+    jBC: ABC.TMP.LECTORA.CHQ
+}
+
+private method AbcTmpLectoraChqFields (
+)
+{
+    jBC: ABC.TMP.LECTORA.CHQ.FIELDS
+}
+
+private method AbcAaPreProcess (
+)
+{
+    jBC: ABC.AA.PRE.PROCESS
+}
+
+private method AbcAaPreProcessFields (
+)
+{
+    jBC: ABC.AA.PRE.PROCESS.FIELDS
+}
+
+private method AbcAaPreProcessAuthorise (
+)
+{
+    jBC: ABC.AA.PRE.PROCESS.AUTHORISE
+}
+
+private method AbcAaPreProcessId (
+)
+{
+    jBC: ABC.AA.PRE.PROCESS.ID
+}
+
+private method AbcAaPreProcessProcess (
+)
+{
+    jBC: ABC.AA.PRE.PROCESS.PROCESS
+}
+
+private method AbcAaPreProcessRecord (
+)
+{
+    jBC: ABC.AA.PRE.PROCESS.RECORD
+}
+
+private method AbcAaPreProcessValidate (
+)
+{
+    jBC: ABC.AA.PRE.PROCESS.VALIDATE
+}
+
+private method AbcAaPreProcessList (
+)
+{
+    jBC: ABC.AA.PRE.PROCESS.LIST
+}
+
+private method AbcAaPreProcessListFields (
+)
+{
+    jBC: ABC.AA.PRE.PROCESS.LIST.FIELDS
+}
+
+private method AbcAaLPrePro (
+)
+{
+    jBC: ABC.AA.L.PRE.PRO
+}
+
+
+
+private method AbcAaLPreProFields (
+)
+{
+    jBC: ABC.AA.L.PRE.PRO.FIELDS
+}
+
+
+
+private method AbcClubAhorro (
+)
+{
+    jBC: ABC.CLUB.AHORRO
+}
+
+
+
+private method AbcClubAhorroFields (
+)
+{
+    jBC: ABC.CLUB.AHORRO.FIELDS
+}
+
+
+
+private method Abc2brCustomerGroups (
+)
+{
+    jBC: ABC.2BR.CUSTOMER.GROUPS
+}
+
+
+
+private method Abc2brCustomerGroupsFields (
+)
+{
+    jBC: ABC.2BR.CUSTOMER.GROUPS.FIELDS
+}
+
+
+
+private method Abc2lnDepositRates (
+)
+{
+    jBC: ABC.2LN.DEPOSIT.RATES
+}
+
+
+
+private method Abc2lnDepositRatesFields (
+)
+{
+    jBC: ABC.2LN.DEPOSIT.RATES.FIELDS
+}
+
+
+
+private method Abc2lnCustClassDep (
+)
+{
+    jBC: ABC.2LN.CUST.CLASS.DEP
+}
+
+
+
+private method Abc2lnCustClassDepFields (
+)
+{
+    jBC: ABC.2LN.CUST.CLASS.DEP.FIELDS
+}
+
+
+private method RevaisableInterest (
+)
+{
+    jBC: REVAISABLE.INTEREST
+}
+
+
+
+private method RevaisableInterestFields (
+)
+{
+    jBC: REVAISABLE.INTEREST.FIELDS
+}
+
+
+private method AbcBancaInternet (
+)
+{
+    jBC: ABC.BANCA.INTERNET
+}
+
+
+
+private method AbcBancaInternetFields (
+)
+{
+    jBC: ABC.BANCA.INTERNET.FIELDS
+}
+
+private method AbcBancaInternetId (
+)
+{
+    jBC: ABC.BANCA.INTERNET.ID
+}
+
+
+private method TmpRepSalOp (
+)
+{
+    jBC: TMP.REP.SAL.OP
+}
+
+private method TmpRepSalOpFields (
+)
+{
+    jBC: TMP.REP.SAL.OP.FIELDS
+}
+
+private method AbcFileExport ()
+{
+    jBC: ABC.FILE.EXPORT
+}
+
+private method AbcFileExportFields ()
+{
+    jBC: ABC.FILE.EXPORT.FIELDS
+}
+
+# -------------------------------------------------
+private method AbcFileMapping ()
+{
+    jBC: ABC.FILE.MAPPING
+}
+
+private method AbcFileMappingFields ()
+{
+    jBC: ABC.FILE.MAPPING.FIELDS
+}
+
+# -------------------------------------------------
+private method AbcSdoCompIpab ()
+{
+    jBC: ABC.SDO.COMP.IPAB
+}
+
+private method AbcSdoCompIpabFields ()
+{
+    jBC: ABC.SDO.COMP.IPAB.FIELDS
+}
+
+# -------------------------------------------------
+private method AbcSectorCnbv ()
+{
+    jBC: ABC.SECTOR.CNBV
+}
+
+private method AbcSectorCnbvFields ()
+{
+    jBC: ABC.SECTOR.CNBV.FIELDS
+}
+
+# -------------------------------------------------
+private method AbcIpabCredVenc ()
+{
+    jBC: ABC.IPAB.CRED.VENC
+}
+
+private method AbcIpabCredVencFields ()
+{
+    jBC: ABC.IPAB.CRED.VENC.FIELDS
+}
+
+# -------------------------------------------------
+private method AbcIpabParam ()
+{
+    jBC: ABC.IPAB.PARAM
+}
+
+private method AbcIpabParamFields ()
+{
+    jBC: ABC.IPAB.PARAM.FIELDS
+}
+
+# -------------------------------------------------
+
+private method AbcConcatSaldos (
+)
+{
+    jBC: ABC.CONCAT.SALDOS
+}
+
+
+
+private method AbcConcatSaldosFields (
+)
+{
+    jBC: ABC.CONCAT.SALDOS.FIELDS
+}
+
+
+
+private method AbcIpabCliCtaBen (
+)
+{
+    jBC: ABC.IPAB.CLI.CTA.BEN
+}
+
+
+
+private method AbcIpabCliCtaBenFields (
+)
+{
+    jBC: ABC.IPAB.CLI.CTA.BEN.FIELDS
+}
+
+
+
+private method AbcIpabCtaBen (
+)
+{
+    jBC: ABC.IPAB.CTA.BEN
+}
+
+
+
+private method AbcIpabCtaBenFields (
+)
+{
+    jBC: ABC.IPAB.CTA.BEN.FIELDS
+}
+
+private method AbcIdeSaldosClie ()
+{
+    jBC: ABC.IDE.SALDOS.CLIE
+}
+
+private method AbcIdeSaldosClieFields ()
+{
+    jBC: ABC.IDE.SALDOS.CLIE.FIELDS
+}
+
+private method AbcIdeSaldosClieId ()
+{
+    jBC: ABC.IDE.SALDOS.CLIE.ID
+}
+
+# -------------------------------------------------
+private method AbcIdeTransMensual ()
+{
+    jBC: ABC.IDE.TRANS.MENSUAL
+}
+
+private method AbcIdeTransMensualFields ()
+{
+    jBC: ABC.IDE.TRANS.MENSUAL.FIELDS
+}
+
+private method AbcIdeTransMensualId ()
+{
+    jBC: ABC.IDE.TRANS.MENSUAL.ID
+}
+
+# -------------------------------------------------
+private method AbcIdeParam ()
+{
+    jBC: ABC.IDE.PARAM
+}
+
+private method AbcIdeParamFields ()
+{
+    jBC: ABC.IDE.PARAM.FIELDS
+}
+
+private method AbcIdeParamId ()
+{
+    jBC: ABC.IDE.PARAM.ID
+}
+
+# -------------------------------------------------
+private method AbcRepR24Param ()
+{
+    jBC: ABC.REP.R24.PARAM
+}
+
+private method AbcRepR24ParamFields ()
+{
+    jBC: ABC.REP.R24.PARAM.FIELDS
+}
+
+# -------------------------------------------------
+
+
+
+private method AbcIdeParamRecord (
+)
+{
+    jBC: ABC.IDE.PARAM.RECORD
+}
+
+private method AbcCtasAutorizadasInt ()
+{
+    jBC: ABC.CTAS.AUTORIZADAS.INT
+}
+
+private method AbcCtasAutorizadasIntFields ()
+{
+    jBC: ABC.CTAS.AUTORIZADAS.INT.FIELDS
+}
+
+
+
+
+
+
+private method GenericExtractParamLv (
+)
+{
+    jBC: GENERIC.EXTRACT.PARAM.LV
+}
+
+
+
+private method GenericExtractParamLvFields (
+)
+{
+    jBC: GENERIC.EXTRACT.PARAM.LV.FIELDS
+}
+
+
+
+private method GenericExtractParamLvId (
+)
+{
+    jBC: GENERIC.EXTRACT.PARAM.LV.ID
+}
+
+
+
+private method GenericExtractParamLvValidate (
+)
+{
+    jBC: GENERIC.EXTRACT.PARAM.LV.VALIDATE
+}
+
+private method Abc2brBovedasId (
+)
+{
+    jBC: ABC.2BR.BOVEDAS.ID
+}
+
+
+private method AbcTmpSimulaTt ()
+{
+    jBC: ABC.TMP.SIMULA.TT
+}
+
+private method AbcTmpSimulaTtFields ()
+{
+    jBC: ABC.TMP.SIMULA.TT.FIELDS
+}
+
+private method AbcIdeTransAnualFields (
+)
+{
+    jBC: ABC.IDE.TRANS.ANUAL.FIELDS
+}
+
+
+
+private method EbRhiAcLineFilterFields (
+)
+{
+    jBC: EB.RHI.AC.LINE.FILTER.FIELDS
+}
+
+
+
+private method EbRhiAcLineFilter (
+)
+{
+    jBC: EB.RHI.AC.LINE.FILTER
+}
+
+
+
+private method EbRhiAcLineParameter (
+)
+{
+    jBC: EB.RHI.AC.LINE.PARAMETER
+}
+
+
+
+private method EbRhiAcLineParameterFields (
+)
+{ 
+    jBC: EB.RHI.AC.LINE.PARAMETER.FIELDS
+}
+
+
+
+private method AbcIdeTransAnual (
+)
+{
+    jBC: ABC.IDE.TRANS.ANUAL
+}
+
+
+private method Abc2BrEfectivo ()
+{
+    jBC: ABC.2BR.EFECTIVO
+}
+
+private method Abc2BrEfectivoFields ()
+{
+    jBC: ABC.2BR.EFECTIVO.FIELDS
+}
+
+private method Abc2BrChqProveedor ()
+{
+    jBC: ABC.2BR.CHQ.PROVEEDOR
+}
+
+private method Abc2BrChqProveedorFields ()
+{
+    jBC: ABC.2BR.CHQ.PROVEEDOR.FIELDS
+}

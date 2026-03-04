@@ -1,0 +1,32 @@
+public table AbcSdoCompIpab {
+    t24: ABC.SDO.COMP.IPAB
+    fields:{
+        CausalRevision(ABC.SDO.COM.CAUSAL.REVISION) = 1
+        SaldoNeto(ABC.SDO.COM.SALDO.NETO) = 2
+        SaldoVencido(ABC.SDO.COM.SALDO.VENCIDO) = 3
+        SaldoCompensado(ABC.SDO.COM.SALDO.COMPENSADO) = 4
+
+        Reserved10(ABC.SDO.COM.RESERVED.10) = 5
+        Reserved9(ABC.SDO.COM.RESERVED.9) = 6
+        Reserved8(ABC.SDO.COM.RESERVED.8) = 7
+        Reserved7(ABC.SDO.COM.RESERVED.7) = 8
+        Reserved6(ABC.SDO.COM.RESERVED.6) = 9
+        Reserved5(ABC.SDO.COM.RESERVED.5) = 10
+        Reserved4(ABC.SDO.COM.RESERVED.4) = 11
+        Reserved3(ABC.SDO.COM.RESERVED.3) = 12
+        Reserved2(ABC.SDO.COM.RESERVED.2) = 13
+        Reserved1(ABC.SDO.COM.RESERVED.1) = 14
+
+        LocalRef(ABC.SDO.COM.LOCAL.REF) = 15
+        Override(ABC.SDO.COM.OVERRIDE) = 16
+        RecordStatus(ABC.SDO.COM.RECORD.STATUS) = 17
+        CurrNo(ABC.SDO.COM.CURR.NO) = 18
+        Inputter(ABC.SDO.COM.INPUTTER) = 19
+        DateTime(ABC.SDO.COM.DATE.TIME) = 20
+        Authoriser(ABC.SDO.COM.AUTHORISER) = 21
+        CoCode(ABC.SDO.COM.CO.CODE) = 22
+        DeptCode(ABC.SDO.COM.DEPT.CODE) = 23
+        AuditorCode(ABC.SDO.COM.AUDITOR.CODE) = 24
+        AuditDateTime(ABC.SDO.COM.AUDIT.DATE.TIME) = 25
+    }
+}

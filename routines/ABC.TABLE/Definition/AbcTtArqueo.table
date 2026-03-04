@@ -1,0 +1,34 @@
+public table AbcTtArqueo {
+    t24: ABC.TT.ARQUEO
+    fields:{
+        Cajero(TT.ARQ.CAJERO) = 1
+        Moneda(TT.ARQ.MONEDA) = 2
+        Narrative(TT.ARQ.NARRATIVE) = 3
+        Denom(TT.ARQ.DENOM) = 4
+        Cantidad(TT.ARQ.CANTIDAD) = 5
+        CantidadFis(TT.ARQ.CANTIDAD.FIS) = 6
+        Reservado5(TT.ARQ.RESERVADO.1.5) = 7
+        Reservado4(TT.ARQ.RESERVADO.1.4) = 8
+        Reservado3(TT.ARQ.RESERVADO.1.3) = 9
+        Reservado2(TT.ARQ.RESERVADO.1.2) = 10
+        Reservado1(TT.ARQ.RESERVADO.1.1) = 11
+        Total(TT.ARQ.TOTAL) = 12
+        TotalFis(TT.ARQ.TOTAL.FIS) = 13
+        Diferencia(TT.ARQ.DIFERENCIA) = 14
+        Reserved5(TT.ARQ.RESERVED.5) = 15
+        Reserved4(TT.ARQ.RESERVED.4) = 16
+        Reserved3(TT.ARQ.RESERVED.3) = 17
+        Reserved2(TT.ARQ.RESERVED.2) = 18
+        Reserved1(TT.ARQ.RESERVED.1) = 19
+        Override(TT.ARQ.OVERRIDE) = 20
+        RecordStatus(TT.ARQ.RECORD.STATUS) = 21
+        CurrNo(TT.ARQ.CURR.NO) = 22
+        Inputter(TT.ARQ.INPUTTER) = 23
+        DateTime(TT.ARQ.DATE.TIME) = 24
+        Authoriser(TT.ARQ.AUTHORISER) = 25
+        CoCode(TT.ARQ.CO.CODE) = 26
+        DeptCode(TT.ARQ.DEPT.CODE) = 27
+        AuditorCode(TT.ARQ.AUDITOR.CODE) = 28
+        AuditDateTime(TT.ARQ.AUDIT.DATE.TIME) = 29
+    }
+}

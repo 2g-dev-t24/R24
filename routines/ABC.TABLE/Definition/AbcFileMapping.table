@@ -1,0 +1,36 @@
+public table AbcFileMapping {
+    t24: ABC.FILE.MAPPING
+    fields:{
+        
+        FieldMarker(FILE.MAPP.FIELD.MARKER)              = 1
+        MainApplication(FILE.MAPP.MAIN.APPLICATION)      = 2
+        FixedSelection(FILE.MAPP.FIXED.SELECTION)        = 3
+        FieldName(FILE.MAPP.FIELD.NAME)                  = 4
+        Operation(FILE.MAPP.OPERATION)                   = 5
+        Conversion(FILE.MAPP.CONVERSION)                 = 6
+        Show(FILE.MAPP.SHOW)                             = 7
+        
+        Reserved10(FILE.MAPP.RESERVED.10)                = 8
+        Reserved9(FILE.MAPP.RESERVED.09)                 = 9
+        Reserved8(FILE.MAPP.RESERVED.08)                 = 10
+        Reserved7(FILE.MAPP.RESERVED.07)                 = 11
+        Reserved6(FILE.MAPP.RESERVED.06)                 = 12
+        Reserved5(FILE.MAPP.RESERVED.05)                 = 13
+        Reserved4(FILE.MAPP.RESERVED.04)                 = 14
+        Reserved3(FILE.MAPP.RESERVED.03)                 = 15
+        Reserved2(FILE.MAPP.RESERVED.02)                 = 16
+        Reserved1(FILE.MAPP.RESERVED.01)                 = 17
+        
+        LocalRef(FILE.MAPP.LOCAL.REF)                    = 18
+        Override(FILE.MAPP.OVERRIDE)                     = 19
+        RecordStatus(FILE.MAPP.RECORD.STATUS)            = 20
+        CurrNo(FILE.MAPP.CURR.NO)                        = 21
+        Inputter(FILE.MAPP.INPUTTER)                     = 22
+        DateTime(FILE.MAPP.DATE.TIME)                    = 23
+        Authoriser(FILE.MAPP.AUTHORISER)                 = 24
+        CoCode(FILE.MAPP.CO.CODE)                        = 25
+        DeptCode(FILE.MAPP.DEPT.CODE)                    = 26
+        AuditorCode(FILE.MAPP.AUDITOR.CODE)              = 27
+        AuditDateTime(FILE.MAPP.AUDIT.DATE.TIME)         = 28
+    }
+}

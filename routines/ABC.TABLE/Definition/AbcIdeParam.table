@@ -1,0 +1,37 @@
+public table AbcIdeParam {
+    t24: ABC.IDE.PARAM
+    fields:{
+        Moneda(ABC.IP.MONEDA) = 1
+        MtoLimite(ABC.IP.MTO.LIMITE) = 2
+        PorcCobro(ABC.IP.PORC.COBRO) = 3
+        TransCr(ABC.IP.TRANS.CR) = 4
+        TransAb(ABC.IP.TRANS.AB) = 5
+        CuentaAb(ABC.IP.CUENTA.AB) = 6
+        CodTrans(ABC.IP.COD.TRANS) = 7
+        TipoPersona(ABC.IP.TIPO.PERSONA) = 8
+        ExcTrans(ABC.IP.EXC.TRANS) = 9
+        RepFisNom(ABC.IP.REP.FIS.NOM) = 10
+        RepFisPat(ABC.IP.REP.FIS.PAT) = 11
+        RepFisMat(ABC.IP.REP.FIS.MAT) = 12
+        RepFisRfc(ABC.IP.REP.FIS.RFC) = 13
+        RepFisCurp(ABC.IP.REP.FIS.CURP) = 14
+        RutaRep(ABC.IP.RUTA.REP) = 15
+        RutaRepXsl(ABC.IP.RUTA.REP.XSL) = 16
+        PorcCobroFec(ABC.IP.PORC.COBRO.FEC) = 17
+        PorcLimite(ABC.IP.PORC.LIMITE) = 18
+        PorcCobroHis(ABC.IP.PORC.COBRO.HIS) = 19
+
+        LocalRef(ABC.IP.LOCAL.REF) = 20
+        Override(ABC.IP.OVERRIDE) = 21
+        RecordStatus(ABC.IP.RECORD.STATUS) = 22
+        CurrNo(ABC.IP.CURR.NO) = 23
+        Inputter(ABC.IP.INPUTTER) = 24
+        DateTime(ABC.IP.DATE.TIME) = 25
+        Authoriser(ABC.IP.AUTHORISER) = 26
+        CoCode(ABC.IP.CO.CODE) = 27
+        DeptCode(ABC.IP.DEPT.CODE) = 28
+        AuditorCode(ABC.IP.AUDITOR.CODE) = 29
+        AuditDateTime(ABC.IP.AUDIT.DATE.TIME) = 30
+    }
+}
+

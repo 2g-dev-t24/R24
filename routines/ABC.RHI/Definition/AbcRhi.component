@@ -1,0 +1,184 @@
+component AbcRhi
+
+# Component Isolation Definition
+metamodelVersion 1.6
+
+# ========================================
+# PROPERTIES FOR ABC.CAL.SDO.NETO
+# ========================================
+
+public property readwrite FnAbcGeneralParam : string {
+}
+public property readwrite FAbcGeneralParam : string {
+}
+
+public property readwrite FnCategEntActivity : string {
+}
+public property readwrite FCategEntActivity : string {
+}
+
+public property readwrite FnAcctEntLworkDay : string {
+}
+public property readwrite FAcctEntLworkDay : string {
+}
+
+public property readwrite FnReConsolSpecEntKey : string {
+}
+public property readwrite FReConsolSpecEntKey : string {
+}
+
+public property readwrite FnAccountClosed : string {
+}
+public property readwrite FAccountClosed : string {
+}
+
+public property readwrite FnEbRhiAcLineFilter : string {
+}
+public property readwrite FEbRhiAcLineFilter : string {
+}
+
+public property readwrite FnEbRhiAcLineParameter : string {
+}
+public property readwrite FEbRhiAcLineParameter : string {
+}
+
+public property readwrite FnStmtEntry : string {
+}
+public property readwrite FStmtEntry : string {
+}
+
+public property readwrite FnStmtEntryDetail : string {
+}
+public property readwrite FStmtEntryDetail : string {
+}
+
+public property readwrite FnStmtEntryDetailXref : string {
+}
+public property readwrite FStmtEntryDetailXref : string {
+}
+
+public property readwrite FnCategEntry : string {
+}
+public property readwrite FCategEntry : string {
+}
+
+public property readwrite FnCategEntryDetail : string {
+}
+public property readwrite FCategEntryDetail : string {
+}
+
+public property readwrite FnReConsolSpecEntry : string {
+}
+public property readwrite FReConsolSpecEntry : string {
+}
+
+public property readwrite FnReSpecEntryDetail : string {
+}
+public property readwrite FReSpecEntryDetail : string {
+}
+
+public property readwrite FnReTxnCode : string {
+}
+public property readwrite FReTxnCode : string {
+}
+
+public property readwrite FnTransaction : string {
+}
+public property readwrite FTransaction : string {
+}
+public property readwrite FileDirectory : string {
+}
+
+public property readwrite DatafileName : string {
+}
+
+public property readwrite DatafileExt : string {
+}
+
+public property readwrite LogfileName : string {
+}
+
+public property readwrite LogfileExt : string {
+}
+public property readwrite StmtBalLinePos : string {
+}
+
+public property readwrite StmtDcPos : string {
+}
+
+public property readwrite SpecBalLinePos : string {
+}
+
+public property readwrite SpecDcPos : string {
+}
+
+public property readwrite CategBalLinePos : string {
+}
+
+public property readwrite CategDcPos : string {
+}
+public property readwrite YDatafileTmp : string {
+}
+public property readwrite YDatafileTmpF : string {
+}
+public property readwrite YLogfileTmp : string {
+}
+public property readwrite YLogfileTmpF : string {
+}
+public property readwrite ControlList : string {
+}
+public property readwrite YFilterLine : string {
+}
+public property readwrite YFilterProductCategory : string {
+}
+public property readwrite YFilterExtraLine : string {
+}
+public property readwrite YDatesLwkday : string {
+}
+public property readwrite YFilterTransactionCode : string {
+}
+
+public property readwrite FnDataFileTmp : string {
+}
+public property readwrite FDataFileTmp : string {
+}
+public property readwrite FnLogFileTmp : string {
+}
+public property readwrite FLogFileTmp : string {
+}
+
+
+public property readwrite YDataDirectory : string {
+}
+public property readwrite YLogDirectory : string {
+}
+
+
+private method RhiContaAbanksLoad (
+)
+{
+    jBC: RHI.CONTA.ABANKS.LOAD
+}
+
+
+
+private method RhiContaAbanksSelect (
+)
+{
+    jBC: RHI.CONTA.ABANKS.SELECT
+}
+
+
+
+private method RhiContaAbanks (
+    INOUT yParamId string
+)
+{
+    jBC: RHI.CONTA.ABANKS
+}
+
+private method rhiContaAbanksPost (
+)
+{
+    jBC: RHI.CONTA.ABANKS.POST
+}

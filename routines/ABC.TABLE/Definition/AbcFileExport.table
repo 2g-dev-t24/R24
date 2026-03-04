@@ -1,0 +1,32 @@
+public table AbcFileExport {
+    t24: ABC.FILE.EXPORT
+    fields:{
+        
+        FileMappingId(FILE.EXP.FILE.MAPPING.ID)         = 1
+        FileName(FILE.EXP.FILE.NAME)                    = 2
+        FilePath(FILE.EXP.FILE.PATH)                    = 3
+        
+        Reserved10(FILE.EXP.RESERVED.10)                = 4
+        Reserved9(FILE.EXP.RESERVED.09)                 = 5
+        Reserved8(FILE.EXP.RESERVED.08)                 = 6
+        Reserved7(FILE.EXP.RESERVED.07)                 = 7
+        Reserved6(FILE.EXP.RESERVED.06)                 = 8
+        Reserved5(FILE.EXP.RESERVED.05)                 = 9
+        Reserved4(FILE.EXP.RESERVED.04)                 = 10
+        Reserved3(FILE.EXP.RESERVED.03)                 = 11
+        Reserved2(FILE.EXP.RESERVED.02)                 = 12
+        Reserved1(FILE.EXP.RESERVED.01)                 = 13
+        
+        LocalRef(FILE.EXP.LOCAL.REF)                    = 14
+        Override(FILE.EXP.OVERRIDE)                     = 15
+        RecordStatus(FILE.EXP.RECORD.STATUS)            = 16
+        CurrNo(FILE.EXP.CURR.NO)                        = 17
+        Inputter(FILE.EXP.INPUTTER)                     = 18
+        DateTime(FILE.EXP.DATE.TIME)                    = 19
+        Authoriser(FILE.EXP.AUTHORISER)                 = 20
+        CoCode(FILE.EXP.CO.CODE)                        = 21
+        DeptCode(FILE.EXP.DEPT.CODE)                    = 22
+        AuditorCode(FILE.EXP.AUDITOR.CODE)              = 23
+        AuditDateTime(FILE.EXP.AUDIT.DATE.TIME)         = 24
+    }
+}

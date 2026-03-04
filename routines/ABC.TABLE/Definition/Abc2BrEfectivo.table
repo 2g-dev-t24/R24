@@ -1,0 +1,25 @@
+public table Abc2BrEfectivo {
+    t24: ABC.2BR.EFECTIVO
+    fields:{
+        Tipo(EFE.TIPO)                                  = 1
+        Descripcion(EFE.DESCRIPCION)                    = 2
+        Moneda(EFE.MONEDA)                              = 3
+        Saldo(EFE.SALDO)                                = 4
+        Fecha(EFE.FECHA)                                = 5
+        Hora(EFE.HORA)                                  = 6
+        Reserved5(EFE.RESERVED.5)                       = 7
+        Reserved4(EFE.RESERVED.4)                       = 8
+        Reserved3(EFE.RESERVED.3)                       = 9
+        Reserved2(EFE.RESERVED.2)                       = 10
+        Reserved1(EFE.RESERVED.1)                       = 11
+        RecordStatus(EFE.RECORD.STATUS)                 = 12
+        CurrNo(EFE.CURR.NO)                             = 13
+        Inputter(EFE.INPUTTER)                          = 14
+        DateTime(EFE.DATE.TIME)                         = 15
+        Authoriser(EFE.AUTHORISER)                      = 16
+        CoCode(EFE.CO.CODE)                             = 17
+        DeptCode(EFE.DEPT.CODE)                         = 18
+        AuditorCode(EFE.AUDITOR.CODE)                   = 19
+        AuditDateTime(EFE.AUDIT.DATE.TIME)              = 20
+    }
+}

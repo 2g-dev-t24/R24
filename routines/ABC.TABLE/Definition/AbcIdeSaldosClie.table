@@ -1,0 +1,44 @@
+public table AbcIdeSaldosClie {
+    t24: ABC.IDE.SALDOS.CLIE
+    fields:{
+        Cliente(ABC.ISC.CLIENTE) = 1
+        Moneda(ABC.ISC.MONEDA) = 2
+        PeriodoAnt(ABC.ISC.PERIODO.ANT) = 3
+        IdePerAnt(ABC.ISC.IDE.PER.ANT) = 4
+        TotDepMes(ABC.ISC.TOT.DEP.MES) = 5
+        TotDepLin(ABC.ISC.TOT.DEP.LIN) = 6
+        ImpuestoCalc(ABC.ISC.IMPUESTO.CALC) = 7
+        ImpuestoReca(ABC.ISC.IMPUESTO.RECA) = 8
+        ImpuestoPend(ABC.ISC.IMPUESTO.PEND) = 9
+        RefPerIde(ABC.ISC.REF.PER.IDE) = 10
+        RefFolIde(ABC.ISC.REF.FOL.IDE) = 11
+        RefPagIde(ABC.ISC.REF.PAG.IDE) = 12
+        RefPerIdeLin(ABC.ISC.REF.PER.IDE.LIN) = 13
+        RefFolIdeLin(ABC.ISC.REF.FOL.IDE.LIN) = 14
+        RefPagIdeLin(ABC.ISC.REF.PAG.IDE.LIN) = 15
+        MovPago(ABC.ISC.MOV.PAGO) = 16
+
+        Reserved10(ABC.ISC.RESERVED.10) = 17
+        Reserved9(ABC.ISC.RESERVED.09) = 18
+        Reserved8(ABC.ISC.RESERVED.08) = 19
+        Reserved7(ABC.ISC.RESERVED.07) = 20
+        Reserved6(ABC.ISC.RESERVED.06) = 21
+        Reserved5(ABC.ISC.RESERVED.05) = 22
+        Reserved4(ABC.ISC.RESERVED.04) = 23
+        Reserved3(ABC.ISC.RESERVED.03) = 24
+        Reserved2(ABC.ISC.RESERVED.02) = 25
+        Reserved1(ABC.ISC.RESERVED.01) = 26
+
+        LocalRef(ABC.ISC.LOCAL.REF) = 27
+        Override(ABC.ISC.OVERRIDE) = 28
+        RecordStatus(ABC.ISC.RECORD.STATUS) = 29
+        CurrNo(ABC.ISC.CURR.NO) = 30
+        Inputter(ABC.ISC.INPUTTER) = 31
+        DateTime(ABC.ISC.DATE.TIME) = 32
+        Authoriser(ABC.ISC.AUTHORISER) = 33
+        CoCode(ABC.ISC.CO.CODE) = 34
+        DeptCode(ABC.ISC.DEPT.CODE) = 35
+        AuditorCode(ABC.ISC.AUDITOR.CODE) = 36
+        AuditDateTime(ABC.ISC.AUDIT.DATE.TIME) = 37
+    }
+}

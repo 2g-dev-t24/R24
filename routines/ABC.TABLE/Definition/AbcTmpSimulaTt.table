@@ -1,0 +1,38 @@
+public table AbcTmpSimulaTt {
+    t24: ABC.TMP.SIMULA.TT
+    fields:{
+        IdCliente(TT.TMP.ID.CLIENTE) = 1
+        IdRegistro(TT.TMP.ID.REGISTRO) = 2
+        NombreCliente(TT.TMP.NOMBRE.CLIENTE) = 3
+        Cuenta(TT.TMP.CUENTA) = 4
+        Moneda(TT.TMP.MONEDA) = 5
+        MontoLocal(TT.TMP.MONTO.LOCAL) = 6
+        NoChequeGirador(TT.TMP.NO.CHEQUE.GIRADOR) = 7
+        NoCtaGirador(TT.TMP.NO.CTA.GIRADOR) = 8
+        NoBanco(TT.TMP.NO.BANCO) = 9
+        TipoCheque(TT.TMP.TIPO.CHEQUE) = 10
+        CodSegChq(TT.TMP.COD.SEG.CHQ) = 11
+        DigPremarcado(TT.TMP.DIG.PREMARCADO) = 12
+        CveTxnChq(TT.TMP.CVE.TXN.CHQ) = 13
+        PlazaCompChq(TT.TMP.PLAZA.COMP.CHQ) = 14
+        DigIntrcamChq(TT.TMP.DIG.INTRCAM.CHQ) = 15
+        IdImgChq(TT.TMP.ID.IMG.CHQ) = 16
+        IdTeller(TT.TMP.ID.TELLER) = 17
+
+        Reserved5(TT.TMP.RESERVED.5) = 18
+        Reserved4(TT.TMP.RESERVED.4) = 19
+        Reserved3(TT.TMP.RESERVED.3) = 20
+        Reserved2(TT.TMP.RESERVED.2) = 21
+        Reserved1(TT.TMP.RESERVED.1) = 22
+
+        RecordStatus(TT.TMP.RECORD.STATUS) = 23
+        CurrNo(TT.TMP.CURR.NO) = 24
+        Inputter(TT.TMP.INPUTTER) = 25
+        DateTime(TT.TMP.DATE.TIME) = 26
+        Authoriser(TT.TMP.AUTHORISER) = 27
+        CoCode(TT.TMP.CO.CODE) = 28
+        DeptCode(TT.TMP.DEPT.CODE) = 29
+        AuditorCode(TT.TMP.AUDITOR.CODE) = 30
+        AuditDateTime(TT.TMP.AUDIT.DATE.TIME) = 31
+    }
+}

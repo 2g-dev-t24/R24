@@ -1,0 +1,33 @@
+public table AbcPnCodigos {
+    t24: ABC.PN.CODIGOS
+    fields:{
+        Descripcion(PN.CR.DESCRIPCION) = 1
+        Estado(PN.CR.ESTADO) = 2
+
+        Reserved15(PN.CR.RESERVED.15) = 3
+        Reserved14(PN.CR.RESERVED.14) = 4
+        Reserved13(PN.CR.RESERVED.13) = 5
+        Reserved12(PN.CR.RESERVED.12) = 6
+        Reserved11(PN.CR.RESERVED.11) = 7
+        Reserved10(PN.CR.RESERVED.10) = 8
+        Reserved9(PN.CR.RESERVED.9) = 9
+        Reserved8(PN.CR.RESERVED.8) = 10
+        Reserved7(PN.CR.RESERVED.7) = 11
+        Reserved6(PN.CR.RESERVED.6) = 12
+        Reserved5(PN.CR.RESERVED.5) = 13
+        Reserved4(PN.CR.RESERVED.4) = 14
+        Reserved3(PN.CR.RESERVED.3) = 15
+        Reserved2(PN.CR.RESERVED.2) = 16
+        Reserved1(PN.CR.RESERVED.1) = 17
+
+        RecordStatus(PN.CR.RECORD.STATUS) = 18
+        CurrNo(PN.CR.CURR.NO) = 19
+        Inputter(PN.CR.INPUTTER) = 20
+        DateTime(PN.CR.DATE.TIME) = 21
+        Authoriser(PN.CR.AUTHORISER) = 22
+        CoCode(PN.CR.CO.CODE) = 23
+        DeptCode(PN.CR.DEPT.CODE) = 24
+        AuditorCode(PN.CR.AUDITOR.CODE) = 25
+        AuditDateTime(PN.CR.AUDIT.DATE.TIME) = 26
+    }
+}

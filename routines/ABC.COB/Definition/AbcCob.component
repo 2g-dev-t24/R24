@@ -1,0 +1,930 @@
+component AbcCob
+
+# Component Isolation Definition
+metamodelVersion 1.6
+
+# ========================================
+# PROPERTIES FOR ABC.CAL.SDO.NETO
+# ========================================
+public property readwrite FnAbcAcctLclFlds : string {
+}
+public property readwrite FAbcAcctLclFlds : string {
+}
+public property readwrite FnCustomer : string {
+}
+public property readwrite FCustomer : string {
+}
+public property readwrite FnAccount : string {
+}
+public property readwrite FAccount : string {
+}
+public property readwrite FnAaInterestAccruals : string {
+}
+public property readwrite FAaInterestAccruals : string {
+}
+public property readwrite FnAbcSdoCompIpab : string {
+}
+public property readwrite FAbcSdoCompIpab : string {
+}
+public property readwrite FnEbContractBalances : string {
+}
+public property readwrite FEbContractBalances : string {
+}
+public property readwrite FnAaArrangement : string {
+}
+public property readwrite FAaArrangement : string {
+}
+public property readwrite PosExentoIva : string {
+}
+public property readwrite PosIdCoti : string {
+}
+public property readwrite PosTitPorc : string {
+}
+public property readwrite PosAsigIntCoti : string {
+}
+public property readwrite ValPorRet : string {
+}
+public property readwrite ValPorRetInv : string {
+}
+public property readwrite TaxIdList : string {
+}
+public property readwrite CountTaxId : string {
+}
+public property readwrite YCobStatus : string {
+}
+public property readwrite FechaIni : string {
+}
+public property readwrite FechaFin : string {
+}
+public property readwrite ValFrec : string {
+}
+public property readwrite YVar : string {
+}
+public property readwrite YDiasCalc : string {
+}
+
+# ========================================
+# PROPERTIES FOR ABC.CREA.ARCH.CTA.GARAN
+# ========================================
+public property readwrite FnAbcAcctLclFldsGaran : string {
+}
+public property readwrite FAbcAcctLclFldsGaran : string {
+}
+public property readwrite FnAccountGaran : string {
+}
+public property readwrite FAccountGaran : string {
+}
+public property readwrite FnStmtAcctCr : string {
+}
+public property readwrite FStmtAcctCr : string {
+}
+public property readwrite FnAbcGeneralParam : string {
+}
+public property readwrite FAbcGeneralParam : string {
+}
+public property readwrite YPosPrnAcc : string {
+}
+public property readwrite YFechaInicio : string {
+}
+public property readwrite YIdGenParam : string {
+}
+public property readwrite YListParams : string {
+}
+public property readwrite YListValues : string {
+}
+public property readwrite YAccountIdType : string {
+}
+public property readwrite YTransactionType : string {
+}
+public property readwrite YTransactionSubType : string {
+}
+public property readwrite YDesc1 : string {
+}
+public property readwrite YDesc2 : string {
+}
+public property readwrite YDesc3 : string {
+}
+public property readwrite YDesc4 : string {
+}
+public property readwrite YLocationType : string {
+}
+public property readwrite YLocationId : string {
+}
+public property readwrite YTransactionIdentifier : string {
+}
+public property readwrite YMaximoRegistros : string {
+}
+public property readwrite YRutaArchivo : string {
+}
+public property readwrite YRutaArchivoTemp : string {
+}
+public property readwrite YRecordType : string {
+}
+public property readwrite YHeader : string {
+}
+public property readwrite YClientId : string {
+}
+public property readwrite YFileName : string {
+}
+public property readwrite YRecordTypeB : string {
+}
+public property readwrite YRecordTypeF : string {
+}
+public property readwrite YTrailer : string {
+}
+public property readwrite YProgramId : string {
+}
+
+# ========================================
+# PROPERTIES FOR ABC.CREA.ARCH.CTA.REM
+# ========================================
+public property readwrite FnAbcAcctLclFldsRem : string {
+}
+public property readwrite FAbcAcctLclFldsRem : string {
+}
+public property readwrite FnAccountRem : string {
+}
+public property readwrite FAccountRem : string {
+}
+public property readwrite FnStmtAcctCrRem : string {
+}
+public property readwrite FStmtAcctCrRem : string {
+}
+public property readwrite FnAbcGeneralParamRem : string {
+}
+public property readwrite FAbcGeneralParamRem : string {
+}
+public property readwrite FnStmtEntryDetail : string {
+}
+public property readwrite FStmtEntryDetail : string {
+}
+public property readwrite FnAaAccountDetails : string {
+}
+public property readwrite FAaAccountDetails : string {
+}
+public property readwrite FnAaBillDetails : string {
+}
+public property readwrite FAaBillDetails : string {
+}
+public property readwrite YPosPrnAccRem : string {
+}
+public property readwrite YFechaInicioRem : string {
+}
+public property readwrite YIdGenParamRem : string {
+}
+public property readwrite YListParamsRem : string {
+}
+public property readwrite YListValuesRem : string {
+}
+public property readwrite YAccountIdTypeRem : string {
+}
+public property readwrite YTransactionTypeRem : string {
+}
+public property readwrite YTransactionSubTypeRem : string {
+}
+public property readwrite YDesc1Rem : string {
+}
+public property readwrite YDesc2Rem : string {
+}
+public property readwrite YDesc3Rem : string {
+}
+public property readwrite YDesc4Rem : string {
+}
+public property readwrite YLocationTypeRem : string {
+}
+public property readwrite YLocationIdRem : string {
+}
+public property readwrite YTransactionIdentifierRem : string {
+}
+public property readwrite YMaximoRegistrosRem : string {
+}
+public property readwrite YRutaArchivoRem : string {
+}
+public property readwrite YRutaArchivoTempRem : string {
+}
+public property readwrite YRecordTypeRem : string {
+}
+public property readwrite YHeaderRem : string {
+}
+public property readwrite YClientIdRem : string {
+}
+public property readwrite YFileNameRem : string {
+}
+public property readwrite YRecordTypeBRem : string {
+}
+public property readwrite YRecordTypeFRem : string {
+}
+public property readwrite YTrailerRem : string {
+}
+public property readwrite YProgramIdRem : string {
+}
+public property readwrite YNumFechasRem : string {
+}
+public property readwrite YFechasRem : string {
+}
+
+# ========================================
+# PROPERTIES FOR ABC.GENERA.SALDOS.PREC
+# ========================================
+public property readwrite FnHelpBloqs : string {
+}
+public property readwrite FHelpBloqs : string {
+}
+public property readwrite FnAccountSaldos : string {
+}
+public property readwrite FAccountSaldos : string {
+}
+public property readwrite FnCustomerSaldos : string {
+}
+public property readwrite FCustomerSaldos : string {
+}
+public property readwrite FnAbcIpabParam : string {
+}
+public property readwrite FAbcIpabParam : string {
+}
+public property readwrite FnAbcFileExport : string {
+}
+public property readwrite FAbcFileExport : string {
+}
+public property readwrite FnAbcFileMapping : string {
+}
+public property readwrite FAbcFileMapping : string {
+}
+public property readwrite FnAbcConcatSaldos : string {
+}
+public property readwrite FAbcConcatSaldos : string {
+}
+public property readwrite FnTsaService : string {
+}
+public property readwrite FTsaService : string {
+}
+public property readwrite TaxIdListSaldos : string {
+}
+public property readwrite YCobStatusSaldos : string {
+}
+public property readwrite YFmMainApplication : string {
+}
+public property readwrite YFmFixedSelection : string {
+}
+public property readwrite YPathToClear : string {
+}
+public property readwrite YRutaSaldoPre : string {
+}
+public property readwrite YSep : string {
+}
+public property readwrite YHelpFile : string {
+}
+public property readwrite RAbcFileExport : string {
+}
+# ========================================
+# PROPERTIES FOR ABC.REP.MULTI.R24D24.41.42
+# ========================================
+public property readwrite FnAccountR24 : string {
+}
+public property readwrite FAccountR24 : string {
+}
+public property readwrite FnCustomerR24 : string {
+}
+public property readwrite FCustomerR24 : string {
+}
+public property readwrite FnFundsTransfer : string {
+}
+public property readwrite FFundsTransfer : string {
+}
+public property readwrite FnAbcAcctLclFldsR24 : string {
+}
+public property readwrite FAbcAcctLclFldsR24 : string {
+}
+public property readwrite FnAbcGeneralParamR24 : string {
+}
+public property readwrite FAbcGeneralParamR24 : string {
+}
+public property readwrite YPosIdComisionista : string {
+}
+public property readwrite YPosCanal : string {
+}
+public property readwrite YPosNivelAcc : string {
+}
+public property readwrite YPosFechaUpdNvl : string {
+}
+public property readwrite YArrNomParamCanal : string {
+}
+public property readwrite YArrDatParamCanal : string {
+}
+public property readwrite YFechaIniPer : string {
+}
+public property readwrite YFechaFinPer : string {
+}
+public property readwrite YNumeroDiasPeriodo : string {
+}
+public property readwrite YArrNomParam : string {
+}
+public property readwrite YArrDatParam : string {
+}
+
+public property readwrite JCateg2441 : string {
+}
+public property readwrite JRuta2441 : string {
+}
+public property readwrite JNomArch2441 : string {
+}
+public property readwrite JExt2441 : string {
+}
+public property readwrite JRuta2442 : string {
+}
+public property readwrite JNomArch2442 : string {
+}
+public property readwrite JExt2442 : string {
+}
+public property readwrite ClaveEnt : string {
+}
+public property readwrite CanalComisionaste : string {
+}
+public property readwrite YTipoAcTransNvl2 : string {
+}
+public property readwrite YTipoAcTransNvl4 : string {
+}
+public property readwrite FSFile : string {
+}
+public property readwrite FSFile1 : string {
+}
+public property readwrite NoUser4142 : string {
+}
+public property readwrite YUsuariosCelular : string {
+}
+public property readwrite YCategoriasCelular : string {
+}
+public property readwrite YArrNomParamRep : string {
+}
+public property readwrite YArrDatParamRep : string {
+}
+public property readwrite YArrAABanca : string {
+}
+public property readwrite FnFundsTransferHis : string {
+}
+public property readwrite FFundsTransferHis : string {
+}
+public property readwrite FnStmtEntry24 : string {
+}
+public property readwrite FStmtEntry24 : string {
+}
+
+
+private method abcCalSdoNetoSelect (
+)
+{
+    jBC: ABC.CAL.SDO.NETO.SELECT
+}
+
+private method abcCalSdoNetoLoad (
+)
+{
+    jBC: ABC.CAL.SDO.NETO.LOAD
+}
+
+private method abcCreaArchCtaGaranSelect (
+)
+{
+    jBC: ABC.CREA.ARCH.CTA.GARAN.SELECT
+}
+
+private method abcCreaArchCtaRemSelect (
+)
+{
+    jBC: ABC.CREA.ARCH.CTA.REM.SELECT
+}
+
+private method abcGeneraSaldosPrecSelect (
+)
+{
+    jBC: ABC.GENERA.SALDOS.PREC.SELECT
+}
+
+private method abcRepMultiR24d244142Select (
+)
+{
+    jBC: ABC.REP.MULTI.R24D24.41.42.SELECT
+}
+
+private method abcCreaArchCtaGaran (
+    INOUT yIdCuenta string
+)
+{
+    jBC: ABC.CREA.ARCH.CTA.GARAN
+}
+
+private method abcCreaArchCtaGaranLoad (
+)
+{
+    jBC: ABC.CREA.ARCH.CTA.GARAN.LOAD
+}
+
+private method abcCreaArchCtaGaranPost (
+)
+{
+    jBC: ABC.CREA.ARCH.CTA.GARAN.POST
+}
+
+private method abcCreaArchCtaRemLoad (
+)
+{
+    jBC: ABC.CREA.ARCH.CTA.REM.LOAD
+}
+
+private method abcCreaArchCtaRemPost (
+)
+{
+    jBC: ABC.CREA.ARCH.CTA.REM.POST
+}
+
+private method abcGeneraSaldosPrec (
+    INOUT idAccount string
+)
+{
+    jBC: ABC.GENERA.SALDOS.PREC
+}
+
+private method abcCreaArchCtaRem (
+    INOUT yIdCuenta string
+)
+{
+    jBC: ABC.CREA.ARCH.CTA.REM
+}
+
+private method abcGeneraSaldosPrecLoad (
+)
+{
+    jBC: ABC.GENERA.SALDOS.PREC.LOAD
+}
+
+private method abcRepMultiR24d244142Load (
+)
+{
+    jBC: ABC.REP.MULTI.R24D24.41.42.LOAD
+}
+
+private method abcRepMultiR24d244142Post (
+)
+{
+    jBC: ABC.REP.MULTI.R24D24.41.42.POST
+}
+
+private method abcRepMultiR24d244142 (
+    INOUT idAc string
+)
+{
+    jBC: ABC.REP.MULTI.R24D24.41.42
+}
+
+private method abcCalSdoNeto (
+    INOUT accountId string
+)
+{
+    jBC: ABC.CAL.SDO.NETO
+}
+
+private method abcRepCtaActInactRang (
+)
+{
+    jBC: ABC.REP.CTA.ACT.INACT.RANG
+}
+
+private method abcGenIpabCtaBen (
+)
+{
+    jBC: ABC.GEN.IPAB.CTA.BEN
+}
+
+private method abcGetMappedValue (
+    INOUT idAbcGeneralMapping string,
+    INOUT inValue string,
+    INOUT valueMapped string,
+    INOUT error string
+)
+{
+    jBC: ABC.GET.MAPPED.VALUE
+}
+
+private method abcIdeCalcImptoRtn (
+    INOUT pClie string,
+    INOUT pMtoDepTotal string,
+    INOUT pMtoLinea string,
+    INOUT pMtoLimite string,
+    INOUT pPorcImpto string,
+    INOUT xMtoCalc string,
+    INOUT xMsgProc string
+)
+{
+    jBC: ABC.IDE.CALC.IMPTO.RTN
+}
+
+private method abcObtieneTax (
+    INOUT yTaxId string,
+    INOUT fecha string,
+    INOUT tax string
+)
+{
+    jBC: ABC.OBTIENE.TAX
+}
+
+private method abcSaldoPreCompensado (
+    INOUT customerId string,
+    INOUT result string,
+    INOUT valPorRet string,
+    INOUT valPorRetInv string,
+    INOUT fechaIni string,
+    INOUT fechaFin string,
+    INOUT acLockedCustomerList string,
+    INOUT ySep string
+)
+{
+    jBC: ABC.SALDO.PRE.COMPENSADO
+}
+
+private method abcSaldoPromedioIpab (
+    INOUT accountNo string,
+    INOUT fechaIni string,
+    INOUT fechaFin string,
+    INOUT crAvBal string,
+    INOUT noDias string
+)
+{
+    jBC: ABC.SALDO.PROMEDIO.IPAB
+}
+
+private method funCus (
+    INOUT appId string,
+    INOUT valueToGet string,
+    INOUT result string
+)
+{
+    jBC: FUN.CUS
+}
+//*******************************************************************************
+//ABC.CAL.CAUSAL.REV
+//********************************************************************************
+
+private method AbcCalCausalRevLoad (
+)
+{
+    jBC: ABC.CAL.CAUSAL.REV.LOAD
+}
+private method AbcCalCausalRevSelect (
+)
+{
+    jBC: ABC.CAL.CAUSAL.REV.SELECT
+}
+
+
+
+private method AbcCalCausalRev (
+    INOUT customerId string
+)
+{
+    jBC: ABC.CAL.CAUSAL.REV
+}
+public property readwrite FnCustomerRev : string {
+}
+public property readwrite FCustomerRev : string {
+}
+
+public property readwrite FnAbcSectorCnbvRev : string {
+}
+public property readwrite FAbcSectorCnbvRev : string {
+}
+
+public property readwrite FnAcLockedEventsRev : string {
+}
+public property readwrite FAcLockedEventsRev : string {
+}
+
+public property readwrite FnAbcSdoCompIpabRev : string {
+}
+public property readwrite FAbcSdoCompIpabRev : string {
+}
+
+public property readwrite TipIpabGaranPosRev : string {
+}
+public property readwrite SectorCnbvPosRev : string {
+}
+
+public property readwrite FnAbcSecCnbvRev : string {
+}
+public property readwrite FAbcSecCnbvRev : string {
+}
+public property readwrite AcLockedCustomerListRev : string {
+}
+
+
+private method abcIpabCargaCredVenc (
+)
+{
+    jBC: ABC.IPAB.CARGA.CRED.VENC
+}
+
+private method abcIpabTabla4 (
+)
+{
+    jBC: ABC.IPAB.TABLA.4
+}
+
+private method abcIpabTabla6 (
+)
+{
+    jBC: ABC.IPAB.TABLA.6
+}
+
+
+//********************************************************************************
+//ABC.CARGA.DET.CLI.CTA.BEN
+//*******************************************************************************
+
+
+private method AbcCargaDetCliCtaBen (
+)
+{
+    jBC: ABC.CARGA.DET.CLI.CTA.BEN
+}
+
+private method AbcCargaDetCtaBen (
+)
+{
+    jBC: ABC.CARGA.DET.CTA.BEN
+}
+
+
+
+private method AbcFileReportOut (
+)
+{
+    jBC: ABC.FILE.REPORT.OUT
+}
+
+
+
+//*******************************************************************************
+//ABC.ACT.ACCOUNT.ACT
+//*******************************************************************************
+
+private method AbcActAccountActLoad (
+)
+{
+    jBC: ABC.ACT.ACCOUNT.ACT.LOAD
+}
+
+
+public property readwrite FnAccountAct : string {
+}
+
+public property readwrite FAccountAct : string {
+}
+
+public property readwrite FnAccountA : string {
+}
+
+public property readwrite FAccountA : string {
+}
+
+
+private method AbcActAccountActSelect (
+)
+{
+    jBC: ABC.ACT.ACCOUNT.ACT.SELECT
+}
+
+
+
+private method AbcActAccountAct (
+    INOUT yAccountId string
+)
+{
+    jBC: ABC.ACT.ACCOUNT.ACT
+}
+
+
+
+private method AbcAaAuthIntBankingTxn (
+)
+{
+    jBC: ABC.AA.AUTH.INT.BANKING.TXN
+}
+
+
+
+private method AbcAaBulkServices (
+)
+{
+    jBC: ABC.AA.BULK.SERVICES
+}
+
+//*******************************************************************************
+//ABC.AA.PRO.SERVICES.LOAD
+//*******************************************************************************
+private method AbcAaProServicesLoad (
+)
+{
+    jBC: ABC.AA.PRO.SERVICES.LOAD
+}
+
+
+
+private method AbcAaProServicesSelect (
+)
+{
+    jBC: ABC.AA.PRO.SERVICES.SELECT
+}
+private method AbcAaProServices (
+    INOUT recId string
+)
+{
+    jBC: ABC.AA.PRO.SERVICES
+}
+
+public property readwrite FnAa : string {
+}
+public property readwrite FAa : string {
+}
+public property readwrite FnPreProcess : string {
+}
+public property readwrite FPreProcess : string {
+}
+public property readwrite FnPreProcessLiv : string {
+}
+public property readwrite FPreProcessLiv : string {
+}
+public property readwrite FnPreProcessHis : string {
+}
+public property readwrite FPreProcessHis : string {
+}
+public property readwrite FnAccountServices : string {
+}
+public property readwrite FAccountServices : string {
+}
+public property readwrite FnAbcAaConcatPre : string {
+}
+public property readwrite FAbcAaConcatPre : string {
+}
+public property readwrite RutasInformesApp : string {
+}
+public property readwrite RutaInfAppRest : string {
+}
+public property readwrite SeparadorInforme : string {
+}
+public property readwrite MsjSuccessInforme : string {
+}
+public property readwrite MsjErrorInforme : string {
+}
+public property readwrite MsjSaldoInsuficiente : string {
+}
+public property readwrite YPosExtTransId : string {
+}
+public property readwrite YPosCanaEnt : string {
+}
+
+
+
+
+//*******************************************************************************
+//ABC.INI.EXTRACCION
+//*******************************************************************************
+private method AbcIniExtraccion (
+)
+{
+    jBC: ABC.INI.EXTRACCION
+}
+
+
+
+private method AbcAaInformeVencimiento (
+)
+{
+    jBC: ABC.AA.INFORME.VENCIMIENTO
+}
+
+
+
+
+***********************************
+*ABC.B.AA.BULK.SERVICES.LOAD
+***********************************
+private method AbcBAaBulkServicesLoad (
+)
+{
+    jBC: ABC.B.AA.BULK.SERVICES.LOAD
+}
+
+
+public property readwrite FnBulkLoad : string {
+}
+public property readwrite FBulkLoad : string {
+}
+public property readwrite FnAbcAAPreProcessNau : string {
+}
+public property readwrite FAbcAAPreProcessNau : string {
+}
+public property readwrite FnAbcAaBulkAuthorise : string {
+}
+public property readwrite FAbcAaBulkAuthorise : string {
+}
+
+
+
+private method AbcBAaBulkServicesSelect (
+)
+{
+    jBC: ABC.B.AA.BULK.SERVICES.SELECT
+}
+
+
+
+private method AbcBAaBulkServices (
+    INOUT recId string
+)
+{
+    jBC: ABC.B.AA.BULK.SERVICES
+}
+
+
+
+private method AbcUpdateConcatExtTrans (
+)
+{
+    jBC: ABC.UPDATE.CONCAT.EXT.TRANS
+}
+
+***********************************
+*ABC.CONTROLBOX.MULTI.XML
+**************************************
+
+private method AbcControlboxMultiXmlLoad (
+)
+{
+    jBC: ABC.CONTROLBOX.MULTI.XML.LOAD
+}
+
+
+public property readwrite FnCustomerCB : string {
+}
+public property readwrite FCustomerCB : string {
+}
+public property readwrite FnAccountCB : string {
+}
+public property readwrite FAccountCB : string {
+}
+public property readwrite FnCustomerAccountCB : string {
+}
+public property readwrite FCustomerAccountCB : string {
+}
+public property readwrite YCategoriasCB : string {
+}
+public property readwrite YRutaArchivoXmlCB : string {
+}
+public property readwrite YNombreArchivoXmlCB : string {
+}
+public property readwrite YRutaArchivoXmlTempCB : string {
+}
+public property readwrite YRutaArchivoXmlErrorCB : string {
+}
+public property readwrite YNoCatCB : string {
+}
+public property readwrite YUltimaFechaExtrac : string {
+}
+public property readwrite FnAbcAcctLclFldsCB : string {
+}
+public property readwrite FAbcAcctLclFldsCB : string {
+}
+public property readwrite YDiaExtraccionCB : string {
+}
+public property readwrite YRutaControlboxLog : string {
+}
+public property readwrite YPosFechaPrimerExtrac : string {
+}
+public property readwrite YPosUltExtracSatisfac : string {
+}
+public property readwrite Limite : string {
+}
+
+private method AbcControlboxMultiXmlSelect (
+)
+{
+    jBC: ABC.CONTROLBOX.MULTI.XML.SELECT
+}
+
+
+
+private method AbcControlboxMultiXml (
+    INOUT yCusId string
+)
+{
+    jBC: ABC.CONTROLBOX.MULTI.XML
+}
+
+
+
+private method AbcControlboxXmlPost (
+)
+{
+    jBC: ABC.CONTROLBOX.XML.POST
+}
+
+

@@ -1,0 +1,46 @@
+public table BaAcSucursales {
+    t24: BA.AC.SUCURSALES
+    fields:{
+        Sucursal(BA.AC.SUC.SUCURSAL)                        = 1
+        NomSucursal(BA.AC.SUC.NOM.SUCURSAL)                 = 2
+        SucPld(BA.AC.SUC.SUC.PLD)                           = 3
+        SucPrinc(BA.AC.SUC.SUC.PRINC)                       = 4
+        TelSuc(BA.AC.SUC.TEL.SUC)                           = 5
+        FecActiv(BA.AC.SUC.FEC.ACTIV)                       = 6
+        FecDesac(BA.AC.SUC.FEC.DESAC)                       = 7
+        DirPais(BA.AC.SUC.DIR.PAIS)                         = 8
+        DirEstado(BA.AC.SUC.DIR.ESTADO)                     = 9
+        DirMunicipio(BA.AC.SUC.DIR.MUNICIPIO)               = 10
+        DirColonia(BA.AC.SUC.DIR.COLONIA)                   = 11
+        DirCiudad(BA.AC.SUC.DIR.CIUDAD)                     = 12
+        DirCalle(BA.AC.SUC.DIR.CALLE)                       = 13
+        DirNumExt(BA.AC.SUC.DIR.NUM.EXT)                    = 14
+        DirNumInt(BA.AC.SUC.DIR.NUM.INT)                    = 15
+        DirCodpos(BA.AC.SUC.DIR.CODPOS)                     = 16
+        TipoSucursal(BA.AC.SUC.TIPO.SUCURSAL)               = 17
+        ServicioCaje(BA.AC.SUC.SERVICIO.CAJE)               = 18
+        ClaveTransaccion(BA.AC.SUC.CLAVE.TRANSACCION)       = 19
+        ClaveSituacion(BA.AC.SUC.CLAVE.SITUACION)           = 20
+        Colonia(BA.AC.SUC.COLONIA)                          = 21
+        LocalidadCnbv(BA.AC.SUC.LOCALIDAD.CNBV)             = 22
+        MunicipioCnbv(BA.AC.SUC.MUNICIPIO.CNBV)             = 23
+        Latitud(BA.AC.SUC.LATITUD)                          = 24
+        Longitud(BA.AC.SUC.LONGITUD)                        = 25
+        Correo(BA.AC.SUC.CORREO)                            = 26
+        Reserved5(BA.AC.SUC.RESERVED.5)                     = 27
+        Reserved4(BA.AC.SUC.RESERVED.4)                     = 28
+        Reserved3(BA.AC.SUC.RESERVED.3)                     = 29
+        Reserved2(BA.AC.SUC.RESERVED.2)                     = 30
+        Reserved1(BA.AC.SUC.RESERVED.1)                     = 31
+        Override(BA.AC.SUC.OVERRIDE)                        = 33
+        RecordStatus(BA.AC.SUC.RECORD.STATUS)               = 33
+        CurrNo(BA.AC.SUC.CURR.NO)                           = 34
+        Inputter(BA.AC.SUC.INPUTTER)                        = 35
+        DateTime(BA.AC.SUC.DATE.TIME)                       = 36
+        Authoriser(BA.AC.SUC.AUTHORISER)                    = 37
+        CoCode(BA.AC.SUC.CO.CODE)                           = 38
+        DeptCode(BA.AC.SUC.DEPT.CODE)                       = 39
+        AuditorCode(BA.AC.SUC.AUDITOR.CODE)                 = 40
+        AuditDateTime(BA.AC.SUC.AUDIT.DATE.TIME)            = 41 
+    }
+}

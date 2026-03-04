@@ -1,0 +1,193 @@
+component AbcBi
+# Component Isolation Definition
+metamodelVersion 1.6
+
+
+# ------------------ METHOD END ------------------
+
+private method AbcGetGatReimpresion (INOUT TasaBruta string, INOUT Plazo string, INOUT Tipo string, INOUT FechaInicio string, INOUT GatNominal string, INOUT GatReal string)
+{
+    jBC: ABC.GET.GAT.REIMPRESION
+}
+
+private method EnqAccSal (
+    INOUT Cuenta string
+)
+{
+    jBC: ENQ.ACC.SAL
+}
+
+private method AbcNofileImpresion (
+    INOUT RData string
+)
+{
+    jBC: ABC.NOFILE.IMPRESION
+}
+
+
+private method NofileGetTransacciones (
+    INOUT RData string
+)
+{
+    jBC: NOFILE.GET.TRANSACCIONES
+}
+
+private method BiNofileDiasInversion (
+    INOUT yout string
+)
+{
+    jBC: BI.NOFILE.DIAS.INVERSION
+}
+
+
+private method FiltoCtasDestino (
+    INOUT enq string
+)
+{
+    jBC: FILTO.CTAS.DESTINO
+}
+
+private method AbcRepInversion (
+    INOUT Datos string
+)
+{
+    jBC: ABC.REP.INVERSION
+}
+
+
+private method AbcNofileCusAccBi (
+    INOUT Datos string
+)
+{
+    jBC: ABC.NOFILE.CUS.ACC.BI
+}
+
+private method abcBiMueveCampos (
+)
+{
+    jBC: ABC.BI.MUEVE.CAMPOS
+}
+
+private method AbcCtaDesValidaEmail (
+)
+{
+    jBC: ABC.CTA.DES.VALIDA.EMAIL
+}
+
+private method AbcCtaDesValTelMov (
+)
+{
+    jBC: ABC.CTA.DES.VAL.TEL.MOV
+}
+
+private method AbcCtaDesValImpCta (
+)
+{
+    jBC: ABC.CTA.DES.VAL.IMP.CTA
+}
+
+private method AbcCtaDesValInput (
+)
+{
+    jBC: ABC.CTAS.DES.VAL.INPUT
+}
+
+private method AbcVGetName (
+)
+{
+    jBC: ABC.V.GET.NAME
+}
+
+private method AbcGetClass (
+)
+{
+    jBC: ABC.GET.CLASS
+}
+
+private method AbcEmailSpeiAcse (
+)
+{
+    jBC: ABC.ENV.EMAIL.SPEI.ACSE
+}
+
+private method AbcVBancaIntValAcct (
+)
+{
+    jBC: ABC.V.BANCA.INT.VAL.ACCT
+}
+
+private method AbcGetTitularExtSpei (
+)
+{
+    jBC: ABC.GET.TITULAR.EXT.SPEI
+}
+
+private method AbcBamSpeiTxnOutgoing (
+)
+{
+    jBC: ABC.BAM.SPEI.TXN.OUTGOING
+}
+
+private method AbcVFtGicDbAcct (
+)
+{
+    jBC: ABC.V.FT.GIC.DB.ACCT
+}
+
+private method VFtValidaTc (
+)
+{
+    jBC: V.FT.VALIDA.TC
+}
+
+private method AbcECtaExterna (
+    INOUT EnqParam string
+)
+{
+    jBC: ABC.E.CTA.EXTERNA
+}
+
+private method AbcEGetTitCtaExt (
+)
+{
+    jBC: ABC.E.GET.TIT.CTA.EXT
+}
+
+
+private method AbcBanIntValId (
+)
+{
+    jBC: ABC.BAN.INT.VAL.ID
+}
+
+private method AbcCtaDesValTd (
+)
+{
+    jBC: ABC.CTA.DES.VAL.TD
+}
+
+private method AbcFtValAcseBe (
+)
+{
+    jBC: ABC.FT.VAL.ACSE.BE
+}
+
+private method AbcEnvEmailActContacto (
+)
+{
+    jBC: ABC.ENV.EMAIL.ACT.CONTACTO
+}
+
+private method abcBanIntListCtaCte (
+    INOUT rData string
+)
+{
+    jBC: ABC.BAN.INT.LIST.CTA.CTE
+}
+
+private method abcEnvEmailTrasAc (
+)
+{
+    jBC: ABC.ENV.EMAIL.TRAS.AC
+}
+

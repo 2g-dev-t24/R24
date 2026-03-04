@@ -1,0 +1,16 @@
+private table TmppRepSalOp {
+    t24: TMP.REP.SAL.OP
+    fields:{
+        InfoReg(TMP.REP.SAL.OP.INFO.REG) = 1
+
+        RecordStatus(TMP.REP.SAL.OP.RECORD.STATUS)        = 2
+        CurrNo(TMP.REP.SAL.OP.CURR.NO)                    = 3
+        Inputter(TMP.REP.SAL.OP.INPUTTER)                 = 4
+        DateTime(TMP.REP.SAL.OP.DATE.TIME)                = 5
+        Authoriser(TMP.REP.SAL.OP.AUTHORISER)             = 6
+        CoCode(TMP.REP.SAL.OP.CO.CODE)                    = 7
+        DeptCode(TMP.REP.SAL.OP.DEPT.CODE)                = 8
+        AuditorCode(TMP.REP.SAL.OP.AUDITOR.CODE)          = 9
+        AuditDateTime(TMP.REP.SAL.OP.AUDIT.DATE.TIME)     = 10
+    }
+}

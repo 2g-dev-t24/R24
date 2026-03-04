@@ -1,0 +1,23 @@
+private table AbcCuentaL4Api {
+    t24: ABC.CUENTA.L4.API
+    fields:{
+        Account(ABC.ACCT.L4.ACCOUNT) = 1
+        ApePaterno(ABC.ACCT.L4.APE.PATERNO) = 2
+        ApeMaterno(ABC.ACCT.L4.APE.MATERNO)= 3
+        Nombres(ABC.ACCT.L4.NOMBRES)= 4
+        FecNac(ABC.ACCT.L4.FEC.NAC)= 5
+        Porcentaje(ABC.ACCT.L4.PORCENTAJE)= 6
+        Email(ABC.ACCT.L4.EMAIL)= 7
+        PregFonTer(ABC.ACCT.L4.PREG.FON.TER)= 8
+
+        RecordStatus(ABC.ACCT.L4.RECORD.STATUS) = 9
+        CurrNo(ABC.ACCT.L4.CURR.NO) = 10
+        Inputter(ABC.ACCT.L4.INPUTTER) = 11
+        DateTime(ABC.ACCT.L4.DATE.TIME) = 12
+        Authoriser(ABC.ACCT.L4.AUTHORISER) = 13
+        CoCode(ABC.ACCT.L4.CO.CODE) = 14
+        DeptCode(ABC.ACCT.L4.DEPT.CODE) = 15
+        AuditorCode(ABC.ACCT.L4.AUDITOR.CODE) = 16
+        AuditDateTime(ABC.ACCT.L4.AUDIT.DATE.TIME) = 17
+    }
+}

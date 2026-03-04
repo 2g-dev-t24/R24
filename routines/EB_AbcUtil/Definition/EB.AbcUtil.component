@@ -1,0 +1,84 @@
+
+component EB.AbcUtil
+# Component Isolation Definition
+metamodelVersion 1.6
+# -------------------------------------------------
+
+public method abcSGetSsInfo (
+    INOUT inField string,
+    INOUT outValue string
+)
+{
+    jBC: ABC.S.GET.SS.INFO
+}
+
+
+public method abcSRtn (
+)
+{
+    jBC: ABC.S.RTN
+}
+
+
+
+public method numToText (
+    INOUT num2text string
+)
+{
+    jBC: NUM.TO.TEXT
+}
+
+
+
+public method abcNumToText (
+    INOUT num2textbase string
+)
+{
+    jBC: ABC.NUM.TO.TEXT
+}
+
+
+
+
+public method abcEscribeLogGenerico (
+    INOUT yRtnName string,
+    INOUT yDataLog string
+)
+{
+    jBC: ABC.ESCRIBE.LOG.GENERICO
+}
+
+
+
+
+public method abcMoveFileToS3 (
+    INOUT yRutaArchivoOrigen string,
+    INOUT yRutaFinS3 string,
+    INOUT yNombreArchivo string
+)
+{
+    jBC: ABC.MOVE.FILE.TO.S3
+}
+
+
+
+public method abcMoveToS3 (
+    INOUT yRutaArchivoOrigen string,
+    INOUT yRutaFinS3 string,
+    INOUT yNombreArchivo string
+)
+{
+    jBC: ABC.MOVE.TO.S3
+}
+
+
+public method abcGetLastDom (
+    INOUT ccyymm string,
+    INOUT lDate string,
+    INOUT lDay string,
+    INOUT mName string
+)
+{
+    jBC: ABC.GET.LAST.DOM
+}
+

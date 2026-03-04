@@ -1,0 +1,19 @@
+private table EbRhiAcLineFilter {
+    t24: T24.NAME
+    fields:{
+        Descripcion(EB.RHI38.DESCRIPCION) = 1
+        VariableName(EB.RHI38.VARIABLE.NAME) = 2
+        Note(EB.RHI38.NOTE) = 3
+        VariableValue(EB.RHI38.VARIABLE.VALUE) = 4
+        
+        RecordStatus(EB.RHI38.RECORD.STATUS) = 5
+        CurrNo(EB.RHI38.CURR.NO) = 6
+        Inputter(EB.RHI38.INPUTTER) = 7
+        DateTime(EB.RHI38.DATE.TIME) = 8
+        Authoriser(EB.RHI38.AUTHORISER) = 9
+        CoCode(EB.RHI38.CO.CODE) = 10
+        DeptCode(EB.RHI38.DEPT.CODE) = 11
+        AuditorCode(EB.RHI38.AUDITOR.CODE) = 12
+        AuditDateTime(EB.RHI38.AUDIT.DATE.TIME) = 13
+    }
+}

@@ -1,0 +1,19 @@
+public table AbcConcatSaldos {
+    t24: ABC.CONCAT.SALDOS
+    fields:{
+        Result(SALDOS.PRE.RESULT) = 1
+        Fecha(SALDOS.PRE.FECHA) = 2
+
+        LocalRef(SALDOS.PRE.LOCAL.REF) = 3
+        RecordStatus(SALDOS.PRE.RECORD.STATUS) = 4
+        CurrNo(SALDOS.PRE.CURR.NO) = 5
+        Inputter(SALDOS.PRE.INPUTTER) = 6
+        DateTime(SALDOS.PRE.DATE.TIME) = 7
+        Authoriser(SALDOS.PRE.AUTHORISER) = 8
+        CoCode(SALDOS.PRE.CO.CODE) = 9
+        DeptCode(SALDOS.PRE.DEPT.CODE) = 10
+        AuditorCode(SALDOS.PRE.AUDITOR.CODE) = 11
+        AuditDateTime(SALDOS.PRE.AUDIT.DATE.TIME) = 12
+    }
+}
+

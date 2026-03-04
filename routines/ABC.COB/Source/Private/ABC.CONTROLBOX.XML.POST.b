@@ -1,0 +1,427 @@
+* @ValidationCode : MjoyMDMzNzYyMDc0OkNwMTI1MjoxNzY3NzE2MTkwOTU2OkVkZ2FyIFNhbmNoZXo6LTE6LTE6MDowOmZhbHNlOk4vQTpSMjRfU1AxLjA6LTE6LTE=
+* @ValidationInfo : Timestamp         : 06 Jan 2026 10:16:30
+* @ValidationInfo : Encoding          : Cp1252
+* @ValidationInfo : User Name         : Edgar Sanchez
+* @ValidationInfo : Nb tests success  : N/A
+* @ValidationInfo : Nb tests failure  : N/A
+* @ValidationInfo : Rating            : N/A
+* @ValidationInfo : Coverage          : N/A
+* @ValidationInfo : Strict flag       : N/A
+* @ValidationInfo : Bypass GateKeeper : false
+* @ValidationInfo : Compiler Version  : R24_SP1.0
+* @ValidationInfo : Copyright Temenos Headquarters SA 1993-2026. All rights reserved.
+$PACKAGE AbcCob
+
+
+SUBROUTINE ABC.CONTROLBOX.XML.POST
+*-----------------------------------------------------------------------------
+*
+*-----------------------------------------------------------------------------
+* Modification History :
+*-----------------------------------------------------------------------------
+*======================================================================================
+* Nombre de Programa : ABC.CONTROLBOX.MULTI.XML.POST
+* Objetivo           : Se requiere conversi�n a multithreat para extraer informacion de
+*                      customer y account en archivos XML para alimentar el sistema CONTROLBOX
+* Desarrollador      : C�sar Miranda - FyG Solutions
+* Fecha Creacion     : 2023-11-13
+*======================================================================================
+*-----------------------------------------------------------------------------
+    $USING EB.SystemTables
+    $USING EB.DataAccess
+    $USING EB.Display
+    $USING AC.AccountOpening
+    $USING EB.ErrorProcessing
+    $USING ST.Customer
+    $USING AbcTable
+    $USING EB.Updates
+    $USING EB.Service
+    $USING AbcGetGeneralParam
+    $USING EB.AbcUtil
+    
+    GOSUB INICIALIZA
+    GOSUB PROCESO
+    GOSUB FINALIZA
+
+RETURN
+
+***********
+INICIALIZA:
+***********
+
+    yDataLog<-1> = 'Inicia POST'
+    
+    
+    
+    Y.CONT.REG = 0
+    Y.CONT.CONS = '01'
+    Y.CONT.TOTAL = 0
+    Y.REGISTROS.INCIDENCIA = 0
+* Y.RUTA_ARCHIVO_XML_TEMP = Y.RUTA_ARCHIVO_XML:"TEMP/"
+    GOSUB OBTIENE.VARIABLES
+
+    GOSUB CAMBIA.CONSECUTIVO
+
+RETURN
+
+********
+PROCESO:
+********
+
+    GOSUB SELECCIONA.ERROR
+    GOSUB SELECCIONA.XML
+
+RETURN
+
+*****************
+SELECCIONA.ERROR:
+*****************
+
+    SEL.CMD.ERR = "SELECT ":Y.RUTA_ARCHIVO_XML_ERR
+    EB.DataAccess.Readlist(SEL.CMD.ERR,ID.LIST.ERR,'',Y.NO.REC.ERR,ERR.SEL.ERR)
+
+    FOR REC.REG.ERR = 1 TO Y.NO.REC.ERR
+        EOF = ''
+        Y.ID = ID.LIST.ERR<REC.REG.ERR>
+        OPENSEQ Y.RUTA_ARCHIVO_XML_ERR:Y.ID TO Y.PUNTERO THEN
+            LOOP
+            WHILE NOT(EOF) DO
+                READSEQ REC.LINE FROM Y.PUNTERO THEN
+                    XML.REGISTRO.ALERTA:=REC.LINE:CHAR(10)
+                    IF FIELD(REC.LINE,':',1) EQ 'ID.CLIENTE' THEN Y.CONT.ERR += 1
+                END ELSE
+                    EOF = 1
+                END
+            REPEAT
+        END
+        CLOSESEQ Y.PUNTERO    ;*esanchez20251222
+    NEXT REC.REG.ERR
+   
+    Y.REGISTROS.INCIDENCIA = Y.CONT.ERR
+
+RETURN
+
+***************
+SELECCIONA.XML:
+***************
+
+    SEL.CMD = "SELECT ":Y.RUTA_ARCHIVO_XML_TEMP
+    EB.DataAccess.Readlist(SEL.CMD,ID.LIST,'',Y.NO.REC,ERR.SEL)
+
+    FOR REC.REG = 1 TO Y.NO.REC
+        EOF = ''
+        Y.ID = ID.LIST<REC.REG>
+        OPENSEQ Y.RUTA_ARCHIVO_XML_TEMP:Y.ID TO Y.PUNTERO THEN
+            LOOP
+            WHILE NOT(EOF) DO
+                READSEQ REC.LINE FROM Y.PUNTERO THEN
+                    GOSUB ESCRIBE.ARCHIVO
+                END ELSE
+                    EOF = 1
+                END
+            REPEAT
+        END
+        CLOSESEQ Y.PUNTERO    ;*esanchez20251222
+    NEXT REC.REG
+
+RETURN
+
+******************
+ESCRIBE.ARCHIVO:
+*****************
+
+    
+    OPENSEQ Y.RUTA_ARCHIVO_XML:Y.NOMBRE_ARCHIVO_XML_TEMP TO FILE.VAR1 ELSE
+        CREATE FILE.VAR1 ELSE
+        END
+    END
+
+    WRITESEQ REC.LINE APPEND TO FILE.VAR1 ELSE
+        Y.BANDERA.XML = 1
+    END
+
+    CLOSESEQ FILE.VAR1
+
+    IF REC.LINE EQ '</Cliente>' THEN
+        Y.CONT.REG += 1
+        Y.CONT.TOTAL += 1
+        IF Y.CONT.REG EQ LIMITE THEN
+            Y.CONT.CONS += 1
+            GOSUB CAMBIA.CONSECUTIVO
+            Y.CONT.REG = 0
+        END
+    END
+
+RETURN
+
+*******************
+CAMBIA.CONSECUTIVO:
+*******************
+
+    IF REC.LINE NE '' THEN
+        Y.XML.ARCHIVO  =''
+        Y.XML.ARCHIVO :=CHAR(10):'</Clientes>':CHAR(10)
+        
+        OPENSEQ Y.RUTA_ARCHIVO_XML:Y.NOMBRE_ARCHIVO_XML_TEMP TO FILE.VAR1 ELSE
+            CREATE FILE.VAR1 ELSE
+            END
+        END
+
+        WRITESEQ Y.XML.ARCHIVO APPEND TO FILE.VAR1 ELSE
+        END
+    END
+
+    IF LEN(Y.CONT.CONS) LT 2 THEN
+        Y.CONSECUTIVO = '0':Y.CONT.CONS
+    END ELSE
+        Y.CONSECUTIVO = Y.CONT.CONS
+    END
+
+    Y.NOMBRE_ARCHIVO_XML_TEMP = Y.NOMBRE_ARCHIVO_XML        ;*NOMBRE DE ARCHIVO XML PARAMETRIZADO
+    FINDSTR 'YYYYMMDD' IN Y.NOMBRE_ARCHIVO_XML SETTING Y.ENC.FECHA THEN
+        CHANGE 'YYYYMMDD' TO Y.DIA.EXTRACCION IN Y.NOMBRE_ARCHIVO_XML_TEMP
+    END
+
+    FINDSTR 'NN' IN Y.NOMBRE_ARCHIVO_XML SETTING Y.ENC.CONSE THEN
+        CHANGE 'NN' TO Y.CONSECUTIVO IN Y.NOMBRE_ARCHIVO_XML_TEMP
+    END
+
+    Y.XML.ARCHIVO  =''
+    Y.XML.ARCHIVO := '<?xml version="1.0" encoding="utf-8"?>'
+    Y.XML.ARCHIVO := CHAR(10):'<Clientes>':CHAR(10)
+    DELETESEQ Y.RUTA_ARCHIVO_XML:Y.NOMBRE_ARCHIVO_XML_TEMP
+    OPENSEQ Y.RUTA_ARCHIVO_XML:Y.NOMBRE_ARCHIVO_XML_TEMP TO FILE.VAR1 ELSE
+        CREATE FILE.VAR1 ELSE
+        END
+    END
+
+    WRITESEQ Y.XML.ARCHIVO APPEND TO FILE.VAR1 THEN
+        Y.NOMBRES.ARCHIVOS:=Y.NOMBRE_ARCHIVO_XML_TEMP:CHAR(10)
+    END
+
+RETURN
+
+********************
+ESCRIBE.ARCHIVO.LOG:
+********************
+
+    GOSUB REGISTRA.ESTATUS.EXTRACCION
+
+    IF Y.BANDERA.XML NE 1 THEN
+
+        IF Y.FECHA_PRIMER_EXTRAC EQ 'YYYYMMDD' THEN
+            Y.FECHA_PRIMER_EXTRAC=Y.DIA.EXTRACCION
+        END
+
+        Y.ULTIMA_EXTRACCION=Y.DIA.EXTRACCION
+    END
+
+    F.LOG.FILE = ''
+    Y.NOMBRE.ARCHIVO.LOG = Y.NOMBRE_ARCHIVO_XML
+
+    FINDSTR 'YYYYMMDD' IN Y.NOMBRE.ARCHIVO.LOG SETTING Y.ENC.FECHA THEN
+        CHANGE 'YYYYMMDD' TO Y.DIA.EXTRACCION IN Y.NOMBRE.ARCHIVO.LOG
+    END
+    AGENT.NUMBER    = EB.Service.getAgentNumber()
+    FINDSTR 'NN' IN Y.NOMBRE.ARCHIVO.LOG SETTING Y.ENC.CONSE THEN
+        CHANGE 'NN' TO '_':AGENT.NUMBER IN Y.NOMBRE.ARCHIVO.LOG
+    END
+    CHANGE '.xml' TO '' IN Y.NOMBRE.ARCHIVO.LOG
+   
+    EB.AbcUtil.abcEscribeLogGenerico(yRtnName, yDataLog)
+    Y.RUTA_CONTROLBOX_LOG = Y.RUTA_ARCHIVO_XML:'Log/' ;*esanchezg20251204
+    Y.NOMBRE.LOG = Y.RUTA_CONTROLBOX_LOG:Y.NOMBRE.ARCHIVO.LOG:Y.HORA.EXTRACCION:'.log'
+    DELETESEQ Y.NOMBRE.LOG ;*esanchez20251222
+    OPENSEQ Y.NOMBRE.LOG TO F.LOG.FILE THEN
+
+    END ELSE
+        CREATE F.LOG.FILE ELSE
+            DISPLAY 'ERROR AL CREAR EL ARCHIVO LOG'
+        END
+    END
+
+    Y.FINAL.LOG:='FECHA Y HORA DE EXTRACCION: ' : Y.DIA.EXTRACCION:'_':Y.HORA.EXTRACCION:CHAR(10)
+    Y.FINAL.LOG:='CATEGORIAS: ':Y.CATEGORIAS:CHAR(10)
+    Y.FINAL.LOG:='REGISTROS POR ARCHIVO: ':LIMITE:CHAR(10)
+    Y.FINAL.LOG:='PRIMERA EXTRACCION: ': Y.FECHA_PRIMER_EXTRAC: CHAR(10)
+    Y.FINAL.LOG:='ULTIMA EXTRACCION SATISFACTORIA: ': Y.ULTIMA_EXTRACCION:CHAR(10)
+    Y.FINAL.LOG:='ARCHIVO(S) XML GENERADO(S): ': CHAR(10)
+    Y.FINAL.LOG:=Y.NOMBRES.ARCHIVOS:CHAR(10):CHAR(10)
+*    Y.FINAL.LOG:='LOS SIGUIENTES CLIENTES Y CUENTAS SERAN EXTRAIDOS EN FORMATOS XML(CLIENTE, CUENTAS ASOCIADAS Y RELACIONADOS POR CADA CUENTA):':CHAR(10):CHAR(10)
+    IF Y.CONT.REG GT 0 THEN
+*        Y.FINAL.LOG:=Y.REGISTRO.LOG
+    END ELSE
+        Y.FINAL.LOG:='NO EXISTEN REGISTROS NUEVOS POR EXTRAER':CHAR(10)
+    END
+
+    WRITESEQ Y.FINAL.LOG APPEND TO F.LOG.FILE ELSE
+        DISPLAY " NO SE PUDO ESCRIBIR EN EL ARCHIVO... " : Y.FINAL.LOG
+    END
+
+    CLOSESEQ F.LOG.FILE
+    Y.LOG.ARCHIVO=''
+    Y.FINAL.LOG=''
+    Y.REGISTRO.LOG=''
+
+RETURN
+
+****************************
+REGISTRA.ESTATUS.EXTRACCION:
+****************************
+
+    IF Y.BANDERA.XML NE 1 THEN          ;* VALIDA SI SE PUDO ESCRIBIR EL ARCHIVO XML GENERADO EN LA EXTRACCION
+        EB.DataAccess.FRead(FN.ABC.GENERAL.PARAM,Y.ID.PARAM,R.PARAMS,F.ABC.GENERAL.PARAM,ERR);*esanchez20251222
+
+        IF Y.FECHA_PRIMER_EXTRAC EQ 'YYYYMMDD' OR '' THEN
+            R.PARAMS<AbcTable.AbcGeneralParam.DatoParametro,Y.POS.FECHA_PRIMER_EXTRAC>=Y.DIA.EXTRACCION
+        END
+
+        R.PARAMS<AbcTable.AbcGeneralParam.DatoParametro,Y.POS.ULT_EXTRAC_SATISFAC>=Y.DIA.EXTRACCION
+
+        EB.DataAccess.FWrite(FN.ABC.GENERAL.PARAM,Y.ID.PARAM,R.PARAMS)  ;* ACTUALIZA LA PRIMERA Y ULTIMA FECHA DE EXTRACCION ;*esanchez20251222
+*     CALL JOURNAL.UPDATE('ABC.CONTROLBOX')
+
+        IF XML.REGISTRO.ALERTA EQ '' THEN         ;*VALIDA SI LA EXTRACCION FUE REALIZADA SIN INCICIDENCIAS
+            Y.FINAL.LOG:=CHAR(10)
+            Y.FINAL.LOG:='EXTRACCION SATISFACIORIA':CHAR(10)
+        END ELSE    ;*VALIDA SI LA EXTRACCION FUE REALIZADA PERO CON INCIDENCIAS
+            Y.FINAL.LOG:=CHAR(10)
+            Y.FINAL.LOG:='REGISTROS CON ERRORES: ':Y.REGISTROS.INCIDENCIA:CHAR(10)
+            Y.FINAL.LOG:='************************* REGISTROS CON ERRORES *************************':CHAR(10)
+            Y.FINAL.LOG:=XML.REGISTRO.ALERTA:CHAR(10):CHAR(10)
+        END
+    END ELSE
+        Y.FINAL.LOG:='EXTRACCION FALLIDA':CHAR(10)
+    END
+
+RETURN
+
+*********
+FINALIZA:
+*********
+    Y.XML.ARCHIVO  =''
+    Y.XML.ARCHIVO :=CHAR(10):'</Clientes>':CHAR(10)
+
+    OPENSEQ Y.RUTA_ARCHIVO_XML:Y.NOMBRE_ARCHIVO_XML_TEMP TO FILE.VAR1 ELSE
+        CREATE FILE.VAR1 ELSE
+        END
+    END
+
+    WRITESEQ Y.XML.ARCHIVO APPEND TO FILE.VAR1 ELSE
+    END
+    GOSUB ESCRIBE.ARCHIVO.LOG
+   
+*;Depositar archivos finales en S3  ;*esanchez20251222
+    yDataLog<-1> = 'Movimiento de Files S3'
+    Y.FILES.MOVE = EREPLACE(Y.NOMBRES.ARCHIVOS,CHAR(10),@FM)
+    Y.NUM.FILES = DCOUNT(Y.FILES.MOVE,CHAR(10))
+    FOR Y.AA = 1 TO Y.NUM.FILES
+        EB.AbcUtil.abcMoveFileToS3(Y.RUTA_ARCHIVO_XML,Y.RUTA.MOV.S3,Y.FILES.MOVE<Y.AA>) ;*esanchez20251222
+    NEXT Y.AA
+    Y.FILE.LOG = Y.NOMBRE.ARCHIVO.LOG:Y.HORA.EXTRACCION:'.log'
+    EB.AbcUtil.abcMoveFileToS3(Y.RUTA_CONTROLBOX_LOG,Y.RUTA.LOG.S3,Y.FILE.LOG)             ;*esanchez20251222
+    
+    yDataLog<-1> = 'Termine movimiento hacia el S3'
+       
+    EXECUTE 'SH -c rm ': Y.RUTA_ARCHIVO_XML_TEMP :'*' CAPTURING Y.RETURNVAL   ;*esanchez20251222
+    EXECUTE 'SH -c rm ': Y.RUTA_ARCHIVO_XML_ERR :'*' CAPTURING Y.RETURNVAL    ;*esanchez20251222
+    yDataLog<-1> = 'EXECUTE SH -c rm ' : Y.RUTA_ARCHIVO_XML_TEMP : 'RETURNVAL: ' :Y.RETURNVAL ;*esanchez20251222
+    yDataLog<-1> = 'EXECUTE SH -c rm ' : Y.RUTA_ARCHIVO_XML_ERR : 'RETURNVAL: ' :Y.RETURNVAL   ;*esanchez20251222
+    yDataLog<-1> = 'Termine POST'
+    EB.AbcUtil.abcEscribeLogGenerico(yRtnName, yDataLog)
+    
+*; Fin de modificacion ;*esanchez20251222
+RETURN
+******************
+OBTIENE.VARIABLES:
+******************
+    yRtnName = 'ABC.CONTROLBOX.XML'                                 ;*esanchez20251222
+    yDataLog = ''
+    FN.ABC.GENERAL.PARAM =  'F.ABC.GENERAL.PARAM'                  ;*esanchez20251222
+    F.ABC.GENERAL.PARAM = ''                                       ;*esanchez20251222
+    Y.ID.PARAM = 'ABC.CONTROLBOX'                                   ;*esanchez20251222
+    EB.DataAccess.Opf(FN.ABC.GENERAL.PARAM, F.ABC.GENERAL.PARAM)   ;*esanchez20251222
+*    Y.DIA.EXTRACCION = OCONV(DATE(), "D-YMD[4,2,2]")
+    Y.DIA.EXTRACCION =  EB.SystemTables.getToday()                 ;*esanchez20251222
+    
+    CHANGE '-' TO '' IN Y.DIA.EXTRACCION
+        
+    Y.HORA.EXTRACCION = TIMEDATE()
+    Y.HORA.EXTRACCION.LOG = OCONV(TIME(), "MTS")
+    CHANGE ':' TO '' IN Y.HORA.EXTRACCION
+
+    Y.HORA.EXTRACCION=Y.HORA.EXTRACCION[1,6]
+
+    AbcGetGeneralParam.AbcGetGeneralParam(Y.ID.PARAM, Y.LIST.PARAMS, Y.LIST.VALUES)        ;*LEE PARAMETRIZACION PARA EXTRAER INFORMACION
+
+    Y.NUM.LIST.PARAMS = DCOUNT(Y.LIST.PARAMS,@FM)
+
+    IF Y.NUM.LIST.PARAMS GT 0 THEN
+        LOCATE "CATEGORIAS_CUENTA" IN Y.LIST.PARAMS SETTING LOC THEN
+            Y.CATEGORIAS = TRIM(Y.LIST.VALUES<LOC>)
+*CHANGE ',' TO @FM IN Y.CATEGORIAS
+            LOC=''
+        END
+        LOCATE "LIMITE_REGISTROS_POR_ARCHIVO" IN Y.LIST.PARAMS SETTING LOC THEN
+            LIMITE = TRIM(Y.LIST.VALUES<LOC>)
+            LIMITE.TEMP = LIMITE
+            LOC=''
+        END
+        LOCATE "RUTA_ARCHIVO_XML" IN Y.LIST.PARAMS SETTING LOC THEN
+            Y.RUTA_ARCHIVO_XML = TRIM(Y.LIST.VALUES<LOC>)
+*CALL ABC.OBTIENE.RUTA.ABS(Y.RUTA_ARCHIVO_XML)
+            LOC=''
+        END
+        LOCATE "RUTA_CONTROLBOX_LOG" IN Y.LIST.PARAMS SETTING LOC THEN
+            Y.RUTA_CONTROLBOX_LOG = TRIM(Y.LIST.VALUES<LOC>)
+* ABC.OBTIENE.RUTA.ABS(Y.RUTA_CONTROLBOX_LOG)
+            LOC=''
+        END
+        LOCATE "NOMBRE_ARCHIVO_XML" IN Y.LIST.PARAMS SETTING LOC THEN
+            Y.NOMBRE_ARCHIVO_XML = TRIM(Y.LIST.VALUES<LOC>)
+            LOC=''
+        END
+        LOCATE "FECHA_PRIMERA_EXTRACCION" IN Y.LIST.PARAMS SETTING LOC THEN     ;* TOMA LA FECHA DE LA PRIMERA EXTRACCION
+            Y.FECHA_PRIMER_EXTRAC = TRIM(Y.LIST.VALUES<LOC>)
+
+            Y.POS.FECHA_PRIMER_EXTRAC = LOC
+            LOC=''
+        END
+        LOCATE "ULTIMA_EXTRACCION_SATISFACTORIA" IN Y.LIST.PARAMS SETTING LOC THEN
+            Y.POS.ULT_EXTRAC_SATISFAC=LOC
+            Y.ULTIMA_EXTRACCION = TRIM(Y.LIST.VALUES<LOC>)
+            IF Y.ULTIMA_EXTRACCION NE '' AND Y.ULTIMA_EXTRACCION NE 'YYYYMMDD' THEN
+                Y.ULTIMA_EXTRACCION = TRIM(Y.LIST.VALUES<LOC>)[3,8]:'0000'
+            END
+            LOC=''
+        END
+    
+        LOCATE "RUTA.MOV.S3.FILE" IN Y.LIST.PARAMS SETTING LOC THEN
+            Y.RUTA.MOV.S3 = TRIM(Y.LIST.VALUES<LOC>)
+            LOC=''
+        END
+        LOCATE "RUTA.MOV.S3.LOG" IN Y.LIST.PARAMS SETTING LOC THEN
+            Y.RUTA.LOG.S3 = TRIM(Y.LIST.VALUES<LOC>)
+            LOC=''
+        END
+    END
+
+
+    IF Y.RUTA_ARCHIVO_XML NE '' THEN
+        Y.RUTA_ARCHIVO_XML_TEMP = Y.RUTA_ARCHIVO_XML:"TEMP/"
+        Y.RUTA_ARCHIVO_XML_ERR = Y.RUTA_ARCHIVO_XML:"ERROR/"
+    END
+    TODAY   = EB.SystemTables.getToday()
+    IF Y.FECHA_PRIMER_EXTRAC EQ TODAY OR Y.ULTIMA_EXTRACCION EQ '' OR Y.ULTIMA_EXTRACCION EQ 'YYYYMMDD' THEN  ;*ES LA PRIMERA VEZ QUE CORRE -> TOMO TODOS LOS CLIENTES
+        Y.ULTIMA_FECHA_EXTRAC = '0001010000'
+    END ELSE        ;*SOLO TOMO LOS CLIENTES QUE HAN SUFRIDO MODIFICACIONES A PARTIR DE LA TIMA FECHA
+        Y.ULTIMA_FECHA_EXTRAC = Y.ULTIMA_EXTRACCION         ;*CON UN LOCATE LA TOMO DE DONDE LA ESCRIB*        Y.PRIMERA_EJEC = '0'
+    END
+   
+    Y.NO.CAT = DCOUNT(Y.CATEGORIAS,',')
+   
+RETURN
+
+
+END
+

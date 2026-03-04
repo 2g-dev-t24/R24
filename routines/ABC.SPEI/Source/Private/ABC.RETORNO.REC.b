@@ -1,0 +1,369 @@
+*-----------------------------------------------------------------------------
+* <Rating>83</Rating>
+*-----------------------------------------------------------------------------
+$PACKAGE AbcSpei
+    SUBROUTINE ABC.RETORNO.REC(DATOS)
+
+*-----------------------------------------------------------------------------
+* Modification History :
+*-----------------------------------------------------------------------------
+* Development for : 
+* Development by  : 
+* Date            : 
+* Description     : Se valida que el id del FT exista tanto en historicos como en vivos
+*--------------------------------------------------------------------------------------------------------------
+
+    $USING EB.Reports
+    $USING EB.DataAccess
+    $USING EB.LocalReferences
+    $USING ABC.BP
+    $USING AC.ModelBank
+    $USING FT.Config
+    $USING FT.Contract
+    $USING AC.AccountOpening
+    $USING AC.Config
+    $USING AC.EntryCreation
+    $USING ST.Config
+    $USING AbcTable
+    $USING EB.SystemTables
+    $USING EB.Template
+    $USING AbcGetGeneralParam
+    $USING EB.Interface
+    $USING EB.TransactionControl
+    
+    GOSUB INICIA
+    IF Y.TIPO.OPER AND Y.CLAVE.RASTREO THEN
+        GOSUB VALIDA.DATOS
+    END ELSE
+        DATOS = '-1, NO CONTIENE LOS DATOS NECESARIOS PARA PROCESAR EL RETORNO'
+    END
+
+    RETURN
+
+*******
+INICIA:
+*******
+
+    DATOS = ''
+    Y.TRANSACTION.TYPE = ''
+    OFS.MSG = ''
+    Y.ID.GEN.PARAM = 'OFS.SPEI.DEVOLUCION'
+    Y.ID.GEN.PAR.USER = 'USER.T24.PROCESOS'
+    Y.ID.COD.TRAN.RET.REC = 'COD.TRAN.RETORNO.RECIBIDO'
+    Y.LIST.PARAMS = ''
+    Y.LIST.VALUES = ''
+    Y.VER.ING.FT = ''
+    Y.OFS.SOURCE = ''
+    Y.USUARIO.OFS = ''
+    Y.PASS.OFS = ''
+
+    FN.FT = 'F.FUNDS.TRANSFER'
+    F.FT = ''
+    EB.DataAccess.Opf(FN.FT,F.FT)
+
+    FN.FT.HIS = 'F.FUNDS.TRANSFER$HIS'
+    F.FT.HIS = ''
+    EB.DataAccess.Opf(FN.FT.HIS,F.FT.HIS)
+
+    Y.CLAVE.RASTREO = ''
+    Y.TIPO.OPER = ''
+    Y.FEC.ORI = ''
+    Y.REF.NUM = ''
+    Y.CUENTA.ORDENANTE = ''
+
+    Y.MONTO.ORI = ''
+    Y.MONTO.RET = ''
+
+    YPOS.CLAVE.RASTREO = ''
+    YPOS.TIPO.OPER = ''
+    YPOS.FEC.ORI = ''
+    YPOS.REF.NUM = ''
+    YPOS.CUENTA.ORDENANTE = ''
+
+    YPOS.MONTO.ORI = ''
+    YPOS.MONTO.RET = ''
+
+    D.FIELDS            = EB.Reports.getDFields()
+    D.RANGE.AND.VALUE   = EB.Reports.getDRangeAndValue()
+
+    LOCATE "CLAVE.RASTREO" IN D.FIELDS<1> SETTING YPOS.CLAVE.RASTREO THEN
+        Y.CLAVE.RASTREO = D.RANGE.AND.VALUE<YPOS.CLAVE.RASTREO>
+    END
+
+    LOCATE "TIPO.OPER" IN D.FIELDS<1> SETTING YPOS.TIPO.OPER THEN
+        Y.TIPO.OPER = D.RANGE.AND.VALUE<YPOS.TIPO.OPER>
+    END
+
+    LOCATE "FEC.ORI" IN D.FIELDS<1> SETTING YPOS.FEC.ORI THEN
+        Y.FEC.ORI = D.RANGE.AND.VALUE<YPOS.FEC.ORI>
+    END
+
+    LOCATE "REF.NUM" IN D.FIELDS<1> SETTING YPOS.REF.NUM THEN
+        Y.REF.NUM = D.RANGE.AND.VALUE<YPOS.REF.NUM>
+    END
+
+    LOCATE "CUENTA.ORDENANTE" IN D.FIELDS<1> SETTING YPOS.CUENTA.ORDENANTE THEN
+        Y.CUENTA.ORDENANTE = D.RANGE.AND.VALUE<YPOS.CUENTA.ORDENANTE>
+        Y.CUENTA.ORDENANTE=Y.CUENTA.ORDENANTE[7,11]
+    END
+
+    LOCATE "MONTO.ORI" IN D.FIELDS<1> SETTING YPOS.MONTO.ORI THEN
+        Y.MONTO.ORI = D.RANGE.AND.VALUE<YPOS.MONTO.ORI>
+    END
+
+    LOCATE "MONTO.RET" IN D.FIELDS<1> SETTING YPOS.MONTO.RET THEN
+        Y.MONTO.RET = D.RANGE.AND.VALUE<YPOS.MONTO.RET>
+    END
+
+
+    AbcGetGeneralParam.AbcGetGeneralParam(Y.ID.GEN.PARAM, Y.LIST.PARAMS, Y.LIST.VALUES)
+
+    IF Y.LIST.VALUES THEN
+        LOCATE 'NOMBRE.VERSION.DEVOLUCION' IN Y.LIST.PARAMS SETTING POSITION.VER THEN
+            Y.VER.ING.FT = Y.LIST.VALUES<POSITION.VER>
+        END
+
+        LOCATE 'NOMBRE.OFS.SOURCE' IN Y.LIST.PARAMS SETTING POSITION.OFS THEN
+            Y.OFS.SOURCE = Y.LIST.VALUES<POSITION.OFS>
+        END
+
+        LOCATE 'PROFIT.CENTRE.CUST' IN Y.LIST.PARAMS SETTING POSITION.PROFIT THEN
+            Y.PROFIT.CENTRE.CUST = Y.LIST.VALUES<POSITION.PROFIT>
+        END
+    END
+
+    Y.LIST.PARAMS = ''
+    Y.LIST.VALUES = ''
+
+    AbcGetGeneralParam.AbcGetGeneralParam(Y.ID.GEN.PAR.USER, Y.LIST.PARAMS, Y.LIST.VALUES)
+    IF Y.LIST.VALUES THEN
+        LOCATE 'USUARIO.OFS' IN Y.LIST.PARAMS SETTING POSITION.USUARIO THEN
+            Y.USUARIO.OFS = Y.LIST.VALUES<POSITION.USUARIO>
+        END
+
+        LOCATE 'PASSWORD.OFS' IN Y.LIST.PARAMS SETTING POSITION.PASS THEN
+            Y.PASS.OFS = Y.LIST.VALUES<POSITION.PASS>
+        END
+    END
+
+    AbcGetGeneralParam.AbcGetGeneralParam(Y.ID.COD.TRAN.RET.REC, Y.LIST.PARAMS, Y.LIST.VALUES)
+    IF Y.LIST.VALUES THEN
+        COD.TRANS = Y.LIST.VALUES
+        CHANGE @FM TO @VM IN COD.TRANS
+    END
+
+    YSEP = '|'
+
+    RETURN
+
+*************
+VALIDA.DATOS:
+*************
+
+    BEGIN CASE
+    CASE Y.TIPO.OPER EQ '17'
+        IF Y.CLAVE.RASTREO THEN
+            GOSUB PROCESA.ACRT
+        END ELSE
+            DATOS = '-1, NO CONTIENE LOS DATOS NECESARIOS PARA PROCESAR EL RETORNO'
+        END
+
+    CASE Y.TIPO.OPER EQ '18'
+        IF Y.CLAVE.RASTREO AND Y.FEC.ORI AND Y.CUENTA.ORDENANTE AND Y.MONTO.ORI AND Y.MONTO.RET THEN
+            GOSUB PROCESA.ACER
+        END ELSE
+            DATOS = '-1, NO CONTIENE LOS DATOS NECESARIOS PARA PROCESAR EL RETORNO'
+        END
+
+    CASE Y.TIPO.OPER EQ '23'
+        IF Y.CLAVE.RASTREO AND Y.MONTO.ORI AND Y.MONTO.RET THEN
+            GOSUB PROCESA.ACRR
+        END ELSE
+            DATOS = '-1, NO CONTIENE LOS DATOS NECESARIOS PARA PROCESAR EL RETORNO'
+        END
+
+    CASE Y.TIPO.OPER EQ '24'
+        IF Y.CLAVE.RASTREO AND Y.FEC.ORI AND Y.CUENTA.ORDENANTE AND Y.MONTO.ORI AND Y.MONTO.RET THEN
+            GOSUB PROCESA.ACEE
+        END ELSE
+            DATOS = '-1, NO CONTIENE LOS DATOS NECESARIOS PARA PROCESAR EL RETORNO'
+        END
+
+    END CASE
+    IF Y.TIPO.OPER NE '17' OR Y.TIPO.OPER NE '18' OR Y.TIPO.OPER NE '23' OR Y.TIPO.OPER NE '24' THEN
+       DATOS = '-1, EL TIPO DE OPERECION NO CORRESPONDE A UN RETORNO'
+    END
+    RETURN
+
+*************
+PROCESA.ACRT:
+*************
+
+    GOSUB OBTIENE.FT.LIVE
+    GOSUB OBTIENE.VALORES.FT
+    Y.TRANSACTION.TYPE = 'ACRT'
+    IF Y.FT.TRANSACTION.TYPE MATCHES COD.TRANS THEN
+        GOSUB ARMA.OFS
+        GOSUB ENVIA.OFS
+    END ELSE
+        DATOS = '-1, EL FT ORIGINAL NO ES SPEI O CODI SALIENTE ACRT'
+    END
+
+    RETURN
+
+*************
+PROCESA.ACRR:
+*************
+
+    GOSUB OBTIENE.FT.LIVE
+    GOSUB OBTIENE.VALORES.FT
+    Y.TRANSACTION.TYPE = 'ACRR'
+
+    IF Y.FT.TRANSACTION.TYPE MATCHES COD.TRANS THEN
+        IF Y.MONTO.ORI EQ Y.FT.DEBIT.AMOUNT THEN
+            Y.FT.DEBIT.AMOUNT = Y.MONTO.RET
+            GOSUB ARMA.OFS
+            GOSUB ENVIA.OFS
+        END ELSE
+            DATOS = '-1, EL MONTO ORIGINAL NO COINCIDE CON EL MONTO ORIGINAL DEL RETORNO'
+        END
+    END ELSE
+        DATOS = '-1, EL FT ORIGINAL NO ES SPEI O CODI SALIENTE ACRR'
+    END
+
+    RETURN
+
+*************
+PROCESA.ACER:
+*************
+
+    GOSUB OBTIENE.FT.HIS
+    GOSUB OBTIENE.VALORES.FT
+    Y.TRANSACTION.TYPE = 'ACER'
+    IF Y.FT.TRANSACTION.TYPE MATCHES COD.TRANS THEN
+        IF Y.MONTO.ORI EQ Y.FT.DEBIT.AMOUNT THEN
+            IF Y.FEC.ORI EQ Y.FT.DEBIT.VALUE.DATE THEN
+                IF Y.CUENTA.ORDENANTE EQ Y.FT.DEBIT.ACCT.NO THEN
+                    GOSUB ARMA.OFS
+                    GOSUB ENVIA.OFS
+                END ELSE
+                    DATOS = '-1, LA CUENTA ORDENANTE NO COINCIDE CON LA CUENTA ORDENANTE DEL RETORNO'
+                END
+            END ELSE
+                DATOS = '-1, LA FECHA ORIGINAL NO COINCIDE CON LA FECHA ORIGINAL DEL RETORNO'
+            END
+        END ELSE
+            DATOS = '-1, EL MONTO ORIGINAL NO COINCIDE CON EL MONTO ORIGINAL DEL RETORNO'
+        END
+    END ELSE
+        DATOS = '-1, EL FT ORIGINAL NO ES SPEI O CODI SALIENTE ACER'
+    END
+
+    RETURN
+
+*************
+PROCESA.ACEE:
+*************
+
+    GOSUB OBTIENE.FT.HIS
+    GOSUB OBTIENE.VALORES.FT
+    Y.TRANSACTION.TYPE = 'ACEE'
+    IF Y.FT.TRANSACTION.TYPE MATCHES COD.TRANS THEN
+        IF Y.MONTO.ORI EQ Y.FT.DEBIT.AMOUNT THEN
+            IF Y.FEC.ORI EQ Y.FT.DEBIT.VALUE.DATE THEN
+                Y.FT.DEBIT.AMOUNT = Y.MONTO.RET
+                IF Y.CUENTA.ORDENANTE EQ Y.FT.DEBIT.ACCT.NO THEN
+                    GOSUB ARMA.OFS
+                    GOSUB ENVIA.OFS
+                END ELSE
+                    DATOS = '-1, LA CUENTA ORDENANTE NO COINCIDE CON LA CUENTA ORDENANTE DEL RETORNO'
+                END
+            END ELSE
+                DATOS = '-1, LA FECHA ORIGINAL NO COINCIDE CON LA FECHA ORIGINAL DEL RETORNO'
+            END
+        END ELSE
+            DATOS = '-1, EL MONTO ORIGINAL NO COINCIDE CON EL MONTO ORIGINAL DEL RETORNO'
+        END
+    END ELSE
+        DATOS = '-1, EL FT ORIGINAL NO ES SPEI O CODI SALIENTE ACEE'
+    END
+
+    RETURN
+
+****************
+OBTIENE.FT.LIVE:
+****************
+
+    ID.FT = 'FT':Y.CLAVE.RASTREO
+    EB.DataAccess.FRead(FN.FT,ID.FT,REC.FT,F.FT,ERR.FT)
+    IF REC.FT THEN
+    END ELSE
+        DATOS = '-1, EL FT NO EXISTE'
+    END
+
+    RETURN
+
+***************
+OBTIENE.FT.HIS:
+***************
+
+    ID.FT = 'FT':Y.CLAVE.RASTREO
+    EB.DataAccess.FReadHistory(FN.FT.HIS,ID.FT,REC.FT,F.FT.HIS,ERR.FT)
+    IF ERR.FT THEN
+        GOSUB OBTIENE.FT.LIVE
+    END
+
+    RETURN
+
+*******************
+OBTIENE.VALORES.FT:
+*******************
+
+    Y.FT.TRANSACTION.TYPE = REC.FT<FT.Contract.FundsTransfer.TransactionType>
+    Y.FT.CREDIT.ACCT.NO = REC.FT<FT.Contract.FundsTransfer.CreditAcctNo>
+    Y.FT.DEBIT.ACCT.NO = REC.FT<FT.Contract.FundsTransfer.DebitAcctNo>
+    Y.FT.DEBIT.AMOUNT = REC.FT<FT.Contract.FundsTransfer.DebitAmount>
+    Y.FT.DEBIT.CURRENCY = REC.FT<FT.Contract.FundsTransfer.DebitCurrency>
+    Y.FT.DEBIT.VALUE.DATE = REC.FT<FT.Contract.FundsTransfer.DebitValueDate>
+
+    RETURN
+
+*********
+ARMA.OFS:
+*********
+
+    OFS.MSG  = Y.VER.ING.FT:"/I/PROCESS,":Y.USUARIO.OFS:"/":Y.PASS.OFS:","
+    OFS.MSG := ",TRANSACTION.TYPE:1:1=":Y.TRANSACTION.TYPE
+    OFS.MSG := ",DEBIT.ACCT.NO:1:1=":Y.FT.CREDIT.ACCT.NO
+    OFS.MSG := ",DEBIT.AMOUNT:1:1=":Y.FT.DEBIT.AMOUNT
+    OFS.MSG := ",CREDIT.ACCT.NO:1:1=":Y.FT.DEBIT.ACCT.NO
+    OFS.MSG := ",DEBIT.CURRENCY:1:1=":Y.FT.DEBIT.CURRENCY
+    OFS.MSG := ",TIPO.SPEI:1:1=":Y.TIPO.OPER
+    OFS.MSG := ",FT.RETORNO:1:1=":FIELD(ID.FT,";",1)
+    OFS.MSG := ",PROFIT.CENTRE.CUST:1:1=":Y.PROFIT.CENTRE.CUST
+    PRINT OFS.MSG
+    DISPLAY OFS.MSG
+
+    RETURN
+
+**********
+ENVIA.OFS:
+**********
+
+    EB.Interface.OfsGlobusManager(Y.OFS.SOURCE,OFS.MSG)
+    EB.TransactionControl.JournalUpdate("")
+    Y.RESPONSE.CODE.ENV = TRIM(FIELD(OFS.MSG, '/', 3))
+    Y.RESPONSE.CODE.ENV = TRIM(FIELD(Y.RESPONSE.CODE.ENV,",",1))
+    IF Y.RESPONSE.CODE.ENV EQ 1 THEN
+        DATOS ="1|":TRIM(FIELD(OFS.MSG, '/', 1))
+    END ELSE
+        IF TRIM(FIELD(OFS.MSG, '/', 4)) NE '' THEN
+            DATOS ="-1|":TRIM(FIELD(OFS.MSG, '/', 4))
+        END ELSE
+            DATOS ="-1|":TRIM(FIELD(OFS.MSG, '/', 2))
+        END
+    END
+
+    RETURN
+
+END

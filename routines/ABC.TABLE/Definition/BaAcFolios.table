@@ -1,0 +1,22 @@
+public table BaAcFolios {
+    t24: BA.AC.FOLIOS
+    fields:{
+        Version(BA.AC.FOL.VERSION)                      = 1
+        Sucursal(BA.AC.FOL.SUCURSAL)                    = 2
+        Folio(BA.AC.FOL.FOLIO)                          = 3
+        Reserved5(BA.AC.FOL.RESERVED.5)                 = 4
+        Reserved4(BA.AC.FOL.RESERVED.4)                 = 5
+        Reserved3(BA.AC.FOL.RESERVED.3)                 = 6
+        Reserved2(BA.AC.FOL.RESERVED.2)                 = 7
+        Reserved1(BA.AC.FOL.RESERVED.1)                 = 8
+        RecordStatus(BA.AC.FOL.RECORD.STATUS)           = 9
+        CurrNo(BA.AC.FOL.CURR.NO)                       = 10
+        Inputter(BA.AC.FOL.INPUTTER)                    = 11
+        DateTime(BA.AC.FOL.DATE.TIME)                   = 12
+        Authoriser(BA.AC.FOL.AUTHORISER)                = 13
+        CoCode(BA.AC.FOL.CO.CODE)                       = 14
+        DeptCode(BA.AC.FOL.DEPT.CODE)                   = 15
+        AuditorCode(BA.AC.FOL.AUDITOR.CODE)             = 16
+        AuditDateTime(BA.AC.FOL.AUDIT.DATE.TIME)        = 17
+    }
+}

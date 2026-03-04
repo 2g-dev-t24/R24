@@ -1,0 +1,39 @@
+public table EtSapProducto {
+    t24: ET.SAP.PRODUCTO
+    fields:{
+        Bin(PRD.BIN)  = 1 
+        Descripcion(PRD.DESCRIPCION)  = 2 
+        Perfilid(PRD.PERFILID)  = 3 
+        TVencimiento(PRD.T.VENCIMIENTO) = 4 
+        Baid(PRD.BAID) = 5 
+        GeneraArchivos(PRD.GENERA.ARCHIVOS)  = 6 
+        NomArcTarjeta(PRD.NOM.ARC.TARJETA)  = 7 
+        NomArcNip(PRD.NOM.ARC.NIP)   = 8 
+        EnvioNips(PRD.ENVIO.NIPS)  = 9 
+        TipoReposicion(PRD.TIPO.REPOSICION) = 10 
+        CostoReposi(PRD.COSTO.REPOSI)  = 11 
+        NoRepSncosto(PRD.NO.REP.SNCOSTO)  = 12 
+        MaxTarAdic(PRD.MAX.TAR.ADIC)   = 13 
+        ConsFecVen(PRD.CONS.FEC.VEN) = 14 
+        Reserved9(PRD.RESERVED.9) = 15
+        Reserved8(PRD.RESERVED.8) = 16
+        Reserved7(PRD.RESERVED.7) = 17
+        Reserved6(PRD.RESERVED.6) = 18
+        Reserved5(PRD.RESERVED.5) = 19
+        Reserved4(PRD.RESERVED.4) = 20
+        Reserved3(PRD.RESERVED.3) = 21
+        Reserved2(PRD.RESERVED.2) = 22
+        Reserved1(PRD.RESERVED.1) = 23
+        LocalRef(PRD.LOCAL.REF) = 24
+        Override(PRD.OVERRIDE) = 25
+        RecordStatus(PRD.RECORD.STATUS) = 26
+        CurrNo(PRD.CURR.NO) = 27
+        Inputter(PRD.INPUTTER) = 28
+        DateTime(PRD.DATE.TIME) = 29
+        Authoriser(PRD.AUTHORISER) = 30
+        CoCode(PRD.CO.CODE) = 31
+        DeptCode(PRD.DEPT.CODE) = 32
+        AuditorCode(PRD.AUDITOR.CODE) = 33
+        AuditDateTime(PRD.AUDIT.DATE.TIME) = 34
+    }
+}

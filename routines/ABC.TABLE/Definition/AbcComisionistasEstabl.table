@@ -1,0 +1,39 @@
+public table AbcComisionistasEstabl {
+    t24: ABC.COMISIONISTAS.ESTABL
+    fields:{
+        FecMov(ACE.FEC.MOV) = 1
+        ClaveEntidad(ACE.CLAVE.ENTIDAD) = 2
+        ClaveFormulario(ACE.CLAVE.FORMULARIO) = 3
+        IdComisionista(ACE.ID.COMISIONISTA) = 4
+        RfcComisionista(ACE.RFC.COMISIONISTA) = 5
+        TipoMovimiento(ACE.TIPO.MOVIMIENTO) = 6
+        ClaveModulEstabl(ACE.CLAVE.MODUL.ESTABL) = 7
+        LocModulEstabl(ACE.LOC.MODUL.ESTABL) = 8
+        CausaBaja(ACE.CAUSA.BAJA) = 9
+        MuniModuloEstabl(ACE.MUNI.MODULO.ESTABL) = 10
+        EdoModuloEstabl(ACE.EDO.MODULO.ESTABL) = 11
+        NombreEstabl(ACE.NOMBRE.ESTABL) = 12
+        Calle(ACE.CALLE) = 13
+        NumExt(ACE.NUM.EXT) = 14
+        NumInt(ACE.NUM.INT) = 15
+        Colonia(ACE.COLONIA) = 16
+        CodPostal(ACE.COD.POSTAL) = 17
+        Geolocalizacion(ACE.GEOLOCALIZACION) = 18
+
+        Reserved1(ACE.RESERVED.1)              = 19
+        Reserved2(ACE.RESERVED.2)              = 20
+        Reserved3(ACE.RESERVED.3)              = 21
+        
+        LocalRef(ACE.LOCAL.REF) = 22
+        Override(ACE.OVERRIDE) = 23
+        RecordStatus(ACE.RECORD.STATUS)        = 24
+        CurrNo(ACE.CURR.NO)                    = 25
+        Inputter(ACE.INPUTTER)                 = 26
+        DateTime(ACE.DATE.TIME)                = 27
+        Authoriser(ACE.AUTHORISER)             = 28
+        CoCode(ACE.CO.CODE)                    = 29
+        DeptCode(ACE.DEPT.CODE)                = 30
+        AuditorCode(ACE.AUDITOR.CODE)          = 31
+        AuditDateTime(ACE.AUDIT.DATE.TIME)     = 32
+    }
+}

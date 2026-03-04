@@ -1,0 +1,263 @@
+* @ValidationCode : MjotMTU3MDI4NTAwNjpDcDEyNTI6MTc3MjMxODQyMTA2OTpMdWlzIENhcHJhOi0xOi0xOjA6MDpmYWxzZTpOL0E6UjI0X1NQMS4wOi0xOi0x
+* @ValidationInfo : Timestamp         : 28 Feb 2026 19:40:21
+* @ValidationInfo : Encoding          : Cp1252
+* @ValidationInfo : User Name         : Luis Capra
+* @ValidationInfo : Nb tests success  : N/A
+* @ValidationInfo : Nb tests failure  : N/A
+* @ValidationInfo : Rating            : N/A
+* @ValidationInfo : Coverage          : N/A
+* @ValidationInfo : Strict flag       : N/A
+* @ValidationInfo : Bypass GateKeeper : false
+* @ValidationInfo : Compiler Version  : R24_SP1.0
+* @ValidationInfo : Copyright Temenos Headquarters SA 1993-2026. All rights reserved.
+$PACKAGE AbcRhi
+
+SUBROUTINE RHI.CONTA.ABANKS.LOAD
+*-----------------------------------------------------------------------------
+*
+*-----------------------------------------------------------------------------
+* Modification History :
+*-----------------------------------------------------------------------------
+    $USING EB.DataAccess
+    $USING EB.Updates
+    $USING EB.Utility
+    $USING EB.SystemTables
+    $USING AbcGetGeneralParam
+*-----------------------------------------------------------------------------
+
+    GOSUB OPEN.CORE.FILES
+
+    GOSUB OPEN.CREATE.EXTRACTOR.FILES
+    
+    GOSUB VARIABLES.COMMON
+
+RETURN
+
+OPEN.CREATE.EXTRACTOR.FILES:
+
+*/ Filter Definitions to variables used in the main routine
+    EB.DataAccess.FRead(FN.EB.RHI.AC.LINE.FILTER,"SYSTEM",REC.LINE.FILTER,F.EB.RHI.AC.LINE.FILTER,ERR.LINE.FILTER)
+
+    LOCATE 'FILTER.LINE' IN REC.LINE.FILTER<2,1> SETTING YPOS.LOC THEN
+        Y.FILTER.LINE = REC.LINE.FILTER<4,YPOS.LOC>
+        CONVERT @SM TO @VM IN Y.FILTER.LINE
+    END ELSE
+        Y.FILTER.LINE = ''
+    END
+
+    LOCATE 'FILTER.PRODUCT.CATEGORY' IN REC.LINE.FILTER<2,1> SETTING YPOS.LOC THEN
+        Y.FILTER.PRODUCT.CATEGORY = REC.LINE.FILTER<4,YPOS.LOC>
+        CONVERT @SM TO @VM IN Y.FILTER.PRODUCT.CATEGORY
+    END ELSE
+        Y.FILTER.PRODUCT.CATEGORY = ''
+    END
+
+    LOCATE 'FILTER.EXTRA.LINE' IN REC.LINE.FILTER<2,1> SETTING YPOS.LOC THEN
+        Y.FILTER.EXTRA.LINE = REC.LINE.FILTER<4,YPOS.LOC>
+        CONVERT @SM TO @VM IN Y.FILTER.EXTRA.LINE
+    END ELSE
+        Y.FILTER.EXTRA.LINE = ''
+    END
+
+    LOCATE 'FILTER.TRANSACTION.CODE' IN REC.LINE.FILTER<2,1> SETTING YPOS.LOC THEN
+        Y.FILTER.TRANSACTION.CODE = REC.LINE.FILTER<4,YPOS.LOC>
+        CONVERT @SM TO @VM IN Y.FILTER.TRANSACTION.CODE
+    END ELSE
+        Y.FILTER.TRANSACTION.CODE = ''
+    END
+
+*/ Fin
+
+*/ Call export file name and folder extensions
+
+    AbcGetGeneralParam.AbcGetGeneralParam('RHI.CONTA.ABANKS', Y.LIST.PARAMS, Y.LIST.VALUES)
+
+    LOCATE 'FILE.DIRECTORY' IN Y.LIST.PARAMS SETTING YPOS.FILE.DIRECTORY THEN
+        Y.BASE.FILE.DIRECTORY = Y.LIST.VALUES<YPOS.FILE.DIRECTORY>
+    END
+    LOCATE 'TEMP.DIRECTORY' IN Y.LIST.PARAMS SETTING YPOS.TEMP.DIRECTORY THEN
+        Y.TEMP.DIRECTORY = Y.LIST.VALUES<YPOS.TEMP.DIRECTORY>
+    END
+    LOCATE 'DATAFILE.NAME' IN Y.LIST.PARAMS SETTING YPOS.DATAFILE.NAME THEN
+        Y.BASE.DATAFILE.NAME = Y.LIST.VALUES<YPOS.DATAFILE.NAME>
+    END
+    LOCATE 'DATAFILE.EXT' IN Y.LIST.PARAMS SETTING YPOS.DATAFILE.EXT THEN
+        Y.BASE.DATAFILE.EXT = Y.LIST.VALUES<YPOS.DATAFILE.EXT>
+    END
+    LOCATE 'LOGFILE.NAME' IN Y.LIST.PARAMS SETTING YPOS.LOGFILE.NAME THEN
+        Y.BASE.LOGFILE.NAME = Y.LIST.VALUES<YPOS.LOGFILE.NAME>
+    END
+    LOCATE 'LOGFILE.EXT' IN Y.LIST.PARAMS SETTING YPOS.LOGFILE.EXT THEN
+        Y.BASE.LOGFILE.EXT = Y.LIST.VALUES<YPOS.LOGFILE.EXT>
+    END
+*/ Fin
+
+    IF NOT(Y.BASE.FILE.DIRECTORY AND Y.BASE.DATAFILE.NAME AND Y.BASE.DATAFILE.EXT AND Y.BASE.LOGFILE.NAME AND Y.BASE.LOGFILE.EXT) THEN
+        PRINT "RHI.CONTA.ABANKS.LOAD - Definir Correctamente ABC.GENERAL.PARAM"
+        RETURN
+    END
+
+
+
+    Y.DATAFILE.TMP = Y.BASE.FILE.DIRECTORY:Y.TEMP.DIRECTORY:'/DATAFILE.TMP'
+    Y.LOGFILE.TMP  = Y.BASE.FILE.DIRECTORY:Y.TEMP.DIRECTORY:'/LOGFILE.TMP'
+
+RETURN
+
+OPEN.CORE.FILES:
+
+    Y.APP = "STMT.ENTRY":@FM:"RE.CONSOL.SPEC.ENTRY":@FM:"CATEG.ENTRY"
+    Y.FLD = "BALANCE.LINE":@VM:"DEBIT.CREDIT":@FM:"BALANCE.LINE":@VM:"DEBIT.CREDIT":@FM:"BALANCE.LINE":@VM:"DEBIT.CREDIT"
+    EB.Updates.MultiGetLocRef(Y.APP,Y.FLD,Y.POS.ALL)
+
+    Y.STMT.BAL.LINE.POS     = Y.POS.ALL<1,1>
+    Y.STMT.DC.POS           = Y.POS.ALL<1,2>
+    Y.SPEC.BAL.LINE.POS     = Y.POS.ALL<2,1>
+    Y.SPEC.DC.POS           = Y.POS.ALL<2,2>
+    Y.CATEG.BAL.LINE.POS    = Y.POS.ALL<3,1>
+    Y.CATEG.DC.POS          = Y.POS.ALL<3,2>
+
+*Y.DATES.LWKDAY = R.DATES(EB.DAT.LAST.WORKING.DAY)
+    Y.DATES.LWKDAY= EB.SystemTables.getRDates(EB.Utility.Dates.DatLastWorkingDay)
+
+    FN.ABC.GENERAL.PARAM = 'F.ABC.GENERAL.PARAM'
+    F.ABC.GENERAL.PARAM = ''
+    EB.DataAccess.Opf(FN.ABC.GENERAL.PARAM,F.ABC.GENERAL.PARAM)
+
+    FN.CATEG.ENT.ACTIVITY = 'F.CATEG.ENT.ACTIVITY'
+    F.CATEG.ENT.ACTIVITY = ''
+    EB.DataAccess.Opf(FN.CATEG.ENT.ACTIVITY, F.CATEG.ENT.ACTIVITY)
+
+    FN.ACCT.ENT.LWORK.DAY = 'F.ACCT.ENT.LWORK.DAY'
+    F.ACCT.ENT.LWORK.DAY = ''
+    EB.DataAccess.Opf(FN.ACCT.ENT.LWORK.DAY,F.ACCT.ENT.LWORK.DAY)
+
+    FN.RE.CONSOL.SPEC.ENT.KEY = 'F.RE.CONSOL.SPEC.ENT.KEY'
+    F.RE.CONSOL.SPEC.ENT.KEY = ''
+    EB.DataAccess.Opf(FN.RE.CONSOL.SPEC.ENT.KEY,F.RE.CONSOL.SPEC.ENT.KEY)
+
+    FN.ACCOUNT.CLOSED = 'F.ACCOUNT.CLOSED'
+    F.ACCOUNT.CLOSED = ''
+    EB.DataAccess.Opf(FN.ACCOUNT.CLOSED,F.ACCOUNT.CLOSED)
+
+    FN.EB.RHI.AC.LINE.FILTER = 'F.EB.RHI.AC.LINE.FILTER'
+    F.EB.RHI.AC.LINE.FILTER = ''
+    EB.DataAccess.Opf(FN.EB.RHI.AC.LINE.FILTER,F.EB.RHI.AC.LINE.FILTER)
+
+    FN.EB.RHI.AC.LINE.PARAMETER = 'F.EB.RHI.AC.LINE.PARAMETER'
+    F.EB.RHI.AC.LINE.PARAMETER = ''
+    EB.DataAccess.Opf(FN.EB.RHI.AC.LINE.PARAMETER,F.EB.RHI.AC.LINE.PARAMETER)
+
+    FN.STMT.ENTRY = 'F.STMT.ENTRY'
+    F.STMT.ENTRY = ''
+    EB.DataAccess.Opf(FN.STMT.ENTRY, F.STMT.ENTRY)
+
+    FN.STMT.ENTRY.DETAIL = 'F.STMT.ENTRY.DETAIL'
+    F.STMT.ENTRY.DETAIL = ''
+    EB.DataAccess.Opf(FN.STMT.ENTRY.DETAIL, F.STMT.ENTRY.DETAIL)
+
+    FN.STMT.ENTRY.DETAIL.XREF = 'F.STMT.ENTRY.DETAIL.XREF'
+    F.STMT.ENTRY.DETAIL.XREF = ''
+    EB.DataAccess.Opf(FN.STMT.ENTRY.DETAIL.XREF, F.STMT.ENTRY.DETAIL.XREF)
+
+    FN.CATEG.ENTRY = 'F.CATEG.ENTRY'
+    F.CATEG.ENTRY = ''
+    EB.DataAccess.Opf(FN.CATEG.ENTRY, F.CATEG.ENTRY)
+
+    FN.CATEG.ENTRY.DETAIL = 'F.CATEG.ENTRY.DETAIL'
+    F.CATEG.ENTRY.DETAIL = ''
+    EB.DataAccess.Opf(FN.CATEG.ENTRY.DETAIL, F.CATEG.ENTRY.DETAIL)
+
+    FN.RE.CONSOL.SPEC.ENTRY = 'F.RE.CONSOL.SPEC.ENTRY'
+    F.RE.CONSOL.SPEC.ENTRY = ''
+    EB.DataAccess.Opf(FN.RE.CONSOL.SPEC.ENTRY, F.RE.CONSOL.SPEC.ENTRY)
+
+    FN.RE.SPEC.ENTRY.DETAIL = 'F.RE.SPEC.ENTRY.DETAIL'
+    F.RE.SPEC.ENTRY.DETAIL = ''
+    EB.DataAccess.Opf(FN.RE.SPEC.ENTRY.DETAIL, F.RE.SPEC.ENTRY.DETAIL)
+
+    FN.RE.TXN.CODE = 'F.RE.TXN.CODE'
+    F.RE.TXN.CODE = ''
+    EB.DataAccess.Opf(FN.RE.TXN.CODE, F.RE.TXN.CODE)
+
+    FN.TRANSACTION = 'F.TRANSACTION'
+    F.TRANSACTION = ''
+    EB.DataAccess.Opf(FN.TRANSACTION, F.TRANSACTION)
+
+RETURN
+
+VARIABLES.COMMON:
+    AbcRhi.setFnAbcGeneralParam(FN.ABC.GENERAL.PARAM);
+    AbcRhi.setFAbcGeneralParam(F.ABC.GENERAL.PARAM);
+
+    AbcRhi.setFnCategEntActivity(FN.CATEG.ENT.ACTIVITY);
+    AbcRhi.setFCategEntActivity(F.CATEG.ENT.ACTIVITY);
+
+    AbcRhi.setFnAcctEntLworkDay(FN.ACCT.ENT.LWORK.DAY);
+    AbcRhi.setFAcctEntLworkDay(F.ACCT.ENT.LWORK.DAY);
+
+    AbcRhi.setFnReConsolSpecEntKey(FN.RE.CONSOL.SPEC.ENT.KEY);
+    AbcRhi.setFReConsolSpecEntKey(F.RE.CONSOL.SPEC.ENT.KEY);
+
+    AbcRhi.setFnAccountClosed(FN.ACCOUNT.CLOSED);
+    AbcRhi.setFAccountClosed(F.ACCOUNT.CLOSED);
+
+    AbcRhi.setFnEbRhiAcLineFilter(FN.EB.RHI.AC.LINE.FILTER);
+    AbcRhi.setFEbRhiAcLineFilter(F.EB.RHI.AC.LINE.FILTER);
+
+    AbcRhi.setFnEbRhiAcLineParameter(FN.EB.RHI.AC.LINE.PARAMETER);
+    AbcRhi.setFEbRhiAcLineParameter(F.EB.RHI.AC.LINE.PARAMETER);
+
+    AbcRhi.setFnStmtEntry(FN.STMT.ENTRY);
+    AbcRhi.setFStmtEntry(F.STMT.ENTRY);
+
+    AbcRhi.setFnStmtEntryDetail(FN.STMT.ENTRY.DETAIL);
+    AbcRhi.setFStmtEntryDetail(F.STMT.ENTRY.DETAIL);
+
+    AbcRhi.setFnStmtEntryDetailXref(FN.STMT.ENTRY.DETAIL.XREF);
+    AbcRhi.setFStmtEntryDetailXref(F.STMT.ENTRY.DETAIL.XREF);
+
+    AbcRhi.setFnCategEntry(FN.CATEG.ENTRY);
+    AbcRhi.setFCategEntry(F.CATEG.ENTRY);
+
+    AbcRhi.setFnCategEntryDetail(FN.CATEG.ENTRY.DETAIL);
+    AbcRhi.setFCategEntryDetail(F.CATEG.ENTRY.DETAIL);
+
+    AbcRhi.setFnReConsolSpecEntry(FN.RE.CONSOL.SPEC.ENTRY);
+    AbcRhi.setFReConsolSpecEntry(F.RE.CONSOL.SPEC.ENTRY);
+
+    AbcRhi.setFnReSpecEntryDetail(FN.RE.SPEC.ENTRY.DETAIL);
+    AbcRhi.setFReSpecEntryDetail(F.RE.SPEC.ENTRY.DETAIL);
+
+    AbcRhi.setFnReTxnCode(FN.RE.TXN.CODE);
+    AbcRhi.setFReTxnCode(F.RE.TXN.CODE);
+
+    AbcRhi.setFnTransaction(FN.TRANSACTION);
+    AbcRhi.setFTransaction(F.TRANSACTION);
+
+    AbcRhi.setFileDirectory(Y.BASE.FILE.DIRECTORY);
+    AbcRhi.setDatafileName(Y.BASE.DATAFILE.NAME);
+    AbcRhi.setDatafileExt(Y.BASE.DATAFILE.EXT);
+    AbcRhi.setLogfileName(Y.BASE.LOGFILE.NAME);
+    AbcRhi.setLogfileExt(Y.BASE.LOGFILE.EXT);
+
+    AbcRhi.setStmtBalLinePos(Y.STMT.BAL.LINE.POS);
+    AbcRhi.setStmtDcPos(Y.STMT.DC.POS);
+    AbcRhi.setSpecBalLinePos(Y.SPEC.BAL.LINE.POS);
+    AbcRhi.setSpecDcPos(Y.SPEC.DC.POS);
+    AbcRhi.setCategBalLinePos(Y.CATEG.BAL.LINE.POS);
+    AbcRhi.setCategDcPos(Y.CATEG.DC.POS);
+    AbcRhi.setYDatafileTmp(Y.DATAFILE.TMP);
+    AbcRhi.setYDatafileTmpF(Y.DATAFILE.TMP.F);
+    AbcRhi.setYLogfileTmpF(Y.LOGFILE.TMP.F);
+    AbcRhi.setYLogfileTmp(Y.LOGFILE.TMP);
+    AbcRhi.setYFilterLine(Y.FILTER.LINE)
+    AbcRhi.setYFilterProductCategory(Y.FILTER.PRODUCT.CATEGORY)
+    AbcRhi.setYFilterExtraLine(Y.FILTER.EXTRA.LINE)
+    AbcRhi.setYDatesLwkday(Y.DATES.LWKDAY)
+    AbcRhi.setYFilterTransactionCode(Y.FILTER.TRANSACTION.CODE)
+    
+RETURN
+
+END
+

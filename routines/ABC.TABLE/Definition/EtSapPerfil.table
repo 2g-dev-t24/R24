@@ -1,0 +1,36 @@
+public table EtSapPerfil {
+    t24: ET.SAP.PERFIL
+    fields:{
+        Descripcion(PFL.DESCRIPCION) = 1
+        Jerarquia(PFL.JERARQUIA) = 2
+        CondBin(PFL.COND.BIN) = 3
+        CondProducto(PFL.COND.PRODUCTO) = 4
+        CondMensaje(PFL.COND.MENSAJE) = 5
+        MovsDia(PFL.MOVS.DIA) = 6
+        MontoDia(PFL.MONTO.DIA) = 7
+        MovsSem(PFL.MOVS.SEM) = 8
+        MontoSem(PFL.MONTO.SEM) = 9
+        MovsMes(PFL.MOVS.MES) =  10
+        MontoMes(PFL.MONTO.MES) =  11
+        Reserved9(PFL.RESERVED.9) = 12
+        Reserved8(PFL.RESERVED.8) = 13
+        Reserved7(PFL.RESERVED.7) = 14
+        Reserved6(PFL.RESERVED.6) = 15
+        Reserved5(PFL.RESERVED.5) = 16
+        Reserved4(PFL.RESERVED.4) = 17
+        Reserved3(PFL.RESERVED.3) = 18
+        Reserved2(PFL.RESERVED.2) = 19
+        Reserved1(PFL.RESERVED.1) = 20
+        LocalRef(PFL.LOCAL.REF) = 21
+        Override(PFL.OVERRIDE) = 22
+        RecordStatus(PFL.RECORD.STATUS) = 23
+        CurrNo(PFL.CURR.NO) = 24
+        Inputter(PFL.INPUTTER) = 25
+        DateTime(PFL.DATE.TIME) = 26
+        Authoriser(PFL.AUTHORISER) = 27
+        CoCode(PFL.CO.CODE) = 28
+        DeptCode(PFL.DEPT.CODE) = 29
+        AuditorCode(PFL.AUDITOR.CODE) = 30
+        AuditDateTime(PFL.AUDIT.DATE.TIME) = 31
+    }
+}

@@ -1,0 +1,38 @@
+public table AbcIpabCredVenc {
+    t24: ABC.IPAB.CRED.VENC
+    fields:{
+        CodigoCliente(IPAB.CRE.VEN.CODIGO.CLIENTE) = 1
+        NumeroCredito(IPAB.CRE.VEN.NUMERO.CREDITO) = 2
+        Moneda(IPAB.CRE.VEN.MONEDA) = 3
+        Segmento(IPAB.CRE.VEN.SEGMENTO) = 4
+        TipoCobranza(IPAB.CRE.VEN.TIPO.COBRANZA) = 5
+        CapitalVigente(IPAB.CRE.VEN.CAPITAL.VIGENTE) = 6
+        CapitalVencido(IPAB.CRE.VEN.CAPITAL.VENCIDO) = 7
+        IntOrdExigible(IPAB.CRE.VEN.INT.ORD.EXIGIBLE) = 8
+        IntMoratorio(IPAB.CRE.VEN.INT.MORATORIO) = 9
+        OtrosAccesorios(IPAB.CRE.VEN.OTROS.ACCESORIOS) = 10
+        
+        Reserved10(IPAB.CRE.VEN.RESERVED.10) = 11
+        Reserved9(IPAB.CRE.VEN.RESERVED.09) = 12
+        Reserved8(IPAB.CRE.VEN.RESERVED.08) = 13
+        Reserved7(IPAB.CRE.VEN.RESERVED.07) = 14
+        Reserved6(IPAB.CRE.VEN.RESERVED.06) = 15
+        Reserved5(IPAB.CRE.VEN.RESERVED.05) = 16
+        Reserved4(IPAB.CRE.VEN.RESERVED.04) = 17
+        Reserved3(IPAB.CRE.VEN.RESERVED.03) = 18
+        Reserved2(IPAB.CRE.VEN.RESERVED.02) = 19
+        Reserved1(IPAB.CRE.VEN.RESERVED.01) = 20
+
+        LocalRef(IPAB.CRE.VEN.LOCAL.REF) = 21
+        Override(IPAB.CRE.VEN.OVERRIDE) = 22
+        RecordStatus(IPAB.CRE.VEN.RECORD.STATUS) = 23
+        CurrNo(IPAB.CRE.VEN.CURR.NO) = 24
+        Inputter(IPAB.CRE.VEN.INPUTTER) = 25
+        DateTime(IPAB.CRE.VEN.DATE.TIME) = 26
+        Authoriser(IPAB.CRE.VEN.AUTHORISER) = 27
+        CoCode(IPAB.CRE.VEN.CO.CODE) = 28
+        DeptCode(IPAB.CRE.VEN.DEPT.CODE) = 29
+        AuditorCode(IPAB.CRE.VEN.AUDITOR.CODE) = 30
+        AuditDateTime(IPAB.CRE.VEN.AUDIT.DATE.TIME) = 31
+    }
+}

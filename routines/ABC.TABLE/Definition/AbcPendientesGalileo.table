@@ -1,0 +1,41 @@
+private table AbcPendientesGalileo {
+    t24: ABC.PENDIENTES.GALILEO
+    fields:{
+        TipoTrans(PEND.GALI.TIPO.TRANS)         = 1
+        Descripcion(PEND.GALI.DESCRIPCION)      = 2
+        CuentaCliente(PEND.GALI.CUENTA.CLIENTE) = 3
+        MontoLocal(PEND.GALI.MONTO.LOCAL)       = 4
+        Comision(PEND.GALI.COMISION)            = 5
+        MontoOrig(PEND.GALI.MONTO.ORIG)         = 6
+        MonedaOrig(PEND.GALI.MONEDA.ORIG)       = 7
+        AclkId(PEND.GALI.ACLK.ID)               = 8
+        FechaIngreso(PEND.GALI.FECHA.INGRESO)   = 9
+        HoraIngreso(PEND.GALI.HORA.INGRESO)     = 10
+        Estatus(PEND.GALI.ESTATUS)              = 11
+        FechaApli(PEND.GALI.FECHA.APLI)         = 12
+        HoraApli(PEND.GALI.HORA.APLI)           = 13
+        MsgError(PEND.GALI.MSG.ERROR)           = 14
+        Reserved10(PEND.GALI.RESERVED.10)      = 15
+        Reserved9(PEND.GALI.RESERVED.9)        = 16
+        Reserved8(PEND.GALI.RESERVED.8)        = 17
+        Reserved7(PEND.GALI.RESERVED.7)        = 18
+        Reserved6(PEND.GALI.RESERVED.6)        = 19
+        Reserved5(PEND.GALI.RESERVED.5)        = 20
+        Reserved4(PEND.GALI.RESERVED.4)        = 21
+        Reserved3(PEND.GALI.RESERVED.3)        = 22
+        Reserved2(PEND.GALI.RESERVED.2)        = 23
+        Reserved1(PEND.GALI.RESERVED.1)        = 24
+        
+        LocalRef(PEND.GALI.LOCAL.REF)                = 25
+        Override(PEND.GALI.OVERRIDE)                 = 26
+        RecordStatus(PEND.GALI.RECORD.STATUS)        = 27
+        CurrNo(PEND.GALI.CURR.NO)                    = 28
+        Inputter(PEND.GALI.INPUTTER)                 = 29
+        DateTime(PEND.GALI.DATE.TIME)                = 30
+        Authoriser(PEND.GALI.AUTHORISER)             = 31
+        CoCode(PEND.GALI.CO.CODE)                    = 32
+        DeptCode(PEND.GALI.DEPT.CODE)                = 33
+        AuditorCode(PEND.GALI.AUDITOR.CODE)          = 34
+        AuditDateTime(PEND.GALI.AUDIT.DATE.TIME)     = 35
+    }
+}

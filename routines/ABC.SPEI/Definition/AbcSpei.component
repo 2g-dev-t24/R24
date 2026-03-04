@@ -1,0 +1,913 @@
+component AbcSpei
+
+# Component Isolation Definition
+metamodelVersion 1.6
+
+
+public method AbcObtenNivelCategory (
+)
+{
+    jBC: ABC.OBTEN.NIVEL.CATEGORY
+}
+
+public method AbcGetAccSpeiInTdc (
+)
+{
+    jBC: ABC.GET.ACC.SPEI.IN.TDC
+}
+
+public method AbcObtenGrupo (
+)
+{
+    jBC: ABC.OBTEN.GRUPO
+}
+
+public method abcObtenTasaInt (
+)
+{
+    jBC: ABC.OBTEN.TASA.INT
+}
+
+public method abcCtaExtValidate (
+)
+{
+    jBC: ABC.CTA.EXT.VALIDATE
+}
+
+
+private method bmvIdCaja (
+)
+{
+    jBC: BMV.ID.CAJA
+}
+
+private method AbcETasaInteres (
+    INOUT RData string
+)
+{
+    jBC: ABC.E.TASA.INTERES
+}
+
+private method AbcFiltraClabeTdc (
+    INOUT enq string
+)
+{
+    jBC: ABC.FILTRA.CLABE.TDC
+}
+
+private method AbcSpeiGetDataRetorno (
+    INOUT yIdtipopago string,
+    INOUT yFtRetorno string,
+    INOUT ySep string,
+    INOUT yCadenaRetorno string
+)
+{
+    jBC: ABC.SPEI.GETDATA.RETORNO
+}
+
+
+private method AbcSpeiGetdataRequest (
+    INOUT yStringOriginal string,
+    INOUT yCadenaDatos string
+)
+{
+    jBC: ABC.SPEI.GETDATA.REQUEST
+}
+
+
+private method EtSapConsultaCuenta (
+    INOUT result string
+)
+{
+    jBC: ET.SAP.CONSULTA.CUENTA
+}
+
+private method abcValidateIvaSpei (
+)
+{
+    jBC: ABC.VALIDATE.IVA.SPEI
+}
+
+
+
+private method abcRfcCep (
+)
+{
+    jBC: ABC.RFC.CEP
+}
+
+
+
+
+
+public method abcVCustomerName (
+    INOUT yComi string,
+    INOUT yNombre string,
+    INOUT msg string
+)
+{
+    jBC: ABC.V.CUSTOMER.NAME
+}
+
+
+
+private method abcValidaCanal (
+    INOUT yCanal string,
+    INOUT yError string
+)
+{
+    jBC: ABC.VALIDA.CANAL
+}
+
+
+
+private method abcValidaCanalFt (
+)
+{
+    jBC: ABC.VALIDA.CANAL.FT
+}
+
+private method AbcValidaRangosSpeiA ()
+{
+    jBC: ABC.VALIDA.RANGOS.SPEI.A
+}
+
+
+private method abcValidaAutSpei (
+)
+{
+    jBC: ABC.VALIDA.AUT.SPEI
+}
+
+
+
+private method abcValMontoMenorUdi (
+)
+{
+    jBC: ABC.VAL.MONTO.MENOR.UDI
+}
+
+private method AbcNofileFolioValidacion (
+    INOUT EnqParam string
+)
+{
+    jBC: ABC.NOFILE.FOLIO.VALIDACION
+}
+
+private method AbcRetornoRec (
+    INOUT EnqParam string
+)
+{
+    jBC: ABC.RETORNO.REC
+}
+
+public method AbcMontoBloqueado (
+    INOUT yNoAcc string,
+    INOUT ySaldoBloq string,
+    INOUT ytoday string  
+)
+{
+    jBC: ABC.MONTO.BLOQUEADO
+}
+
+private method AbcValPostRest (
+    INOUT yIdAcct string,
+)
+{
+    jBC: ABC.VAL.POST.REST
+}
+
+private method RtnFtCheckBalance (
+)
+{
+    jBC: RTN.FT.CHECK.BALANCE
+}
+
+private method AbcValidaMontoSpei (
+)
+{
+    jBC: ABC.VALIDA.MONTO.SPEI
+}
+
+private method abc2BrRtnValidaRfc (
+)
+{
+    jBC: ABC.2BR.RTN.VALIDA.RFC
+}
+
+private method abcCalculaCcc (
+    INOUT inCadena string,
+    INOUT outError string
+)
+{
+    jBC: ABC.CALCULA.CCC
+}
+
+private method AbcDateFt (
+    INOUT inYInputData string
+)
+{
+    jBC: ABC.DATE.FT
+}
+
+private method AbcInputterFormat (
+    INOUT inYInputData string
+)
+{
+    jBC: ABC.INPUTTER.FORMAT
+}
+
+private method Abc2brGetBankNameSpei (
+    INOUT inYInputData string
+)
+{
+    jBC: ABC.2BR.GET.BANK.NAME.SPEI
+}
+
+private method Ba2brGetRefSpei (
+    INOUT inYInputData string
+)
+{
+    jBC: BA.2BR.GET.REF.SPEI
+}
+
+private method AbcDealFmtAmt (
+    INOUT inYInputData string
+)
+{
+    jBC: ABC.DEAL.FMT.AMT
+}
+
+private method AbcValidaCanalAc (
+)
+{
+    jBC: ABC.VALIDA.CANAL.AC
+}
+
+private method AbcCambioCategRemu (
+)
+{
+    jBC: ABC.CAMBIO.CATEG.REMU
+}
+
+private method StoChkPostRestr (
+)
+{
+    jBC: STO.CHK.POST.RESTR
+}
+
+public method AbcValidaCccSpei (
+)
+{
+    jBC: ABC.VALIDA.CCC.SPEI
+}
+
+public method AbcValidaComisionSpei (
+)
+{
+    jBC: ABC.VALIDA.COMISION.SPEI
+}
+
+public method AbcCallRtnsGenFt (
+)
+{
+    jBC: ABC.CALL.RTNS.GEN.FT
+}
+
+public method AbcGetBenRfcSpei (
+)
+{
+    jBC: ABC.GET.BEN.RFC.SPEI
+}
+
+public method AbcEnvEmailCashinBbva (
+)
+{
+    jBC: ABC.ENV.EMAIL.CASHIN.BBVA
+}
+
+public method AbcLlenaDebitCashinBbva (
+)
+{
+    jBC: ABC.LLENA.DEBIT.CASHIN.BBVA
+}
+
+public method AbcValidaEnrolCustSpei (
+)
+{
+    jBC: ABC.VALIDA.ENROL.CUST.SPEI
+}
+
+public method AbcFillDebitAcctCashin (
+)
+{
+    jBC: ABC.FILL.DEBIT.ACCT.CASHIN
+}
+
+public method AbcFillInfCashin (
+)
+{
+    jBC: ABC.FILL.INF.CASHIN
+}
+
+public method AbcGetGeneralParam (
+    INOUT yIdParam string,
+    INOUT yListParams string,
+    INOUT yListValues string
+)
+{
+    jBC: ABC.GET.GENERAL.PARAM
+}
+
+public method AbcNivelLimMontoAut (
+)
+{
+    jBC: ABC.NIVEL.LIM.MONTO.AUT
+}
+
+public method AbcRegistraOperCashin (
+)
+{
+    jBC: ABC.REGISTRA.OPER.CASHIN
+}
+
+public method AbcSendEmailCashin (
+)
+{
+    jBC: ABC.SEND.EMAIL.CASHIN
+}
+
+public method AbcValLimitAcCashin (
+)
+{
+    jBC: ABC.VAL.LIMIT.AC.CASHIN
+}
+
+public method AbcValLimitMovsAcComi (
+    INOUT yIdMovsAcComi string,
+    INOUT yMontoTrans string,
+    INOUT yMontoLimitParam string,
+    INOUT yIdNewFt string,
+    INOUT yIdAdmin string,
+    INOUT yIdComi string,
+    INOUT yIdEstab string,
+    INOUT yCliente string
+)
+{
+    jBC: ABC.VAL.LIMIT.MOVS.AC.COMI
+}
+
+public method AbcValidaLimiteMonto (
+    INOUT yIdLimite string,
+    INOUT yMontoTrans string,
+    INOUT yMontoLimite string,
+    INOUT yId string,
+    INOUT yCliente string
+)
+{
+    jBC: ABC.VALIDA.LIMITE.MONTO
+}
+
+private method abcEMovFt (
+    INOUT yArr string
+)
+{
+    jBC: ABC.E.MOV.FT
+}
+
+public method AbcFmtInstBenef (
+)
+{
+    jBC: ABC.FMT.INST.BENEF
+}
+
+public method AbcInsertFtDetsConcat (
+)
+{
+    jBC: ABC.INSERT.FT.DETS.CONCAT
+}
+
+public method AbcSpeiExpressTxnOutgoing (
+)
+{
+    jBC: ABC.SPEI.EXPRESS.TXN.OUTGOING
+}
+
+
+public method AbcGenericWriteFile (
+    INOUT yRutaArch string,
+    INOUT yNomArch string,
+    INOUT yArrArch string
+)
+{
+    jBC: ABC.GENERIC.WRITE.FILE
+}
+
+
+public method AbcSpeiExpressPreparaRequest (
+    INOUT yStringEscribir string,
+    INOUT yResponse string
+)
+{
+    jBC: ABC.SPEI.EXPRESS.PREPARA.REQUEST
+}
+
+public method AbcSpeiExpressGetdataRequest (
+    INOUT yStringOriginal string,
+    INOUT yCadenaDatos string
+)
+{
+    jBC: ABC.SPEI.EXPRESS.GETDATA.REQUEST
+}
+
+public method AbcTraeGeneralParam (
+    INOUT yIdMod string,
+    INOUT yCadenaParam string,
+    INOUT yCadenaDatos string
+)
+{
+    jBC: ABC.TRAE.GENERAL.PARAM
+}
+
+public method AbcSpeiInterpretaResponse (
+    INOUT yResponse string,
+    INOUT yMessageOut string
+)
+{
+    jBC: ABC.SPEI.INTERPRETA.RESPONSE
+}
+
+public method AbcSpeiArmaRequest (
+    INOUT yTagS string,
+    INOUT yTagI string,
+    INOUT yValores string,
+    INOUT yCadenaSalida string
+)
+{
+    jBC: ABC.SPEI.ARMA.REQUEST
+}
+
+public method AbcSpeiPreparaRequest (
+    INOUT yStringOriginal string,
+    INOUT yResponse string,
+    
+)
+{
+    jBC: ABC.SPEI.PREPARA.REQUEST
+}
+
+
+public method AbcSpeiSendRequest (
+    INOUT yCdShell string,
+    INOUT yDatosEnvio string,
+    INOUT yReturnval string
+)
+{
+    jBC: ABC.SPEI.SEND.REQUEST
+}
+
+public method AbcClearCtaExternaSpei (
+)
+{
+    jBC: ABC.CLEAR.CTA.EXTERNA.SPEI
+}
+
+public method AbcValMontoSpeiExpress (
+)
+{
+    jBC: ABC.VAL.MONTO.SPEI.EXPRESS
+}
+
+public method AbcValidaLenCtaBen (
+)
+{
+    jBC: ABC.VALIDA.LEN.CTA.BEN
+}
+
+public method AbcEnvEmailSpeiAcse2 (
+)
+{
+    jBC: ABC.ENV.EMAIL.SPEI.ACSE.2
+}
+
+public method AbcValDefaultRfc (
+)
+{
+    jBC: ABC.VAL.DEFAULT.RFC
+}
+
+public method AbcValidaExtId (
+)
+{
+    jBC: ABC.VALIDA.EXT.ID
+}
+
+public method AbcFtGicDbAcct ()
+{
+    jBC: ABC.FT.GIC.DB.ACCT
+}
+
+public method AbcVFtToday ()
+{
+    jBC: ABC.V.FT.TODAY
+}
+
+public method PbsInslog (
+    INOUT yArchivoGuardar string,
+    INOUT yMensaje string,
+    INOUT yIniciando int
+)
+{
+    jBC: PBS.INSLOG
+}
+
+public method Abc2BrVCheckSpeiType ()
+{
+    jBC: ABC.2BR.V.CHECK.SPEI.TYPE
+}
+
+private method abcExtDescSpei (
+)
+{
+    jBC: ABC.EXT.DESC.SPEI
+}
+
+
+
+private method abcValidaNotSpeiEspecial (
+)
+{
+    jBC: ABC.VALIDA.NOT.SPEI.ESPECIAL
+}
+
+
+
+private method abcHoraCaptura (
+)
+{
+    jBC: ABC.HORA.CAPTURA
+}
+
+public method AbcStoreInfoSmsEmail ()
+{
+    jBC: ABC.STORE.INFO.SMS.EMAIL
+}
+
+public method AbcValCausaBaja ()
+{
+    jBC: ABC.VAL.CAUSA.BAJA
+}
+
+public method AbcActualizaFecha ()
+{
+    jBC: ABC.ACTUALIZA.FECHA
+}
+
+public method AbcCreaIdAdmin ()
+{
+    jBC: ABC.CREA.ID.ADMIN
+}
+
+public method AbcValidaIdAdmin ()
+{
+    jBC: ABC.VALIDA.ID.ADMIN
+}
+
+public method AbcValRfc ()
+{
+    jBC: ABC.VAL.RFC
+}
+
+
+public method AbcValidaOpAdmin ()
+{
+    jBC: ABC.VALIDA.OP.ADMIN
+}
+
+
+public method AbcVerificaRfcAdmin ()
+{
+    jBC: ABC.VERIFICA.RFC.ADMIN
+}
+
+
+public method AbcValCausaBajaComi ()
+{
+    jBC: ABC.VAL.CAUSA.BAJA.COMI
+}
+
+
+public method AbcCreaIdComi ()
+{
+    jBC: ABC.CREA.ID.COMI
+}
+
+
+public method AbcActualizaFechaComi ()
+{
+    jBC: ABC.ACTUALIZA.FECHA.COMI
+}
+
+
+public method AbcValidaIdComi ()
+{
+    jBC: ABC.VALIDA.ID.COMI
+}
+
+
+public method AbcVerificaRfcComi ()
+{
+    jBC: ABC.VERIFICA.RFC.COMI
+}
+
+
+public method AbcValCausaBajaEstabl ()
+{
+    jBC: ABC.VAL.CAUSA.BAJA.ESTABL
+}
+
+
+public method AbcActualizaFechaEstabl ()
+{
+    jBC: ABC.ACTUALIZA.FECHA.ESTABL
+}
+
+
+public method AbcValidaIdEstabl ()
+{
+    jBC: ABC.VALIDA.ID.ESTABL
+}
+
+
+private method AbcGetProductosInteres (
+    INOUT enqParam string
+)
+{
+    jBC: ABC.GET.PRODUCTOS.INTERES
+}
+
+public method AbcNofileMovilBancos (
+    INOUT rData string
+)
+{
+    jBC: ABC.NOFILE.MOVIL.BANCOS
+}
+
+
+public method AbcValCtaBenef ()
+{
+    jBC: ABC.VAL.CTA.BENEF
+}
+
+public method fygEnqCustomerName (
+    INOUT CustId string,
+)
+{
+    jBC: FYG.ENQ.CUSTOMER.NAME
+}
+
+private method abcEmailSpeiTdcUala (
+)
+{
+    jBC: ABC.EMAIL.SPEI.TDC.UALA
+}
+
+private method abcEnvEmailSpei (
+)
+{
+    jBC: ABC.ENV.EMAIL.SPEI
+}
+
+private method abcEnvEmailSpeiDev (
+)
+{
+    jBC: ABC.ENV.EMAIL.SPEI.DEV
+}
+
+private method abcFtSpeiDevol (
+)
+{
+    jBC: ABC.FT.SPEI.DEVOL
+}
+
+private method abcGetCustSpeiTdc (
+)
+{
+    jBC: ABC.GET.CUST.SPEI.TDC
+}
+
+private method abcIxpDatosCep (
+)
+{
+    jBC: ABC.IXP.DATOS.CEP
+}
+
+private method abcUpdateDcAccEnri (
+)
+{
+    jBC: ABC.UPDATE.DC.ACC.ENRI
+}
+
+private method abcValidaCtaPostRest (
+)
+{
+    jBC: ABC.VALIDA.CTA.POST.REST
+}
+
+
+private method AbcValDatBenPrn (
+)
+{
+    jBC: ABC.VAL.DAT.BEN.PRN
+}
+
+private method AbcValidaCuentasFt (
+)
+{
+    jBC: ABC.VALIDA.CUENTAS.FT
+}
+
+private method AbcEnvMailTrasAc2 (
+)
+{
+    jBC: ABC.ENV.EMAIL.TRAS.AC.2
+}
+
+private method AbcEnvMailTrasAcBen2 (
+)
+{
+    jBC: ABC.ENV.EMAIL.TRAS.AC.BEN.2
+}
+
+private method AbcValidaOpenDateAcct (
+)
+{
+    jBC: ABC.VALIDA.OPEN.DATE.ACCT
+}
+
+private method AbcValMontoTraspasoExpress (
+)
+{
+    jBC: ABC.VAL.MONTO.TRASPASO.EXPRESS
+}
+
+private method AbcMontoIvaBonificacion (
+)
+{
+    jBC: ABC.MONTO.IVA.BONIFICACION
+}
+
+
+
+private method AbcEnvEmailBonif (
+)
+{
+    jBC: ABC.ENV.EMAIL.BONIF
+}
+
+private method AbcVFtGicCrAcct (
+)
+{
+    jBC: ABC.V.FT.GIC.CR.ACCT
+}
+
+private method AbcCcCheckCustnoDr (
+)
+{
+    jBC: ABC.CC.CHECK.CUSTNO.DR
+}
+
+private method AbcValidaRfc (INOUT YRfc string, INOUT YErr string,
+)
+{
+    jBC: ABC.VALIDA.RFC
+}
+
+private method AbcLlenaCreditAcctServs (
+)
+{
+    jBC: ABC.LLENA.CREDIT.ACCT.SERVS
+}
+
+
+
+private method AbcGetAccDesembolsoR1 (
+)
+{
+    jBC: ABC.GET.ACC.DESEMBOLSO.R1
+}
+
+
+
+private method AbcGenFtAclkPosl (
+)
+{
+    jBC: ABC.GEN.FT.ACLK.POSL
+}
+
+
+
+private method AbcGetAccAbonoComercioR1 (
+)
+{
+    jBC: ABC.GET.ACC.ABONO.COMERCIO.R1
+}
+
+
+
+private method AbcCheckTrasComer (
+)
+{
+    jBC: ABC.CHECK.TRAS.COMER
+}
+
+
+
+private method AbcDesbloqAclkTrasComer (
+)
+{
+    jBC: ABC.DESBLOQ.ACLK.TRAS.COMER
+}
+
+
+
+private method AbcGetAccCancelDesembolso (
+)
+{
+    jBC: ABC.GET.ACC.CANCEL.DESEMBOLSO
+}
+
+
+
+private method AbcAplicaPagoCredito (
+)
+{
+    jBC: ABC.APLICA.PAGO.CREDITO
+}
+
+
+
+private method AbcEnvEmailPagoServ (
+)
+{
+    jBC: ABC.ENV.EMAIL.PAGO.SERV
+}
+
+
+
+private method AbcEnvEmailDesmCredComer (
+)
+{
+    jBC: ABC.ENV.EMAIL.DESM.CRED.COMER
+}
+
+
+
+private method AbcEnvEmailPagoCredito (
+)
+{
+    jBC: ABC.ENV.EMAIL.PAGO.CREDITO
+}
+
+
+
+private method AbcUpdAclkFt (
+)
+{
+    jBC: ABC.UPD.ACLK.FT
+}
+
+
+
+private method AbcEnvEmailDesemCredito (
+)
+{
+    jBC: ABC.ENV.EMAIL.DESEM.CREDITO
+}
+
+public method AbcTimeApliFt (
+    INOUT yDt string
+)
+{
+    jBC: ABC.TIME.APLI.FT
+}
+
+public method Abc2brGetCreditCustName (
+    INOUT yInputData string
+)
+{
+    jBC: ABC.2BR.GET.CREDIT.CUST.NAME
+}
+
+public method AbcIExtractName (
+    INOUT yNombre string,
+    INOUT yTipoCu string,
+    INOUT yApellidoP string,
+    INOUT yApellidoM string
+    INOUT yNombre1 string,
+    INOUT yNombre2 string,
+    INOUT yNomPerMoral string
+)
+{
+    jBC: ABC.I.EXTRACT.NAME
+}

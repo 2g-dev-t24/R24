@@ -1,0 +1,43 @@
+private table AbcCustomerAbcAltaDigitalApi {
+    t24: ABC.CUSTOMER.ABC.ALTA.DIGITAL.API
+    fields:{
+        shortName(ABC.ALTA.DIGITAL.SHORT.NAME) = 1
+        name1(ABC.ALTA.DIGITAL.NAME.1) = 2
+        name2(ABC.ALTA.DIGITAL.NAME.2) = 3
+        dateOfBirth(ABC.ALTA.DIGITAL.DATE.OF.BIRTH) = 4
+        lugNac(ABC.ALTA.DIGITAL.LUG.NAC) = 5
+        gender(ABC.ALTA.DIGITAL.GENDER) = 6
+        externCusId(ABC.ALTA.DIGITAL.EXTERN.CUS.ID) = 7
+        sms1(ABC.ALTA.DIGITAL.SMS.1) = 8
+        email1(ABC.ALTA.DIGITAL.EMAIL.1) = 9
+        street(ABC.ALTA.DIGITAL.STREET) = 10
+        address11(ABC.ALTA.DIGITAL.ADDRESS.1.1) = 11
+        address12(ABC.ALTA.DIGITAL.ADDRESS.1.2) = 12
+        postCode(ABC.ALTA.DIGITAL.POST.CODE) = 13
+        dirColonia(ABC.ALTA.DIGITAL.DIR.COLONIA) = 14
+        legaDocName(ABC.ALTA.DIGITAL.LEGAL.DOC.NAME) = 15
+        legalId(ABC.ALTA.DIGITAL.LEGAL.ID) = 16
+        legalIssDate(ABC.ALTA.DIGITAL.LEGAL.ISS.DATE) = 17
+        legalExpDate(ABC.ALTA.DIGITAL.LEGAL.EXP.DATE) = 18
+        taxId(ABC.ALTA.DIGITAL.TAX.ID) = 19
+        domFisc(ABC.ALTA.DIGITAL.DOM.FISC) = 20
+        usoCfdi(ABC.ALTA.DIGITAL.USO.CFDI) = 21
+        canal(ABC.ALTA.DIGITAL.CANAL) = 22
+        occupation(ABC.ALTA.DIGITAL.OCCUPATION) = 23
+        otherNationality(ABC.ALTA.DIGITAL.OTHER.NATIONALITY) = 24
+        nationality(ABC.ALTA.DIGITAL.NATIONALITY) = 25
+        regFiscal(ABC.ALTA.DIGITAL.REG.FISCAL) = 26
+        actividadEcono(ABC.ALTA.DIGITAL.ACTIVIDAD.ECONO) = 27
+        idCustomer(ABC.ALTA.DIGITAL.ID.CUSTOMER) = 28
+
+        RecordStatus(ABC.ALTA.DIGITAL.RECORD.STATUS)              = 29
+        CurrNo(ABC.ALTA.DIGITAL.CURR.NO)                          = 30
+        Inputter(ABC.ALTA.DIGITAL.INPUTTER)                       = 31
+        DateTime(ABC.ALTA.DIGITAL.DATE.TIME)                      = 32
+        Authoriser(ABC.ALTA.DIGITAL.AUTHORISER)                   = 33
+        CoCode(ABC.ALTA.DIGITAL.CO.CODE)                          = 34
+        DeptCode(ABC.ALTA.DIGITAL.DEPT.CODE)                      = 35
+        AuditorCode(ABC.ALTA.DIGITAL.AUDITOR.CODE)                = 36
+        AuditDateTime(ABC.ALTA.DIGITAL.AUDIT.DATE.TIME)           = 37        
+    }
+}

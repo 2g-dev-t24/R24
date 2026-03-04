@@ -1,0 +1,219 @@
+component AbcSaldoOperPasivasAcc
+# Component Isolation Definition
+metamodelVersion 1.6
+
+
+
+private method AbcRepSaldoOperInvPost (
+)
+{
+    jBC: ABC.REP.SALDO.OPER.INV.POST
+}
+
+private method AbcRepSaldoOperPasivasPre (
+)
+{
+    jBC: ABC.REP.SALDO.OPER.PASIVAS.PRE
+}
+
+//**************************************************
+//
+//ABC.SALDO.OPER.PASIVAS.ACC
+//
+//**************************************************
+private method AbcSaldoOperPasivasAccLoad (
+)
+{
+    jBC: ABC.SALDO.OPER.PASIVAS.ACC.LOAD
+}
+
+
+
+private method AbcRutUltimoDiaMes (
+    INOUT inAnioMes string,
+    INOUT inWoc string,
+    INOUT outFecha string,
+    INOUT outError string
+)
+{
+    jBC: ABC.RUT.ULTIMO.DIA.MES
+}
+
+
+
+private method AbcSaldoOperPasivasAccSelect (
+)
+{
+    jBC: ABC.SALDO.OPER.PASIVAS.ACC.SELECT
+}
+
+public property readwrite FnAccount : string {
+}
+public property readwrite FAccount : string {
+}
+public property readwrite FnDao : string {
+}
+public property readwrite FDao : string {
+}
+public property readwrite FnCustomer : string {
+}
+public property readwrite FCustomer : string {
+}
+public property readwrite FnEbContractBalance : string {
+}
+public property readwrite FEbContractBalance : string {
+}
+public property readwrite FnStmtAcctCr : string {
+}
+public property readwrite FStmtAcctCr : string {
+}
+public property readwrite FnCategory : string {
+}
+public property readwrite FCategory : string {
+}
+public property readwrite FnAbcPromEnlace : string {
+}
+public property readwrite FAbcPromEnlace : string {
+}
+public property readwrite FnGroupCreditInt : string {
+}
+public property readwrite FGroupCreditInt : string {
+}
+public property readwrite YPosClassification : string {
+}
+public property readwrite YPosNomPerMoral : string {
+}
+public property readwrite YLwd : string {
+}
+public property readwrite YPath : string {
+}
+public property readwrite YCategCuentaAhorro : string {
+}
+public property readwrite YCategCuentaSinChequera : string {
+}
+public property readwrite YCategCuentaConChequera : string {
+}
+public property readwrite YUltDiaW : string {
+}
+public property readwrite YUltDiaC : string {
+}
+public property readwrite YNomProcOpPas : string {
+}
+public property readwrite CtaStr4 : string {
+}
+public property readwrite CtaStr5 : string {
+}
+public property readwrite CtaStr6 : string {
+}
+public property readwrite OtrStr : string {
+}
+public property readwrite CtaGcNoOfRec: string {
+}
+public property readwrite CtaGcSelList: string {
+}
+
+private method AbcSaldoOperPasivasAcc (
+    INOUT yAccountId string
+)
+{
+    jBC: ABC.SALDO.OPER.PASIVAS.ACC
+}
+
+private method AbcSaldoOperPasivasAccPost (
+)
+{
+    jBC: ABC.SALDO.OPER.PASIVAS.ACC.POST
+}
+
+
+private method AbcSaldoOperPasivasAccPre (
+)
+{
+    jBC: ABC.SALDO.OPER.PASIVAS.ACC.PRE
+}
+
+//**************************************************
+//
+//ABC.SALDO.OPER.PASIVAS.ACC
+//
+//**************************************************
+
+
+//**************************************************
+//ABC.VEN.INV.CEDES.CSV
+//**************************************************
+private method AbcVenInvCedesCsv (
+)
+{
+    jBC: ABC.VEN.INV.CEDES.CSV
+}
+
+//**************************************************
+//ABC.VEN.INV.CEDES.CSV
+//**************************************************
+
+
+
+//**************************************************
+//ABC.REPROCESA.SALDO.OPER.INV
+//**************************************************
+private method AbcReprocesaSaldoOperInvLoad (
+)
+{
+    jBC: ABC.REPROCESA.SALDO.OPER.INV.LOAD
+}
+
+private method AbcReprocesaSaldoOperInvSelect (
+)
+{
+    jBC: ABC.REPROCESA.SALDO.OPER.INV.SELECT
+}
+
+private method AbcReprocesaSaldoOperInv (
+    INOUT arrId string
+)
+{
+    jBC: ABC.REPROCESA.SALDO.OPER.INV
+}
+
+public property readwrite FnArr : string {
+}
+public property readwrite FArr : string {
+}
+public property readwrite FnTblIns : string {
+}
+public property readwrite FTblIns : string {
+}
+public property readwrite FnAbcAcctLclFlds : string {
+}
+public property readwrite FAbcAcctLclFlds : string {
+}
+public property readwrite YToday : string {
+}
+public property readwrite ACatCampo001 : string {
+}
+public property readwrite ACatCampo002 : string {
+}
+public property readwrite ACatCampo003 : string {
+}
+//**************************************************
+//ABC.REPROCESA.SALDO.OPER.INV
+//**************************************************
+
+
+private method AaCustomerImpresion (
+    INOUT idCliente string,
+    INOUT nombreCliente string
+)
+{
+    jBC: AA.CUSTOMER.IMPRESION
+}
+
+private method AbcRutSalPromedio (
+    INOUT inCta string,
+    INOUT inFechaHasta string,
+    INOUT outSaldoProm string
+)
+{
+    jBC: ABC.RUT.SAL.PROMEDIO
+}

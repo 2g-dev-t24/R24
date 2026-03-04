@@ -1,0 +1,139 @@
+component AbcContractService
+
+# Component Isolation Definition
+metamodelVersion 1.6
+
+
+public method AbcGenAutContratoCuenta (
+    INOUT idContractAcct string
+)
+{
+    jBC: ABC.GEN.AUT.CONTRATO.CUENTA
+}
+
+public method AbcGenAutContratoCuentaLoad (
+)
+{
+    jBC: ABC.GEN.AUT.CONTRATO.CUENTA.LOAD
+}
+
+public method AbcGenAutContratoCuentaSelect (
+)
+{
+    jBC: ABC.GEN.AUT.CONTRATO.CUENTA.SELECT
+}
+
+public method AbcNewGetGat (
+    INOUT yFechaInflacion string,
+    INOUT tasaBruta string,
+    INOUT plazo string,
+    INOUT tipo string,
+    INOUT gatNominal string,
+    INOUT gatReal string
+)
+{
+    jBC: ABC.NEW.GET.GAT
+}
+
+public method AbcStartContrctService (
+)
+{
+    jBC: ABC.START.CONTRCT.SERVICE
+}
+
+public method AbcNofileReporteContratos (
+    INOUT datos string
+)
+{
+    jBC: ABC.NOFILE.REPORTE.CONTRATOS
+}
+
+public property readwrite FnAccount : string {
+}
+public property readwrite FAccount : string {
+}
+public property readwrite FnAccountNau : string {
+}
+public property readwrite FAccountNau : string {
+}
+public property readwrite TempPath : string {
+}
+public property readwrite PathExec : string {
+}
+
+public property readwrite OfsSource : string {
+}
+
+public property readwrite FnFileAux : string {
+}
+
+public property readwrite FFileAux : string {
+}
+
+public property readwrite FnEbLookup : string {
+}
+
+public property readwrite FEbLookup : string {
+}
+
+
+public method AbcEjecutaJarGeneric (
+    INOUT yData string,
+    INOUT yName string,
+    INOUT yReturnVal string
+)
+{
+    jBC: ABC.EJECUTA.JAR.GENERIC
+}
+
+public method abcCalcInteresContrato (
+    INOUT yParamAdi string,
+    INOUT yIvaAd string,
+    INOUT yIvaMtoAdi string
+)
+{
+    jBC: ABC.CALC.INTERES.CONTRATO
+}
+
+
+
+public method abcBancaInternet (
+)
+{
+    jBC: ABC.BANCA.INTERNET
+}
+
+
+
+public method abcBancaInternetFields (
+)
+{
+    jBC: ABC.BANCA.INTERNET.FIELDS
+}
+
+
+
+public method abcNofileCaratulaContrato (
+    INOUT rData string
+)
+{
+    jBC: ABC.NOFILE.CARATULA.CONTRATO
+}
+
+
+
+public method abcNofileRutaContr (
+    INOUT rData string
+)
+{
+    jBC: ABC.NOFILE.RUTA.CONTR
+}
+
+
+private method abcStartCaratService (
+)
+{
+    jBC: ABC.START.CARAT.SERVICE
+}
+
+

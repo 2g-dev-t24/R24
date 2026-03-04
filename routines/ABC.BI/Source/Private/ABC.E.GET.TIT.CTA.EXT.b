@@ -1,0 +1,46 @@
+$PACKAGE AbcBi
+*-----------------------------------------------------------------------------
+   SUBROUTINE ABC.E.GET.TIT.CTA.EXT
+
+   $USING EB.Template
+   $USING EB.DataAccess
+   $USING EB.SystemTables
+   $USING AbcTable
+     
+   YDATA = O.DATA
+
+   F.ABC.CTAS.AUTORIZADAS = ""
+   FN.ABC.CTAS.AUTORIZADAS = "F.ABC.CTAS.AUTORIZADAS"
+   EB.DataAccess.Opf(FN.ABC.CTAS.AUTORIZADAS,F.ABC.CTAS.AUTORIZADAS)
+
+   YCTA.EXT = FIELD(YDATA,"*",1)
+   YCTE.GLOBUS = FIELD(YDATA,"*",2)
+
+   YREC.ABC.CTAS.AUTORIZADAS = ""
+
+   EB.DataAccess.FRead(FN.ABC.CTAS.AUTORIZADAS, YCTE.GLOBUS, YREC.ABC.CTAS.AUTORIZADAS, F.ABC.CTAS.AUTORIZADAS, Y.ERR.CTAS.AUTORIZADAS)
+   IF YREC.ABC.CTAS.AUTORIZADAS EQ '' THEN
+      YCTA.EXISTE = 0
+   END
+
+   FIND YCTA.EXT IN YREC.ABC.CTAS.AUTORIZADAS<AbcTable.AbcCtasAutorizadas.CtaClabe> SETTING YCAMPO, YPOSICION ELSE
+      YCAMPO = 0
+      YPOSICION = 0
+   END
+
+   IF YPOSICION NE 0 THEN
+      YAPE.PATERNO = TRIM(TRIM(YREC.ABC.CTAS.AUTORIZADAS<AbcTable.AbcCtasAutorizadas.ApePaterno><1,YPOSICION>," ","T"))
+      YAPE.MATERNO = TRIM(TRIM(YREC.ABC.CTAS.AUTORIZADAS<AbcTable.AbcCtasAutorizadas.ApeMaterno><1,YPOSICION>," ","T"))
+      YNOMBRE = TRIM(TRIM(YREC.ABC.CTAS.AUTORIZADAS<AbcTable.AbcCtasAutorizadas.Nombre><1,YPOSICION>," ","T"))
+      O.DATA  = YAPE.PATERNO
+      IF YAPE.MATERNO NE "" THEN
+         O.DATA := " ":YAPE.MATERNO
+      END 
+      IF YNOMBRE NE "" THEN
+         O.DATA := " ":YNOMBRE
+      END
+   END ELSE
+      O.DATA = ""
+   END
+
+   RETURN

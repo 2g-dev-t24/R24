@@ -1,0 +1,21 @@
+public table BaAcProductos {
+    t24: BA.AC.PRODUCTOS
+    fields:{
+        Descripcion(BA.AC.PROD.DESCRIPCION)                     = 1
+        AcctGenCondId(BA.AC.PROD.ACCT.GEN.COND.ID)              = 2
+        Reserved5(BA.AC.PROD.RESERVED.5)                        = 3
+        Reserved4(BA.AC.PROD.RESERVED.4)                        = 4
+        Reserved3(BA.AC.PROD.RESERVED.3)                        = 5
+        Reserved2(BA.AC.PROD.RESERVED.2)                        = 6
+        Reserved1(BA.AC.PROD.RESERVED.1)                        = 7
+        RecordStatus(BA.AC.PROD.RECORD.STATUS)                  = 8
+        CurrNo(BA.AC.PROD.CURR.NO)                              = 9
+        Inputter(BA.AC.PROD.INPUTTER)                           = 10
+        DateTime(BA.AC.PROD.DATE.TIME)                          = 11
+        Authoriser(BA.AC.PROD.AUTHORISER)                       = 12
+        CoCode(BA.AC.PROD.CO.CODE)                              = 13
+        DeptCode(BA.AC.PROD.DEPT.CODE)                          = 14
+        AuditorCode(BA.AC.PROD.AUDITOR.CODE)                    = 15
+        AuditDateTime(BA.AC.PROD.AUDIT.DATE.TIME)               = 16
+    }
+}

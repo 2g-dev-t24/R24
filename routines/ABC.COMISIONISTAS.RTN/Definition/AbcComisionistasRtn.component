@@ -1,0 +1,135 @@
+component AbcComisionistasRtn
+# Component Isolation Definition
+metamodelVersion 1.6
+
+private method AbcComisionistasValSexo (INOUT YValor string)
+{
+    jBC: ABC.COMISIONISTAS.VAL.SEXO
+}
+
+private method AbcComisionistasValPlazo (INOUT YValor string)
+{
+    jBC: ABC.COMISIONISTAS.VAL.PLAZO
+}
+
+private method AbcComisionistasValFecha (INOUT YValor string)
+{
+    jBC: ABC.COMISIONISTAS.VAL.FECHA
+}
+
+private method AbcComisionistasValClave (INOUT YValor string)
+{
+    jBC: ABC.COMISIONISTAS.VAL.CLAVE
+}
+
+private method AbcComisionistasObtTerm (INOUT YiDetail string)
+{
+    jBC: ABC.COMISIONISTAS.OBT.TERM
+}
+ 
+private method AbcComisionistasObtInversion (INOUT YiDetail string)
+{
+    jBC: ABC.COMISIONISTAS.OBT.INVERSION
+} 
+ 
+private method AbcComisionistasEjecuta (INOUT RData string)
+{
+    jBC: ABC.COMISIONISTAS.EJECUTA
+} 
+
+private method AbcComisionistasCreaLayout (INOUT YIdRegistroLayout string, 
+INOUT YListRegistro string, 
+INOUT YNoRegistros string)
+{
+    jBC: ABC.COMISIONISTAS.CREA.LAYOUT
+} 
+private method AbcComisionistasValidacion ()
+{
+    jBC: ABC.COMISIONISTAS.VALIDACION
+} 
+private method AbcComisionistasFileLoad (INOUT YIdComisionista string, INOUT YMensaje string)
+{
+    jBC: ABC.COMISIONISTAS.FILE.LOAD
+} 
+
+private method AbcComisionistasAplicaOfs (INOUT YClienteComisionista string, 
+INOUT YFechaProceso string,
+INOUT YAplicacionOfs string,
+INOUT ArrAplicacionDep string,
+INOUT YMensaje string)
+{
+    jBC: ABC.COMISIONISTAS.APLICA.OFS
+}
+
+
+
+private method AbcComisionistasCarga (INOUT Respuesta string)
+{
+    jBC: ABC.COMISIONISTAS.CARGA
+}
+
+private method AbcComisionistasCargaCtas (INOUT YMensaje string)
+{
+    jBC: ABC.COMISIONISTAS.CARGA.CTAS
+}
+
+private method AbcComisionistasCargaCtes (INOUT YMensaje string)
+{
+    jBC: ABC.COMISIONISTAS.CARGA.CTES
+}
+
+private method AbcComisionistasCargaFtes ()
+{
+    jBC: ABC.COMISIONISTAS.CARGA.FTES
+}
+
+
+private method AbcComisionistasCargaInic ()
+{
+    jBC: ABC.COMISIONISTAS.CARGA.INIC
+}
+
+private method AbcComisionistasCargaInvs (INOUT YMensaje string)
+{
+    jBC: ABC.COMISIONISTAS.CARGA.INVS
+}
+
+private method AbcComisionistasObtCliente (INOUT YIDetail string)
+{
+    jBC: ABC.COMISIONISTAS.OBT.CLIENTE
+}
+
+private method AbcComisionistasObtCuenta (INOUT YIDetail string)
+{
+    jBC: ABC.COMISIONISTAS.OBT.CUENTA
+}
+
+private method AbcComisionistasServicioInvs ()
+{
+    jBC: ABC.COMISIONISTAS.SERVICIO.INVS
+}
+
+
+private method AbcComisionistasArrOfs (INOUT YArrIdsDetal string, 
+INOUT YIdAplicacion string,
+INOUT ArrAplicacionDep string,
+INOUT YEnvioOfsAplicacion string)
+{
+    jBC: ABC.COMISIONISTAS.ARR.OFS
+}
+
+private method AbcComisionistasCargaCatalogo ()
+{
+    jBC: ABC.COMISIONISTAS.CARGA.CATALOGO
+}
+
+
+
+# ------------------ METHOD END ------------------
+
+
+
+
+
+
+

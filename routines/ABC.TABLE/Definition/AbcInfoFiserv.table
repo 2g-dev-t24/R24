@@ -1,0 +1,6 @@
+private table AbcInfoFiserv {
+    t24: ABC.INFO.FISERV
+    fields:{
+        CuentaFiserv(INFO.AC.FI.CUENTA.FISERV) = 1
+    }
+}

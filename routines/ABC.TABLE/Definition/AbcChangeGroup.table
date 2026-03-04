@@ -1,0 +1,6 @@
+private table AbcChangeGroup {
+    t24: ABC.CHANGE.GROUP
+    fields:{
+        idAa(ABC.CHAN.GROUP.ID.AA) = 1
+    }
+}

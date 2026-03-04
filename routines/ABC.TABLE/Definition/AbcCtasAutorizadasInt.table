@@ -1,0 +1,23 @@
+public table AbcCtasAutorizadasInt {
+    t24: ABC.CTAS.SAUTORIZADAS.INT
+    fields:{
+        CteGlobus(VCAI.CTE.GLOBUS)                    = 1
+        Reserved6(VCAI.RESERVED.6)                    = 2
+        Reserved5(VCAI.RESERVED.5)                    = 3
+        Reserved4(VCAI.RESERVED.4)                    = 4
+        Reserved3(VCAI.RESERVED.3)                    = 5
+        Reserved2(VCAI.RESERVED.2)                    = 6
+        Reserved1(VCAI.RESERVED.1)                    = 7
+        LocalRef(VCAI.LOCAL.REF)                      = 8
+        Override(VCAI.OVERRIDE)                       = 9
+        RecordStatus(VCAI.RECORD.STATUS)              = 10
+        CurrNo(VCAI.CURR.NO)                          = 11
+        Inputter(VCAI.INPUTTER)                       = 12
+        DateTime(VCAI.DATE.TIME)                      = 13
+        Authoriser(VCAI.AUTHORISER)                   = 14
+        CoCode(VCAI.CO.CODE)                          = 15
+        DeptCode(VCAI.DEPT.CODE)                      = 16
+        AuditorCode(VCAI.AUDITOR.CODE)                = 17
+        AuditDateTime(VCAI.AUDIT.DATE.TIME)           = 18
+    }
+}

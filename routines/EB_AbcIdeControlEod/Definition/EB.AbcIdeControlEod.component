@@ -1,0 +1,68 @@
+component EB.AbcIdeControlEod
+# Component Isolation Definition
+metamodelVersion 1.6
+# -------------------------------------------------
+
+
+private method abcIdeControlMovLoad (
+)
+{
+    jBC: ABC.IDE.CONTROL.MOV.LOAD
+}
+
+
+
+public method abcIdeControlMovSelect (
+)
+{
+    jBC: ABC.IDE.CONTROL.MOV.SELECT
+}
+
+private method abcIdeControlMov (
+    INOUT yId string
+)
+{
+    jBC: ABC.IDE.CONTROL.MOV
+}
+
+
+
+public property readwrite FnEbContractBalances : string {
+}
+public property readwrite FEbContractBalances : string {
+}
+public property readwrite CadFechas : string {
+}
+public property readwrite CadCateg : string {
+}
+public property readwrite FnAbcIdeSaldosClie : string {
+}
+public property readwrite YTmpCta : string {
+}
+
+public property readwrite CadTipo : string {
+}
+public property readwrite CadExcp : string {
+}
+public property readwrite PsDc : string {
+}
+
+public property readwrite MtoLimite : string {
+}
+public property readwrite FAbcIdeSaldosClie : string {
+   
+}
+public property readwrite CadCodTrans : string {
+   
+}
+public property readwrite PorcImpto : string {
+   
+}
+
+
+
+
+
+
+
+

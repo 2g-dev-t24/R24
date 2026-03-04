@@ -1,0 +1,51 @@
+public table AbcParamContProd {
+    t24: ABC.PARAM.CONT.PROD
+    fields:{
+        Id(CO.PR.ID) = 1
+        Reca(CO.PR.RECA) = 2
+        NomComercial(CO.PR.NOM.COMERCIAL) = 3
+
+        MedTarjeta(CO.PR.MED.TARJETA) = 4
+        MedChequera(CO.PR.MED.CHEQUERA) = 5
+        MedVentanilla(CO.PR.MED.VENTANILLA) = 6
+        MedCajero(CO.PR.MED.CAJERO) = 7
+        MedInternet(CO.PR.MED.INTERNET) = 8
+        MedDomicilia(CO.PR.MED.DOMICILIA) = 9
+        MedComercio(CO.PR.MED.COMERCIO) = 10
+        MedTransf(CO.PR.MED.TRANSF) = 11
+
+        ServCede(CO.PR.SERV.CEDE) = 12
+        ServPagare(CO.PR.SERV.PAGARE) = 13
+        ServSpei(CO.PR.SERV.SPEI) = 14
+
+        TipoOper(CO.PR.TIPO.OPER) = 15
+        Comision(CO.PR.XX.COMISION) = 16
+        ComCajero(CO.PR.XX.COM.CAJERO) = 17
+
+        UeauNombre(CO.PR.UEAU.NOMBRE) = 18
+        Domicilio(CO.PR.DOMICILIO) = 19
+        Telefono(CO.PR.TELEFONO) = 20
+        Correo(CO.PR.CORREO) = 21
+        PagWeb(CO.PR.PAG.WEB) = 22
+        CdfTel(CO.PR.CDF.TEL) = 23
+        CdfPagWeb(CO.PR.CDF.PAG.WEB) = 24
+
+        Reserved5(CO.PR.RESERVED.5)              = 25
+        Reserved4(CO.PR.RESERVED.4)              = 26
+        Reserved3(CO.PR.RESERVED.3)              = 27
+        Reserved2(CO.PR.RESERVED.2)              = 28
+        Reserved1(CO.PR.RESERVED.1)              = 29
+
+        RecordStatus(CO.PR.RECORD.STATUS)        = 30
+        CurrNo(CO.PR.CURR.NO)                    = 31
+        Inputter(CO.PR.INPUTTER)                 = 32
+        DateTime(CO.PR.DATE.TIME)                = 33
+        Authoriser(CO.PR.AUTHORISER)             = 34
+        CoCode(CO.PR.CO.CODE)                    = 35
+        DeptCode(CO.PR.DEPT.CODE)                = 36
+        AuditorCode(CO.PR.AUDITOR.CODE)          = 37
+        AuditDateTime(CO.PR.AUDIT.DATE.TIME)     = 38
+        LocalRef(CO.PR.LOCAL.REF)                = 39
+    }
+}
+

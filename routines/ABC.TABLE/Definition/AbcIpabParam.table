@@ -1,0 +1,44 @@
+public table AbcIpabParam {
+    t24: ABC.IPAB.PARAM
+    fields:{
+        ClaveBanco(AIP.CLAVE.BANCO) = 1
+        Separador(AIP.SEPARADOR) = 2
+        NomArchivo(AIP.NOM.ARCHIVO) = 3
+        RutaArchivoExt(AIP.RUTA.ARCHIVO.EXT) = 4
+        RutaArchivoProy(AIP.RUTA.ARCHIVO.PROY) = 5
+        IdIsr(AIP.ID.ISR) = 6
+        
+        Categoria(AIP.CATEGORIA) = 7
+        Clasificacion(AIP.CLASIFICACION) = 8
+        Producto(AIP.PRODUCTO) = 9
+        Tabla6(AIP.TABLA.6) = 10
+        
+        TasaAhorro(AIP.TASA.AHORRO) = 11
+        
+        ProductoAa(AIP.PRODUCTO.AA) = 12
+        TipoTasa(AIP.TIPO.TASA) = 13
+        
+        Reserved10(AIP.RESERVED.10) = 14
+        Reserved9(AIP.RESERVED.09) = 15
+        Reserved8(AIP.RESERVED.08) = 16
+        Reserved7(AIP.RESERVED.07) = 17
+        Reserved6(AIP.RESERVED.06) = 18
+        Reserved5(AIP.RESERVED.05) = 19
+        Reserved4(AIP.RESERVED.04) = 20
+        Reserved3(AIP.RESERVED.03) = 21
+        Reserved2(AIP.RESERVED.02) = 22
+        Reserved1(AIP.RESERVED.01) = 23
+
+        LocalRef(AIP.LOCAL.REF) = 24
+        Override(AIP.OVERRIDE) = 25
+        RecordStatus(AIP.RECORD.STATUS) = 26
+        CurrNo(AIP.CURR.NO) = 27
+        Inputter(AIP.INPUTTER) = 28
+        DateTime(AIP.DATE.TIME) = 29
+        Authoriser(AIP.AUTHORISER) = 30
+        CoCode(AIP.CO.CODE) = 31
+        DeptCode(AIP.DEPT.CODE) = 32
+        AuditorCode(AIP.AUDITOR.CODE) = 33
+        AuditDateTime(AIP.AUDIT.DATE.TIME) = 34
+    }
+}

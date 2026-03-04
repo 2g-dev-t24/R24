@@ -1,0 +1,133 @@
+component AbcExtractGeneric
+
+# Component Isolation Definition
+metamodelVersion 1.6
+
+# ========================================
+# PROPERTIES FOR ABC.CAL.SDO.NETO
+# ========================================
+
+
+private method GenericDataExtractLvLoad (
+)
+{
+    jBC: GENERIC.DATA.EXTRACT.LV.LOAD
+}
+
+
+
+private method GenericDataExtractLvSelect (
+)
+{
+    jBC: GENERIC.DATA.EXTRACT.LV.SELECT
+}
+
+public property readwrite YFlagHeader : string {
+}
+
+public property readwrite YFilePath : string {
+}
+
+public property readwrite YFileName : string {
+}
+
+public property readwrite YLoadDateIni : string {
+}
+
+public property readwrite YLoadDateFin : string {
+}
+
+public property readwrite YOperadorList : string {
+}
+
+public property readwrite YOperandoList : string {
+}
+
+public property readwrite YConstant : string {
+}
+
+public property readwrite YSelFilterRoutine : string {
+}
+
+public property readwrite FnGenericFile : string {
+}
+public property readwrite FGenericFile : string {
+}
+
+public property readwrite FnGenericExtractParamLv : string {
+}
+public property readwrite FGenericExtractParamLv : string {
+}
+public property readwrite FDataHelpFile : string {
+}
+public property readwrite YLoadDateFmtIni : string {
+}
+public property readwrite YLoadDateFmtFin : string {
+}
+public property readwrite YAppExec : string {
+}
+public property readwrite YLoadType : string {
+}
+public property readwrite YFieldList : string {
+}
+
+public property readwrite YLocalFieldList : string {
+}
+public property readwrite YLocalRefPos : string {
+}
+public property readwrite YNoFileds : string {
+}
+
+public property readwrite YLocalNameList : string {
+}
+public property readwrite YNoPosVmList : string {
+}
+public property readwrite YNoPosSmList : string {
+}
+public property readwrite YVisualizaList : string {
+}
+public property readwrite YVmSep : string {
+}
+public property readwrite YSmSep : string {
+}
+public property readwrite YSpecVmSepList : string {
+}
+public property readwrite YSpecSmSepList : string {
+}
+public property readwrite YRecAppSs : string {
+}
+public property readwrite FnDataHelpFile : string {
+}
+public property readwrite YSeparador : string {
+}
+public property readwrite YLinkAppFieldList : string {
+}
+
+
+private method GenericDataExtractLv (
+    INOUT yIdToProcess string
+)
+{
+    jBC: GENERIC.DATA.EXTRACT.LV
+}
+
+
+
+private method GenDataExtBuildFileLv (
+)
+{
+    jBC: GEN.DATA.EXT.BUILD.FILE.LV
+}
+
+
+
+private method GenSelCmdLv (
+    INOUT yFieldList string,
+    INOUT yOperatorList string,
+    INOUT yFilterList string,
+    INOUT ySelCmd string
+)
+{
+    jBC: GEN.SEL.CMD.LV
+}
+

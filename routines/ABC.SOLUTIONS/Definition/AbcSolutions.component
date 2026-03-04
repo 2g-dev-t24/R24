@@ -1,0 +1,13 @@
+component AbcSolutions
+# Component Isolation Definition
+metamodelVersion 1.6
+
+
+
+
+private method AbcSolutions (
+)
+{
+   jBC: ABC.SOLUTIONS
+}
+

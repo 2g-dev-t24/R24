@@ -1,0 +1,119 @@
+component AbcActivityLine
+# Component Isolation Definition
+metamodelVersion 1.6
+
+
+# ------------------ METHOD END ------------------
+
+private method AbcActivity (
+)
+{
+    jBC: ABC.ACTIVITY
+}
+
+private method AbcActivityStmt (
+)
+{
+    jBC: ABC.ACTIVITY.STMT
+}
+
+private method AbcLineMvmtR6Load (
+)
+{
+    jBC: ABC.LINE.MVMT.R6.LOAD
+}
+
+private method AbcLineMvmtR6Select (
+)
+{
+    jBC: ABC.LINE.MVMT.R6.SELECT
+}
+
+private method AbcLineMvmtR6 (
+    INOUT LimeMvmtId string
+)
+{
+    jBC: ABC.LINE.MVMT.R6
+}
+
+public property readwrite ProcessGoahead : string {
+}
+
+public property readwrite StmtYPost1 : string {
+}
+
+public property readwrite StmtYPost2 : string {
+}
+
+public property readwrite CategYpost1 : string {
+}
+
+public property readwrite CategYPost2 : string {
+}
+
+public property readwrite ConsolYPos1 : string {
+}
+
+public property readwrite ConsolYPos2 : string {
+}
+
+public property readwrite FnStmtEntry : string {
+}
+
+public property readwrite FvStmtEntry : string {
+}
+
+public property readwrite FnCategEntry : string {
+}
+
+public property readwrite FvCategEntry : string {
+}
+
+public property readwrite FnReConsolSpecEntry : string {
+}
+
+public property readwrite FvReConsolSpecEntry : string {
+}
+
+public property readwrite FnReStatLineMvmt : string {
+}
+
+public property readwrite FvReStatLineMvmt : string {
+}
+
+public property readwrite FnReStartRepLine : string {
+}
+
+public property readwrite FvReStartRepLine : string {
+}
+
+public property readwrite FnReStatRequest : string {
+}
+
+public property readwrite FvReStatRequest : string {
+}
+
+public property readwrite FnReConsolSpecEntKey : string {
+}
+
+public property readwrite FvReConsolSpecEntKey : string {
+}
+
+public property readwrite FnReConsolProfit : string {
+}
+
+public property readwrite FvReConsolProfit : string {
+}
+
+public property readwrite FnReConsolStmtEntKey : string {
+}
+
+public property readwrite FvReConsolStmtEntKey : string {
+}
+
+public property readwrite FnCategEntryDetailXref : string {
+}
+
+public property readwrite FvCategEntryDetailXref : string {
+}
+
